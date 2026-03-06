@@ -46,14 +46,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Alpha_Clip: 0.5
+    - _Alpha_Clip: 0.149
     - _OffsetX: 0
     - _OffsetY: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Shadowlimit: -1.55
+    - _Shadowlimit: 3
     m_Colors:
-    - _ShadowColor: {r: 0.7372549, g: 0.82745105, b: 0.9058824, a: 0}
+    - _ShadowColor: {r: 1, g: 0.823148, b: 0.5803922, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &6291305548302225912
@@ -68,4 +68,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  version: 9
+  version: 10

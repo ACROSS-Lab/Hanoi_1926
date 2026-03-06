@@ -19,7 +19,7 @@ LightingSettings:
   m_LightmapMaxSize: 2048
   m_LightmapSizeFixed: 0
   m_UseMipmapLimits: 1
-  m_BakeResolution: 5
+  m_BakeResolution: 1
   m_Padding: 2
   m_LightmapCompression: 3
   m_LightmapPackingMode: 1
@@ -29,9 +29,9 @@ LightingSettings:
   m_XAtlasBlockAlign: 0
   m_XAtlasRepackUnderutilizedLightmaps: 1
   m_AO: 1
-  m_AOMaxDistance: 1
-  m_CompAOExponent: 2.04
-  m_CompAOExponentDirect: 0
+  m_AOMaxDistance: 0.5
+  m_CompAOExponent: 1.85
+  m_CompAOExponentDirect: 1.57
   m_ExtractAO: 0
   m_MixedBakeMode: 2
   m_LightmapsBakeMode: 1
@@ -46,8 +46,8 @@ LightingSettings:
   m_PVRCulling: 1
   m_PVRSampling: 1
   m_PVRDirectSampleCount: 32
-  m_PVRSampleCount: 512
-  m_PVREnvironmentSampleCount: 256
+  m_PVRSampleCount: 16
+  m_PVREnvironmentSampleCount: 8
   m_PVREnvironmentReferencePointCount: 2048
   m_LightProbeSampleCountMultiplier: 4
   m_PVRBounces: 2
