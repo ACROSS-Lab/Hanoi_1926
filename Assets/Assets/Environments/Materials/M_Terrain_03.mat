@@ -117,13 +117,13 @@ Material:
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
-    - _Elevation_Offset: 3.41
+    - _Elevation_Offset: 2.09
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _Noise_Opacity: 0.133
+    - _Noise_Opacity: 0.25
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
@@ -135,7 +135,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _Tiling: 0.51
+    - _Tiling: 0.1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
@@ -145,7 +145,7 @@ Material:
     - _ElevationColor: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Noise_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Shadow_Color: {r: 0.6078231, g: 0.72148746, b: 0.8207547, a: 0}
+    - _Shadow_Color: {r: 0.7830189, g: 0.6610042, b: 0.5577163, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
