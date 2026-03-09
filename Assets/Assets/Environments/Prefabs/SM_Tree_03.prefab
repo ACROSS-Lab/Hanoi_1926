@@ -68,11 +68,19 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 0672d68c2ee3a6d4080b56281fde1baa, type: 2}
+    - target: {fileID: 899339737532956796, guid: 0cec60b6a57632c4a9d1ab88f9056e9e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0cec60b6a57632c4a9d1ab88f9056e9e, type: 3}
       propertyPath: m_Name
       value: SM_Tree_03
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0cec60b6a57632c4a9d1ab88f9056e9e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8706176157475878889, guid: 0cec60b6a57632c4a9d1ab88f9056e9e, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
