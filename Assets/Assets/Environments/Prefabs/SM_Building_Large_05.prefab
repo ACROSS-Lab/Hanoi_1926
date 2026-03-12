@@ -48,10 +48,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8346443366404089414, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3421e587aa184f648b01a5eb26038f53, type: 2}
     - target: {fileID: -7511558181221131132, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3421e587aa184f648b01a5eb26038f53, type: 2}
+    - target: {fileID: -574918599323986808, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 159266152535694747, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
       propertyPath: m_Name
       value: SM_Building_Large_05
@@ -60,6 +72,30 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 2012457476883386290, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.07831696
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.021194918
+      objectReference: {fileID: 0}
+    - target: {fileID: 4742473837712756890, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
+      propertyPath: m_LODs.Array.data[2].screenRelativeHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4771406731933298034, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3421e587aa184f648b01a5eb26038f53, type: 2}
+    - target: {fileID: 9147823045310863017, guid: c258c29313a2d004a9aa0184fb7dfac3, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 3421e587aa184f648b01a5eb26038f53, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
