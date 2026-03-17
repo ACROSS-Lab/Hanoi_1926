@@ -1,55 +1,43 @@
 using UnityEngine;
 using UnityEditor;
-using UnityEditor.SceneManagement;
 
-public class RenameToPrefabName : Editor
+public class RenameToPrefabName
 {
-    // Modifiez le chemin pour utiliser "Tools/" au lieu de "GameObject/"
     private const string MENU_PATH = "Tools/Renommer en Nom du Prefab Parent";
 
-    // Ajoute l'élément de menu à "Tools"
-    [MenuItem(MENU_PATH, false, 0)]
-
-    // Le 'validate'MenuItem permet de griser l'option si rien n'est sélectionné.
-    [MenuItem(MENU_PATH, true)]
-    static bool ValidateRenameSelected()
-    {
-        // Active si un ou plusieurs objets sont sélectionnés
-        return Selection.gameObjects.Length > 0;
-    }
-
-    // Fonction principale appelée par l'élément de menu
     [MenuItem(MENU_PATH)]
     static void RenameSelected()
     {
-        // Parcourt tous les objets sélectionnés
         foreach (GameObject go in Selection.gameObjects)
         {
-            // Vérifie si l'objet est une instance de Prefab
             if (PrefabUtility.IsAnyPrefabInstanceRoot(go))
             {
-                // Obtient le Prefab source (l'Asset) à partir de l'instance
-                Object prefabAsset = PrefabUtility.GetCorrespondingObjectFromSource(go);
+                GameObject prefabAsset = PrefabUtility.GetCorrespondingObjectFromSource(go);
 
                 if (prefabAsset != null)
                 {
-                    // Enregistre l'action pour pouvoir l'annuler (Ctrl+Z)
-                    Undo.RecordObject(go, "Renommer en nom de Prefab");
+                    Undo.RegisterCompleteObjectUndo(go, "Renommer en nom de Prefab");
 
-                    // Renomme l'objet sélectionné avec le nom de l'Asset Prefab
+                    string oldName = go.name;
                     go.name = prefabAsset.name;
 
-                    Debug.Log($"Renommage de '{go.name}' en '{prefabAsset.name}' (Nom du Prefab).");
+                    Debug.Log($"Renommage de '{oldName}' en '{prefabAsset.name}'.");
                 }
                 else
                 {
-                    Debug.LogWarning($"L'objet '{go.name}' n'est pas lié à un Prefab Asset trouvable. Renommage ignoré.");
+                    Debug.LogWarning($"L'objet '{go.name}' n'est pas lié à un Prefab Asset trouvable.");
                 }
             }
             else
             {
-                Debug.LogWarning($"L'objet '{go.name}' n'est pas la racine d'une instance de Prefab. Renommage ignoré.");
+                Debug.LogWarning($"L'objet '{go.name}' n'est pas la racine d'une instance de Prefab.");
             }
         }
+    }
+
+    [MenuItem(MENU_PATH, true)]
+    static bool ValidateRenameSelected()
+    {
+        return Selection.gameObjects.Length > 0;
     }
 }
