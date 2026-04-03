@@ -65,7 +65,8 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReflectionOpacity: 0.425
+    - _ReflectionOpacity: 0.374
+    - _Reflection_Offset: -0.13
     - _ShadowContrast: 1.86
     - _ShadowLimit: 0
     - _XRMotionVectorsPass: 1
@@ -75,6 +76,6 @@ Material:
     - _Foam_Color: {r: 0, g: 0, b: 0, a: 1}
     - _Shadow_Color: {r: 0.6603774, g: 0.65123737, b: 0.5575828, a: 1}
     - _Shore_Color: {r: 0, g: 0, b: 0, a: 1}
-    - _Water_Color: {r: 0.41509432, g: 0.35964566, b: 0.17817728, a: 1}
+    - _Water_Color: {r: 0.3584906, g: 0.27068898, b: 0.13020648, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

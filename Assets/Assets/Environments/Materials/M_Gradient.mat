@@ -139,7 +139,7 @@ Material:
     - _LightDir: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _Outline_Color: {r: 0, g: 0, b: 0, a: 0}
     - _ShadowColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 0}
-    - _Shadow_Color: {r: 0.5109024, g: 0.7079213, b: 0.8396226, a: 0}
+    - _Shadow_Color: {r: 0.8207547, g: 0.6869042, b: 0.63105196, a: 0}
     - _SpecColor: {r: 0.19999933, g: 0.19999933, b: 0.19999933, a: 0}
     - _UV_Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
