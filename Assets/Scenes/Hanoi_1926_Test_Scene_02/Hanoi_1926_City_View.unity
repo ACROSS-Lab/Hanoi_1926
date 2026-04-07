@@ -34674,7 +34674,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransition
   canvas: {fileID: 236766681}
   fadeCanvasGroup: {fileID: 236766680}
-  fadeDuration: 1
+  leftHand: {fileID: 554705967}
+  rightHand: {fileID: 619449285}
+  fadeInDuration: 1
+  fadeOutDuration: 2
 --- !u!1001 &236826832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83082,6 +83085,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3787650747711784992, guid: e2459a298e3ffd64d832bcc5be60d9ca, type: 3}
   m_PrefabInstance: {fileID: 554531321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &554705967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3658452646405003526, guid: ce1fca5e01cd1ce48be46c10d28e75e5, type: 3}
+  m_PrefabInstance: {fileID: 7615592486915259462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &555373244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94058,6 +94066,11 @@ Transform:
 --- !u!20 &619220429 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7199257883983681825, guid: ce1fca5e01cd1ce48be46c10d28e75e5, type: 3}
+  m_PrefabInstance: {fileID: 7615592486915259462}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &619449285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8217761479287960011, guid: ce1fca5e01cd1ce48be46c10d28e75e5, type: 3}
   m_PrefabInstance: {fileID: 7615592486915259462}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &619708040
