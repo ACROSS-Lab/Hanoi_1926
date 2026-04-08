@@ -65,7 +65,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ReflectionOpacity: 0.374
+    - _ReflectionOpacity: 0.366
     - _Reflection_Offset: -0.13
     - _ShadowContrast: 1.86
     - _ShadowLimit: 0

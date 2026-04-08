@@ -48,12 +48,12 @@ Material:
     - _ShadowLimit: 0.05
     - _XRMotionVectorsPass: 1
     m_Colors:
-    - _Color_01: {r: 0.5754717, g: 0.5649018, b: 0.45874867, a: 1}
-    - _Color_02: {r: 0.4811321, g: 0.42692137, b: 0.26099148, a: 1}
+    - _Color_01: {r: 0.5188679, g: 0.47717336, b: 0.374466, a: 1}
+    - _Color_02: {r: 0.6132076, g: 0.5613202, b: 0.31528127, a: 1}
     - _Foam_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
     - _LightDirection: {r: 0, g: 0, b: 0, a: 0}
     - _Shadow_Color: {r: 0.7722944, g: 0.8396226, b: 0.824442, a: 1}
-    - _Shore_Color: {r: 0.8207547, g: 0.7680046, b: 0.36004803, a: 1}
+    - _Shore_Color: {r: 0.5754717, g: 0.41281596, b: 0.078720205, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &245905145222091220
