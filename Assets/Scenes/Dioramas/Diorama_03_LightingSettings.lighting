@@ -30,7 +30,7 @@ LightingSettings:
   m_XAtlasRepackUnderutilizedLightmaps: 1
   m_AO: 1
   m_AOMaxDistance: 0.75
-  m_CompAOExponent: 1.15
+  m_CompAOExponent: 0.57
   m_CompAOExponentDirect: 2.8
   m_ExtractAO: 0
   m_MixedBakeMode: 2
