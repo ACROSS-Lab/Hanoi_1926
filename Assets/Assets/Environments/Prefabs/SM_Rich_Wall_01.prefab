@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 874c36a0368b2764bb08ae330b7c378f, type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 874c36a0368b2764bb08ae330b7c378f, type: 3}
       propertyPath: m_Name
       value: SM_Rich_Wall_01
