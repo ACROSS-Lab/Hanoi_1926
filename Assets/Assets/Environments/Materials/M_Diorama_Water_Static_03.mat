@@ -67,14 +67,14 @@ Material:
     - _QueueOffset: 0
     - _ReflectionOpacity: 0.543
     - _Reflection_Offset: -0.16
-    - _ShadowContrast: 2.16
-    - _ShadowLimit: 0
+    - _ShadowContrast: 1.83
+    - _ShadowLimit: 0.56
     - _XRMotionVectorsPass: 1
     m_Colors:
     - _Color_01: {r: 0, g: 0, b: 0, a: 1}
     - _Color_02: {r: 0, g: 0, b: 0, a: 1}
     - _Foam_Color: {r: 0, g: 0, b: 0, a: 1}
-    - _Shadow_Color: {r: 0.79738116, g: 0.8018868, b: 0.49550554, a: 1}
+    - _Shadow_Color: {r: 0.3207547, g: 0.04914816, b: 0, a: 1}
     - _Shore_Color: {r: 0, g: 0, b: 0, a: 1}
     - _Water_Color: {r: 0.5849056, g: 0.44955975, b: 0.22899605, a: 1}
   m_BuildTextureStacks: []

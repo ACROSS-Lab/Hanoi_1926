@@ -84,7 +84,7 @@ public class Face_Controller : MonoBehaviour
       
 
         // Mouth Calculation
-        float mouth_rawX = Mathf.Clamp01(-mouth_delta.x * 2f);
+        float mouth_rawX = Mathf.Clamp01(mouth_delta.x * 2f);
         float mouth_rawY = Mathf.Clamp01(mouth_delta.z * 2f);
 
         float mouth_stepX = Mathf.Floor(mouth_rawX * 4f) / 4f;
@@ -94,7 +94,7 @@ public class Face_Controller : MonoBehaviour
         mouth_material.SetFloat("_OffsetY", mouth_stepY);
 
         // Eyes Calculation
-        float eyes_rawX = Mathf.Clamp01(-eyes_delta.x * 2f);
+        float eyes_rawX = Mathf.Clamp01(eyes_delta.x * 2f);
         float eyes_rawY = Mathf.Clamp01(eyes_delta.z * 2f);
 
         float eyes_stepX = Mathf.Floor(eyes_rawX * 4f) / 4f;
