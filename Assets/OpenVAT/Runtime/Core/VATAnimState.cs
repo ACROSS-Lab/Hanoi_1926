@@ -1,5 +1,13 @@
 // VATAnimStateMachine.cs
 // Author: Luke Stilson
+// Modified: Added Pause / Resume / Stop support
+//
+// HOW THE PAUSE WORKS:
+// The shader computes:  frame_time = _Time.y - _TimeOffsetA
+// _Time.y is Unity's built-in GPU clock — it can't be stopped.
+// So instead, during a pause we continuously slide _TimeOffsetA forward
+// at the same rate as _Time.y, keeping (Time.time - timeOffsetA) frozen.
+// On Resume(), the offsets are already correct — we just stop sliding them.
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,15 +33,84 @@ public class VATAnimStateMachine
     private float timeOffsetB = 0f;
 
     // Sequence outputs for the shader
-    private float seqStartA = -1f, seqStartB = -1f; // first frame of FIRST clip in sequence
-    private float useSeqA = 0f, useSeqB = 0f;       // 0/1 toggles per track
+    private float seqStartA = -1f, seqStartB = -1f;
+    private float useSeqA = 0f, useSeqB = 0f;
 
     private VATMaterialState lastMaterialState;
 
-    // ------------ INIT/CORE -----------
+    // =============================================
+    //  PAUSE / RESUME / STOP STATE
+    // =============================================
+
+    private bool _isPaused = false;
+
+    // Frozen relative times: (Time.time - offset) captured at pause moment
+    private float _frozenRelativeA   = 0f;
+    private float _frozenRelativeB   = 0f;
+    private float _frozenRelativeBlend = 0f;
+
+    /// <summary>True while the animation is paused.</summary>
+    public bool IsPaused => _isPaused;
+
+    /// <summary>1 = vitesse normale, 0.5 = moitié, 2 = double.</summary>
+    public float speedMultiplier = 1f;
+
+    /// <summary>
+    /// Freeze the animation on its current frame.
+    /// Safe to call multiple times — second call is a no-op.
+    /// </summary>
+    public void Pause()
+    {
+        if (_isPaused) return;
+        _isPaused = true;
+
+        // Capture the current relative times so we can hold them constant.
+        float now = Time.time;
+        _frozenRelativeA     = now - timeOffsetA;
+        _frozenRelativeB     = now - timeOffsetB;
+        _frozenRelativeBlend = now - blendStartTimeAbs;
+    }
+
+    /// <summary>
+    /// Resume playback from the exact frame it was paused on.
+    /// Safe to call when not paused — no-op.
+    /// </summary>
+    public void Resume()
+    {
+        if (!_isPaused) return;
+
+        // Slide offsets so that (Time.time - offset) still equals the frozen value.
+        // From this point UpdateAndGetState will stop adjusting them.
+        float now = Time.time;
+        timeOffsetA       = now - _frozenRelativeA;
+        timeOffsetB       = now - _frozenRelativeB;
+        blendStartTimeAbs = now - _frozenRelativeBlend;
+
+        _isPaused = false;
+    }
+
+    /// <summary>
+    /// Stop and rewind to the beginning of <paramref name="resetIndex"/>.
+    /// Clears any active blend. Leaves the machine in a non-paused state.
+    /// </summary>
+    public void Stop(int resetIndex)
+    {
+        // Clear pause state so Initialize() can run cleanly.
+        _isPaused = false;
+
+        // Re-initialize resets timers and sets the clip from scratch.
+        isInitialized = false;
+        if (anims != null && anims.Count > 0)
+            Initialize(anims, resetIndex);
+    }
+
+    // =============================================
+    //  INIT / CORE
+    // =============================================
+
     public void Initialize(List<VATAnimationData.VATAnimation> anims, int startIndex)
     {
-        if (isInitialized) return; // guard multi-init
+        if (isInitialized) return;
         this.anims = anims;
         if (anims == null || anims.Count == 0) return;
 
@@ -43,7 +120,6 @@ public class VATAnimStateMachine
         animBIndex = animAIndex;
         SetTrackState(toA: false, index: animBIndex, startFrame: anims[animBIndex].frameStart);
 
-        // Clear any sequence state
         useSeqA = 0f; useSeqB = 0f;
         seqStartA = -1f; seqStartB = -1f;
 
@@ -55,26 +131,30 @@ public class VATAnimStateMachine
         isInitialized = true;
     }
 
-    // ----------- PLAY METHODS ------------
+    // =============================================
+    //  PLAY METHODS
+    // =============================================
+
     public void PlayIndex(int index, float transitionTime = 0.25f)
     {
         if (anims == null || index < 0 || index >= anims.Count) return;
         if (!isInitialized) { Initialize(anims, index); return; }
 
-        // Clear finished blend (safety)
+        // Resume automatically if paused so offsets are correct before we mutate them.
+        if (_isPaused) Resume();
+
         if (blendDuration > 0f && blendTimer >= blendDuration)
         {
             blendDuration = 0f;
             blendTimer = 0f;
         }
 
-        // Flip destination track
         usingA = !usingA;
 
         if (transitionTime <= 0f)
         {
             if (usingA) SetTrackState(true, index, anims[index].frameStart);
-            else SetTrackState(false, index, anims[index].frameStart);
+            else        SetTrackState(false, index, anims[index].frameStart);
 
             blendDuration = 0f;
             blendTimer = 0f;
@@ -86,13 +166,13 @@ public class VATAnimStateMachine
         {
             animBIndex = index;
             SetTrackState(false, animBIndex, anims[animBIndex].frameStart);
-            blendForward = true;  // A -> B
+            blendForward = true;
         }
         else
         {
             animAIndex = index;
             SetTrackState(true, animAIndex, anims[animAIndex].frameStart);
-            blendForward = false; // B -> A
+            blendForward = false;
         }
 
         blendDuration = transitionTime;
@@ -110,6 +190,9 @@ public class VATAnimStateMachine
     public void PlayIndexRandomStart(int index, float transitionTime = 0.25f)
     {
         if (anims == null || index < 0 || index >= anims.Count) return;
+
+        if (_isPaused) Resume();
+
         var anim = anims[index];
         int randomFrame = Random.Range(anim.frameStart, anim.frameEnd + 1);
 
@@ -126,7 +209,7 @@ public class VATAnimStateMachine
         if (transitionTime <= 0f)
         {
             if (usingA) SetTrackState(true, index, randomFrame);
-            else SetTrackState(false, index, randomFrame);
+            else        SetTrackState(false, index, randomFrame);
 
             blendDuration = 0f;
             blendTimer = 0f;
@@ -152,32 +235,24 @@ public class VATAnimStateMachine
         blendStartTimeAbs = Time.time;
     }
 
-    // ------- GPU-driven sequence handling ----------
     public void PlaySequence(int minIndex, int maxIndex, float stepTransition = 0.25f, bool _loopIgnored = false, float initialTransition = 0f)
     {
         if (anims == null || minIndex < 0 || maxIndex >= anims.Count || minIndex > maxIndex) return;
 
+        if (_isPaused) Resume();
+
         int firstIndex = minIndex;
-        int lastIndex = maxIndex;
+        int lastIndex  = maxIndex;
 
-        int firstStartFrame = anims[firstIndex].frameStart; // SeqStartX
-        int lastStartFrame = anims[lastIndex].frameStart;  // frameStartX (range and timing come from last clip)
+        int firstStartFrame = anims[firstIndex].frameStart;
+        int lastStartFrame  = anims[lastIndex].frameStart;
 
-        // Flip destination track like PlayIndex
         usingA = !usingA;
 
         if (initialTransition <= 0f)
         {
-            if (usingA)
-            {
-                // Immediate on A
-                SetSequenceOnTrackA(lastIndex, firstStartFrame, lastStartFrame);
-            }
-            else
-            {
-                // Immediate on B
-                SetSequenceOnTrackB(lastIndex, firstStartFrame, lastStartFrame);
-            }
+            if (usingA) SetSequenceOnTrackA(lastIndex, firstStartFrame, lastStartFrame);
+            else        SetSequenceOnTrackB(lastIndex, firstStartFrame, lastStartFrame);
 
             blendDuration = 0f;
             blendTimer = 0f;
@@ -185,18 +260,17 @@ public class VATAnimStateMachine
             return;
         }
 
-        // Crossfade path: put the sequence on the opposite track and blend toward it
         if (usingA)
         {
             animBIndex = lastIndex;
             SetSequenceOnTrackB(lastIndex, firstStartFrame, lastStartFrame);
-            blendForward = true;   // A -> B
+            blendForward = true;
         }
         else
         {
             animAIndex = lastIndex;
             SetSequenceOnTrackA(lastIndex, firstStartFrame, lastStartFrame);
-            blendForward = false;  // B -> A
+            blendForward = false;
         }
 
         blendDuration = stepTransition;
@@ -212,113 +286,113 @@ public class VATAnimStateMachine
         PlayIndex(next, transitionTime);
     }
 
+    // =============================================
+    //  UPDATE
+    // =============================================
 
-    // Make sure unused/irrelevant data is not being handled here
     public VATMaterialState UpdateAndGetState(float deltaTime)
     {
+        // ── PAUSE TRICK ──────────────────────────────────────────────────────
+        // While paused, slide the offsets forward at the same rate as Time.time
+        // so that (Time.time - offset) stays constant → shader sees frozen frame.
+        if (_isPaused)
+        {
+            float now = Time.time;
+            timeOffsetA       = now - _frozenRelativeA;
+            timeOffsetB       = now - _frozenRelativeB;
+            blendStartTimeAbs = now - _frozenRelativeBlend;
+        }
+        // ─────────────────────────────────────────────────────────────────────
+
+
         var animA = anims[animAIndex];
         var animB = (animBIndex >= 0) ? anims[animBIndex] : animA;
 
         lastMaterialState = new VATMaterialState
         {
-            // CPU frame (debug/optional)
             frameIndexA = frameIndexA,
-            nextFrameA = nextFrameA,
-            interpA = interpA,
+            nextFrameA  = nextFrameA,
+            interpA     = interpA,
             frameIndexB = frameIndexB,
-            nextFrameB = nextFrameB,
-            interpB = interpB,
+            nextFrameB  = nextFrameB,
+            interpB     = interpB,
 
-            // Shared frame bounds (per-track)
             frameStartA = animA.frameStart,
-            frameEndA = animA.frameEnd,
+            frameEndA   = animA.frameEnd,
             frameStartB = animB.frameStart,
-            frameEndB = animB.frameEnd,
+            frameEndB   = animB.frameEnd,
 
-            // GPU timeline params (per-track)
-            fpsA = animA.framerate,
-            fpsB = animB.framerate,
+
+            fpsA = animA.framerate * speedMultiplier,
+            fpsB = animB.framerate * speedMultiplier,
             loopA = animA.looping ? 1f : 0f,
             loopB = animB.looping ? 1f : 0f,
 
-            // GPU blend timing
             blendStartTime = blendStartTimeAbs,
-            blendDuration = blendDuration,
+            blendDuration  = blendDuration,
             blendDirection = blendForward ? 1f : 0f,
 
-            // Per-track start time offsets (used as timers in shader)
             timeOffsetA = timeOffsetA,
             timeOffsetB = timeOffsetB,
 
-            // Sequence controls for the shader
             seqStartA = seqStartA,
             seqStartB = seqStartB,
-            useSeqA = useSeqA,
-            useSeqB = useSeqB,
+            useSeqA   = useSeqA,
+            useSeqB   = useSeqB,
         };
 
         return lastMaterialState;
     }
 
-    // ----------- Helpers -----------
+    // =============================================
+    //  HELPERS
+    // =============================================
+
     private void SetTrackState(bool toA, int index, int startFrame)
     {
         if (toA)
         {
-            animAIndex = index;
+            animAIndex  = index;
             frameIndexA = startFrame;
-            interpA = 0f;
-            nextFrameA = frameIndexA + 1;
+            interpA     = 0f;
+            nextFrameA  = frameIndexA + 1;
             timeOffsetA = Time.time;
-
-            // Clear sequence on the track we're explicitly driving by frames
-            useSeqA = 0f;
-            seqStartA = -1f;
+            useSeqA     = 0f;
+            seqStartA   = -1f;
         }
         else
         {
-            animBIndex = index;
+            animBIndex  = index;
             frameIndexB = startFrame;
-            interpB = 0f;
-            nextFrameB = frameIndexB + 1;
+            interpB     = 0f;
+            nextFrameB  = frameIndexB + 1;
             timeOffsetB = Time.time;
-
-            useSeqB = 0f;
-            seqStartB = -1f;
+            useSeqB     = 0f;
+            seqStartB   = -1f;
         }
     }
 
     private void SetSequenceOnTrackA(int lastIndex, int seqStartFrame, int lastStartFrame)
     {
-        animAIndex = lastIndex;
-
-        // CPU-visible fields (not used by GPU for sequencing but kept consistent)
+        animAIndex  = lastIndex;
         frameIndexA = lastStartFrame;
-        interpA = 0f;
-        nextFrameA = frameIndexA + 1;
+        interpA     = 0f;
+        nextFrameA  = frameIndexA + 1;
         timeOffsetA = Time.time;
-
-        // Sequence outputs
-        seqStartA = seqStartFrame; // first frame of FIRST clip
-        useSeqA = 1f;
-
-        // The other track is not sequencing
-        useSeqB = 0f;
-        // (leave seqStartB as-is. Shader should ignore when useSeqB == 0)
+        seqStartA   = seqStartFrame;
+        useSeqA     = 1f;
+        useSeqB     = 0f;
     }
 
     private void SetSequenceOnTrackB(int lastIndex, int seqStartFrame, int lastStartFrame)
     {
-        animBIndex = lastIndex;
-
+        animBIndex  = lastIndex;
         frameIndexB = lastStartFrame;
-        interpB = 0f;
-        nextFrameB = frameIndexB + 1;
+        interpB     = 0f;
+        nextFrameB  = frameIndexB + 1;
         timeOffsetB = Time.time;
-
-        seqStartB = seqStartFrame;
-        useSeqB = 1f;
-
-        useSeqA = 0f;
+        seqStartB   = seqStartFrame;
+        useSeqB     = 1f;
+        useSeqA     = 0f;
     }
 }

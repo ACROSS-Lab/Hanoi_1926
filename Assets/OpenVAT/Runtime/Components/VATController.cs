@@ -1,5 +1,6 @@
-﻿// VATController.cs
+// VATController.cs
 // Author: Luke Stilson
+// Modified: Added Pause / Resume / Stop public API
 
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,73 +11,93 @@ public class VATController : MonoBehaviour
 {
     [Header("Playback Mode")]
     private bool useGpuTimeline = true;
+
+    public float Speed
+    {
+        get => animState.speedMultiplier;
+        set => animState.speedMultiplier = Mathf.Max(0f, value);
+    }
+
     public enum PlayInitMode { Single, Sequence }
 
     [Header("Animation Data")]
     public VATAnimationData animationData;
 
     [Header("Init Playback")]
-    public PlayInitMode playInitMode = PlayInitMode.Single;
-
-    public int singleAnimIndex = 0;
-    public int seqStartIndex = 0;
-    public int seqEndIndex = 0;
-    public float seqTransition = 0.25f;
-    public bool seqLoop = false;
+    public PlayInitMode playInitMode    = PlayInitMode.Single;
+    public int          singleAnimIndex = 0;
+    public int          seqStartIndex   = 0;
+    public int          seqEndIndex     = 0;
+    public float        seqTransition   = 0.25f;
+    public bool         seqLoop         = false;
 
     private VATAnimStateMachine animState;
-    private VATMaterialBinder binder;
-    private VATMaterialState _lastState;
+    private VATMaterialBinder   binder;
+    private VATMaterialState    _lastState;
 
-    // Expose the animation list in editor
-    public List<VATAnimationData.VATAnimation> Anims => animationData ? animationData.animations : null;
+    /// <summary>Expose the animation list in the editor.</summary>
+    public List<VATAnimationData.VATAnimation> Anims
+        => animationData ? animationData.animations : null;
+
+    /// <summary>True while the animation is paused.</summary>
+    public bool IsPaused => animState != null && animState.IsPaused;
+
+    // =============================================
+    //  UNITY LIFECYCLE
+    // =============================================
 
     void OnEnable()
     {
-        // Recreate state machine every enable so we get fresh timers/offsets. (Check garbage collection with this?)
         animState = new VATAnimStateMachine();
-
         if (binder == null)
             binder = new VATMaterialBinder(GetComponent<Renderer>());
-
         InitPlayback();
     }
+
+    void Update()
+    {
+        // Always call ApplyState every frame.
+        // When paused, VATAnimStateMachine slides the time offsets internally
+        // so the shader stays frozen on the correct frame.
+        ApplyState();
+    }
+
+    // =============================================
+    //  INIT
+    // =============================================
 
     private void InitPlayback()
     {
         _lastState = default;
-
         var anims = Anims;
         if (animationData == null || anims == null || anims.Count == 0)
             return;
 
-        // Initialize the machine to a known start clip
         int start = Mathf.Clamp(singleAnimIndex, 0, anims.Count - 1);
         animState.Initialize(anims, start);
 
-        // Apply init play mode immediately (no initial blend)
         switch (playInitMode)
         {
             case PlayInitMode.Single:
-                // already initialized on 'start' — nothing else to do
                 break;
 
             case PlayInitMode.Sequence:
                 seqStartIndex = Mathf.Clamp(seqStartIndex, 0, anims.Count - 1);
-                seqEndIndex = Mathf.Clamp(seqEndIndex, 0, anims.Count - 1);
-                // zero initial transition to guarantee a deterministic first frame
+                seqEndIndex   = Mathf.Clamp(seqEndIndex,   0, anims.Count - 1);
                 animState.PlaySequence(seqStartIndex, seqEndIndex, seqTransition, seqLoop, 0f);
                 break;
         }
 
-        // Force-push initial material state without waiting a frame
         ApplyState(force: true);
     }
 
+    // =============================================
+    //  APPLY STATE
+    // =============================================
+
     private void ApplyState(bool force = false)
     {
-        // Use 0 delta on the init tick so no blend progress occurs.
-        var state = animState.UpdateAndGetState(0f);
+        var state = animState.UpdateAndGetState(Time.deltaTime);
         state.useGpuTimeline = useGpuTimeline;
 
         if (force || !_lastState.Equals(state))
@@ -86,7 +107,10 @@ public class VATController : MonoBehaviour
         }
     }
 
-    // Public API — triggers still work the same, and we push immediately.
+    // =============================================
+    //  PUBLIC PLAYBACK API
+    // =============================================
+
     public void PlayIndex(int index, float transitionTime = 0.25f)
     {
         animState.PlayIndex(index, transitionTime);
@@ -101,7 +125,7 @@ public class VATController : MonoBehaviour
 
     public void PlayInstant(int index)
     {
-        animState.PlayIndex(index, 0.25f);
+        animState.PlayIndex(index, 0f); // corrected: 0f for instant
         ApplyState(force: false);
     }
 
@@ -109,5 +133,40 @@ public class VATController : MonoBehaviour
     {
         animState.PlaySequence(minIndex, maxIndex, transitionTime);
         ApplyState(force: false);
+    }
+
+    // =============================================
+    //  PAUSE / RESUME / STOP
+    // =============================================
+
+    /// <summary>Freeze the animation on its current frame.</summary>
+    public void Pause()
+    {
+        animState.Pause();
+    }
+
+    /// <summary>Resume from the exact frame it was paused on.</summary>
+    public void Resume()
+    {
+        animState.Resume();
+        ApplyState(force: true);
+    }
+
+    /// <summary>
+    /// Stop and rewind to the beginning of <paramref name="index"/>
+    /// (defaults to the inspector's singleAnimIndex).
+    /// </summary>
+    public void Stop(int index = -1)
+    {
+        int resetTo = index >= 0 ? index : singleAnimIndex;
+        animState.Stop(resetTo);
+        ApplyState(force: true);
+    }
+
+    /// <summary>Toggle between Pause and Resume.</summary>
+    public void TogglePause()
+    {
+        if (IsPaused) Resume();
+        else          Pause();
     }
 }
