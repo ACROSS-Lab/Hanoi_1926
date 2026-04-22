@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 222b64c6f7e3e36429845dbd406abb01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Face_Controller
-  MouthmaterialIndex: 1
-  Mouth_restLocalPos: {x: -0.7, y: 1.1, z: 1.1}
+  MouthmaterialIndex: 2
+  Mouth_restLocalPos: {x: 0.7546838, y: -0.04189608, z: 0.5438026}
   EyesmaterialIndex: 1
-  Eyes_restLocalPos: {x: -0.7, y: 0.5, z: 0.5}
+  Eyes_restLocalPos: {x: 0.7, y: 0, z: 1.1}
