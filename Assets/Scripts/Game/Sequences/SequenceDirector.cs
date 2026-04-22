@@ -24,7 +24,7 @@ public class SequenceDirector : MonoBehaviour
 
     void Start()
     {
-        
+        StartCoroutine(ExecuteSequence());
     }
 
     IEnumerator ExecuteSequence()
