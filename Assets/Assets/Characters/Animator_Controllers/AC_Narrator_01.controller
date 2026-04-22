@@ -641,14 +641,14 @@ AnimatorController:
   - m_Name: MouthState
     m_Type: 3
     m_DefaultFloat: 0
-    m_DefaultInt: 0
+    m_DefaultInt: 1
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
     m_StateMachine: {fileID: -4784181762619022272}
-    m_Mask: {fileID: 0}
+    m_Mask: {fileID: 31900000, guid: c9a078e68740f8d4485c4f565be5c085, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -658,9 +658,9 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: Mouth
-    m_StateMachine: {fileID: -1700197239269006613}
-    m_Mask: {fileID: 31900000, guid: 3fc206293cd5c5c479aaef11806e581c, type: 2}
+    m_Name: Eyes
+    m_StateMachine: {fileID: -4492420240818490005}
+    m_Mask: {fileID: 31900000, guid: 6c6343245aae94d48bce0067c74d0a9b, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0
@@ -670,9 +670,9 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: Eyes
-    m_StateMachine: {fileID: -4492420240818490005}
-    m_Mask: {fileID: 31900000, guid: 6c6343245aae94d48bce0067c74d0a9b, type: 2}
+    m_Name: Mouth
+    m_StateMachine: {fileID: -1700197239269006613}
+    m_Mask: {fileID: 31900000, guid: 3fc206293cd5c5c479aaef11806e581c, type: 2}
     m_Motions: []
     m_Behaviours: []
     m_BlendingMode: 0

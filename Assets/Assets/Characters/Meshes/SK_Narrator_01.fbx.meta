@@ -27,7 +27,7 @@ ModelImporter:
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
-    resampleCurves: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
@@ -36,13 +36,39 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
-    importConstraints: 1
+    importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
-    extraExposedTransformPaths: []
+    extraExposedTransformPaths:
+    - SK_Narrator/Root
+    - SK_Narrator/Root/CTRL_Eyes
+    - SK_Narrator/Root/CTRL_Mouth
+    - SK_Narrator/Root/Spine_01
+    - SK_Narrator/Root/Spine_01/Spine_02
+    - SK_Narrator/Root/Spine_01/Spine_02/Head
+    - SK_Narrator/Root/Spine_01/Spine_02/Head/Hat_01
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.L
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.L/UpperArm.L
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.L/UpperArm.L/LowerArm.L
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L/Fingers.L
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L/Fingers.L/Fingers02.L
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L/Index.L
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L/Index.L/Index02.L
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.L/UpperArm.L/LowerArm.L/Hand.L/Thumb.L
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.R
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.R/UpperArm.R
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.R/UpperArm.R/LowerArm.R
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R/Fingers.R
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R/Fingers.R/Fingers02.R
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R/Index.R
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R/Index.R/Index02.R
+    - SK_Narrator/Root/Spine_01/Spine_02/Shoulder.R/UpperArm.R/LowerArm.R/Hand.R/Thumb.R
+    - SK_Narrator_01
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
@@ -232,7 +258,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 1
+      loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0

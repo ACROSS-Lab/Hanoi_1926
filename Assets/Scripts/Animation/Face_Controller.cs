@@ -3,21 +3,19 @@ using UnityEngine;
 
 public class Face_Controller : MonoBehaviour
 {
-    [Header("____________Mouth____________")]
-    [Space(20)]
+    [Header("Mouth")]
     public int MouthmaterialIndex = 1;
+    public Vector3 Mouth_restLocalPos = new Vector3(0.25f, 0.5f, 0f);
+    public bool Mouth_InvertX = false;
+    public bool Mouth_InvertY = false;
     private Material mouth_material;
 
-    [Space(20)]
-    public Vector3 Mouth_restLocalPos = new Vector3(0.25f, 0.5f, 0f);
-
-    [Header("____________Eyes____________")]
-    [Space(20)]
+    [Header("Eyes")]
     public int EyesmaterialIndex = 1;
-    private Material eyes_material;
-
-    [Space(20)]
     public Vector3 Eyes_restLocalPos = new Vector3(0.25f, 0.5f, 0f);
+    public bool Eyes_InvertX = false;
+    public bool Eyes_InvertY = false;
+    private Material eyes_material;
 
     private SkinnedMeshRenderer skinnedMesh;
     private Transform mouthBone;
@@ -26,81 +24,40 @@ public class Face_Controller : MonoBehaviour
     void Start()
     {
         skinnedMesh = GetComponentInChildren<SkinnedMeshRenderer>();
+        mouthBone = GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name == "CTRL_Mouth");
+        eyesBone = GetComponentsInChildren<Transform>().FirstOrDefault(t => t.name == "CTRL_Eyes");
 
-        mouthBone = GetComponentsInChildren<Transform>()
-            .FirstOrDefault(t => t.name == "CTRL_Mouth");
-
-        eyesBone = GetComponentsInChildren<Transform>()
-            .FirstOrDefault(t => t.name == "CTRL_Eyes");
-
-        if (mouthBone == null)
-            Debug.LogError("CTRL_Mouth bone not found!");
-        if (eyesBone == null)
-            Debug.LogError("CTRL_Eyes bone not found!");
-
-        if (skinnedMesh == null)
-        {
-            Debug.LogWarning("No SkinnedMeshRenderer found");
-            return;
-        }
-        else
-        {
-            // Debug.Log("SkinnedMeshRenderer trouv� : " + skinnedMesh.name);
-        }
+        if (mouthBone == null) Debug.LogError("CTRL_Mouth bone not found!");
+        if (eyesBone == null) Debug.LogError("CTRL_Eyes bone not found!");
+        if (skinnedMesh == null) { Debug.LogError("No SkinnedMeshRenderer found!"); return; }
 
         var mats = skinnedMesh.materials;
-
-        // --- Mouth material ---
-        if (MouthmaterialIndex < mats.Length)
-        {
-            mouth_material = mats[MouthmaterialIndex];
-            // Debug.Log("Mouthmaterial trouv�");
-        }
-        else
-        {
-            Debug.LogError("MouthmaterialIndex hors limites");
-        }
-
-        // --- Eyes material ---
-        if (EyesmaterialIndex < mats.Length)
-        {
-            eyes_material = mats[EyesmaterialIndex];
-            // Debug.Log("Eyesmaterial trouv�");
-        }
-        else
-        {
-            Debug.LogError("EyesmaterialIndex hors limites");
-        }
+        if (MouthmaterialIndex < mats.Length) mouth_material = mats[MouthmaterialIndex];
+        else Debug.LogError("MouthmaterialIndex out of range!");
+        if (EyesmaterialIndex < mats.Length) eyes_material = mats[EyesmaterialIndex];
+        else Debug.LogError("EyesmaterialIndex out of range!");
     }
 
     void Update()
     {
-       if (mouth_material == null || eyes_material == null) return;
+        if (mouth_material == null || eyes_material == null) return;
 
+        // ── Mouth ──────────────────────────────────────────────────────────────
         Vector3 mouth_delta = mouthBone.localPosition - Mouth_restLocalPos;
-        Vector3 eyes_delta = eyesBone.localPosition - Eyes_restLocalPos;
-
-        //print(mouthBone.localPosition);
-      
-
-        // Mouth Calculation
         float mouth_rawX = Mathf.Clamp01(mouth_delta.x * 2f);
         float mouth_rawY = Mathf.Clamp01(mouth_delta.z * 2f);
+        if (Mouth_InvertX) mouth_rawX = 1f - mouth_rawX;
+        if (Mouth_InvertY) mouth_rawY = 1f - mouth_rawY;
+        mouth_material.SetFloat("_OffsetX", Mathf.Floor(mouth_rawX * 4f) / 4f);
+        mouth_material.SetFloat("_OffsetY", Mathf.Floor(mouth_rawY * 4f) / 4f);
 
-        float mouth_stepX = Mathf.Floor(mouth_rawX * 4f) / 4f;
-        float mouth_stepY = Mathf.Floor(mouth_rawY * 4f) / 4f;
-
-        mouth_material.SetFloat("_OffsetX", mouth_stepX);
-        mouth_material.SetFloat("_OffsetY", mouth_stepY);
-
-        // Eyes Calculation
+        // ── Eyes ───────────────────────────────────────────────────────────────
+        Vector3 eyes_delta = eyesBone.localPosition - Eyes_restLocalPos;
         float eyes_rawX = Mathf.Clamp01(eyes_delta.x * 2f);
         float eyes_rawY = Mathf.Clamp01(eyes_delta.z * 2f);
-
-        float eyes_stepX = Mathf.Floor(eyes_rawX * 4f) / 4f;
-        float eyes_stepY = Mathf.Floor(eyes_rawY * 4f) / 4f;
-
-        eyes_material.SetFloat("_OffsetX", eyes_stepX);
-        eyes_material.SetFloat("_OffsetY", eyes_stepY);
+        if (Eyes_InvertX) eyes_rawX = 1f - eyes_rawX;
+        if (Eyes_InvertY) eyes_rawY = 1f - eyes_rawY;
+        eyes_material.SetFloat("_OffsetX", Mathf.Floor(eyes_rawX * 4f) / 4f);
+        eyes_material.SetFloat("_OffsetY", Mathf.Floor(eyes_rawY * 4f) / 4f);
     }
 }
