@@ -450,11 +450,6 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 7199257883983681825, guid: ce1fca5e01cd1ce48be46c10d28e75e5, type: 3}
   m_PrefabInstance: {fileID: 753815162}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &524552227 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7199257883983681828, guid: ce1fca5e01cd1ce48be46c10d28e75e5, type: 3}
-  m_PrefabInstance: {fileID: 753815162}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &579938226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,6 +1215,67 @@ Transform:
   - {fileID: 454394681}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1287999163
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1318879528799513842, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: MouthmaterialIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705038554409824099, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -895.70386
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705038554409824099, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00002
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705038554409824099, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3441.8618
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705038554409824099, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705038554409824099, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705038554409824099, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705038554409824099, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705038554409824099, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705038554409824099, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705038554409824099, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369231931079472601, guid: e522e55aa561835469fab35af189152c, type: 3}
+      propertyPath: m_Name
+      value: SK_Narrator_01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e522e55aa561835469fab35af189152c, type: 3}
 --- !u!1 &1387038129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,10 +1600,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmnoothHandCanvas
   leftHand: {fileID: 647939027}
-  mainCamera: {fileID: 524552227}
   positionSmoothSpeed: 8
   rotationSmoothSpeed: 5
   positionalOffset: {x: 0, y: 0.15, z: 0}
+  canvasGroup: {fileID: 0}
+  fadeDuration: 0.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1557,3 +1614,4 @@ SceneRoots:
   - {fileID: 753815162}
   - {fileID: 1685488369}
   - {fileID: 1103529199}
+  - {fileID: 1287999163}

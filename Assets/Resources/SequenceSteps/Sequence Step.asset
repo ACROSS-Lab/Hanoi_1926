@@ -10,18 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
-  m_Name: 1
+  m_Name: Sequence Step
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   stepId: 
-  hasMovement: 0
-  targetPosition: {x: 0, y: 0, z: 0}
+  hasNarratorMovement: 1
+  targetNarratorPosition: {x: 0, y: 0, z: 0}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   flyDuration: 0
+  hasPlayerMovement: 0
+  playerTargetPosition: {x: 0, y: 0, z: 0}
+  playerTargetRotation: {x: 0, y: 0, z: 0}
+  hasSceneTransition: 0
+  sceneName: 
+  isGoingBackToMainScene: 0
   hasDialogue: 0
   dialogueKey: 
   bodyState: 0
   eyesState: 0
-  mouthState: 0
+  mouthStartState: 0
+  mouthEndState: 0
   timeWaitAfterTalking: 0
   hasInteraction: 0
   waitForAction: 0

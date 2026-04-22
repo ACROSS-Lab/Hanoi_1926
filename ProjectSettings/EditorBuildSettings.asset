@@ -50,18 +50,27 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Code Examples/Receive Water Data.unity
     guid: e432add6f06a341039153cf5e865ad9d
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Hanoi_1926_Test_Scene_02/Hanoi_1926_City_View.unity
     guid: 8ca2a31bf3642b84fb780f23e3fdbe56
-  - enabled: 1
+  - enabled: 0
+    path: Assets/Scenes/Hanoi_1926_Test_Scene_01/Hanoi_1926_Test_Scene_01.unity
+    guid: 6a5eb65fdba21fd47a1d2cf43afcd49d
+  - enabled: 0
     path: Assets/Scenes/Dioramas/Diorama_01.unity
     guid: 828babbe76e3e2347a2feabc6a83f1df
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dioramas/Diorama_02.unity
     guid: ef46fdaa193a5b94ca97e90d6c524ee9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dioramas/Diorama_03.unity
     guid: 61172f009e7776240b54589220a2e32a
+  - enabled: 1
+    path: Assets/Scenes/Test/City_View_Test.unity
+    guid: 8a0b57f3af331ed4aaaa24a6af24ce75
+  - enabled: 1
+    path: Assets/Scenes/Test/Diorama_01_Test.unity
+    guid: d2bc19aff358d474994cbc708b3bf12e
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: dc5a169419fa04987b057f65238cf3ba, type: 2}

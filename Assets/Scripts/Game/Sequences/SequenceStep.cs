@@ -8,15 +8,23 @@ public class SequenceStep : ScriptableObject
     public string stepId;
 
     [Header("Phase 1: Movement")]
-    public bool hasMovement;
-    [ShowIf("hasMovement")] public Vector3 targetPosition;
-    [ShowIf("hasMovement")] public Vector3 offsetAtCenter;
-    [ShowIf("hasMovement")] public float flyDuration;
+    public bool hasNarratorMovement;
+    [ShowIf("hasNarratorMovement")] public Vector3 targetNarratorPosition;
+    [ShowIf("hasNarratorMovement")] public Vector3 offsetAtCenter;
+    [ShowIf("hasNarratorMovement")] public float flyDuration;
+
+    public bool hasPlayerMovement;
+    [ShowIf("hasPlayerMovement")] public Vector3 playerTargetPosition;
+    [ShowIf("hasPlayerMovement")] public Vector3 playerTargetRotation;
+    [ShowIf("hasPlayerMovement")] public bool hasSceneTransition;
+    [ShowIf("hasSceneTransition")] public string sceneName;
+    [ShowIf("hasSceneTransition")] public bool isGoingBackToMainScene;
 
     [Header("Phase 2: Presentation")]
     public bool hasDialogue;
     [ShowIf("hasDialogue")] public string dialogueKey;
-    [ShowIf("hasDialogue")] public int bodyState, eyesState, mouthState;
+    [ShowIf("hasDialogue")] public int bodyState, eyesState;
+    [ShowIf("hasDialogue")] public int mouthStartState, mouthEndState;
     [ShowIf("hasDialogue")] public float timeWaitAfterTalking;
 
     [Header("Phase 3: Interaction")]
@@ -28,5 +36,4 @@ public enum PlayerActionType
 { 
     NONE,
     CLICK,
-    WATCH,
 }

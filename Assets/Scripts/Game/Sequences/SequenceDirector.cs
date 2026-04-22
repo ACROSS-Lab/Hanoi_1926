@@ -1,7 +1,6 @@
 using System.Collections;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class SequenceDirector : MonoBehaviour
 {
@@ -9,18 +8,20 @@ public class SequenceDirector : MonoBehaviour
     [SerializeField] SequenceStep[] sequenceSteps;
 
     [Header("Player References")]
-    [SerializeField] Transform playerTransform;
-    [SerializeField] VignetteTrigger vignetteTrigger;
+    [SerializeField] PlayerTransition playerTransition;
  
     [Header("Narrator References")]
-    [SerializeField] LocalizedKey narratorLocalization;
-    [SerializeField] AudioSource narratorAudioSource;
-    [SerializeField] Animator narratorAnimator;
+    [SerializeField] Narrator narrator;
 
     [Header("Event Management")]
     [SerializeField] SequenceEventDispatcher eventDispatcher;
 
     bool hasPerformedAction = false;
+
+    void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
@@ -37,38 +38,33 @@ public class SequenceDirector : MonoBehaviour
 
     IEnumerator ExecuteStep(SequenceStep step)
     {
-        if (step.hasMovement)
+        if (step.hasNarratorMovement)
         {
-            vignetteTrigger.StartVignette();
-            Vector3 midPoint = Vector3.Lerp(playerTransform.position, step.targetPosition, 0.5f) + step.offsetAtCenter;
-            Vector3[] path = {playerTransform.position, midPoint, step.targetPosition};
-            Tween pathTween = playerTransform.DOPath(path, step.flyDuration, PathType.CatmullRom).SetEase(Ease.InOutSine);
+            Tween pathTween = narrator.Move(step.targetNarratorPosition, step.offsetAtCenter, step.flyDuration);
             yield return pathTween.WaitForCompletion();
-            vignetteTrigger.StopVignette();
+        }
+
+        if (step.hasPlayerMovement)
+        {
+            playerTransition.MovePlayer(step.playerTargetPosition, step.playerTargetRotation, step.hasSceneTransition, step.sceneName, step.isGoingBackToMainScene);
         }
 
         if (step.hasDialogue)
         {
-            narratorLocalization.localizationKey = step.dialogueKey;
-            narratorLocalization.UpdateText();
-            narratorLocalization.UpdateAudioClip();
+            float talkingTime = narrator.UpdateTimeAction(step.dialogueKey, step.bodyState, step.eyesState, step.mouthStartState);
+            yield return new WaitForSeconds(talkingTime);
+            narrator.FinishDialogue(step.mouthEndState);
+            yield return new WaitForSeconds(step.timeWaitAfterTalking);
+            narrator.DisableDialogueBox();
+        }
 
-            narratorAnimator.SetInteger("BodyState", step.bodyState);
-            narratorAnimator.SetInteger("EyesState", step.eyesState);
-            narratorAnimator.SetInteger("MouthState", step.mouthState);
-
-            narratorAudioSource.Play();
-            float talkingTime = narratorAudioSource.clip.length;
-            yield return new WaitForSeconds(talkingTime + step.timeWaitAfterTalking);
+        if (eventDispatcher != null)
+        {
+            eventDispatcher.TriggerEventsForStep(step.stepId);
         }
 
         if (step.hasInteraction)
         {
-            if (eventDispatcher != null)
-            {
-                eventDispatcher.TriggerEventsForStep(step.stepId);
-            }
-
             hasPerformedAction = false;
 
             float timer = 0;
