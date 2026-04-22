@@ -53,9 +53,9 @@ public class SequenceDirector : MonoBehaviour
             narratorLocalization.UpdateText();
             narratorLocalization.UpdateAudioClip();
 
-            narratorAnimator.SetFloat("BodyState", step.bodyState);
-            narratorAnimator.SetFloat("EyesState", step.eyesState);
-            narratorAnimator.SetFloat("MouthState", step.mouthState);
+            narratorAnimator.SetInteger("BodyState", step.bodyState);
+            narratorAnimator.SetInteger("EyesState", step.eyesState);
+            narratorAnimator.SetInteger("MouthState", step.mouthState);
 
             narratorAudioSource.Play();
             float talkingTime = narratorAudioSource.clip.length;
