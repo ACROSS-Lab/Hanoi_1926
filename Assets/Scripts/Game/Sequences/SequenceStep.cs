@@ -8,6 +8,7 @@ public class SequenceStep : ScriptableObject
     public bool hasNarratorMovement;
     [ShowIf("hasNarratorMovement")] public Vector3 targetNarratorPosition;
     [ShowIf("hasNarratorMovement")] public Vector3 offsetAtCenter;
+    [ShowIf("hasNarratorMovement")] public float targetNarratorScale;
     [ShowIf("hasNarratorMovement")] public float flyDuration;
 
     public bool hasPlayerMovement;

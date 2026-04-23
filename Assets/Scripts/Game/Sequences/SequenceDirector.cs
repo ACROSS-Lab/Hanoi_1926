@@ -16,6 +16,9 @@ public class SequenceDirector : MonoBehaviour
     [Header("Event Management")]
     [SerializeField] SequenceEventDispatcher eventDispatcher;
 
+    [Header("Debugging")]
+    [SerializeField] int debugStepIndex = 0;
+
     bool hasPerformedAction = false;
 
     void Awake()
@@ -30,18 +33,42 @@ public class SequenceDirector : MonoBehaviour
 
     IEnumerator ExecuteSequence()
     {
-        foreach (SequenceStep step in sequenceSteps)
+        for (int i = 0; i < sequenceSteps.Length; i++)
         {
-            yield return StartCoroutine(ExecuteStep(step));
+            SequenceStep step = sequenceSteps[i];
+            bool fastForward = i < debugStepIndex;
+            yield return StartCoroutine(ExecuteStep(step, fastForward));
         }
     }
 
-    IEnumerator ExecuteStep(SequenceStep step)
+    IEnumerator ExecuteStep(SequenceStep step, bool fastForward)
     {
+        if (fastForward)
+        {
+            if (step.hasNarratorMovement)
+            {
+                narrator.transform.position = step.targetNarratorPosition;
+                narrator.transform.localScale = new Vector3(step.targetNarratorScale, step.targetNarratorScale, step.targetNarratorScale);  
+            }
+
+            if (step.hasPlayerMovement)
+            {
+                playerTransition.transform.position = step.playerTargetPosition;
+                playerTransition.transform.rotation = Quaternion.Euler(step.playerTargetRotation);
+            }
+
+            if (eventDispatcher != null)
+            {
+                eventDispatcher.TriggerEventsForStep(step.name);
+            }
+
+            yield break;
+        }
+
         if (step.hasNarratorMovement)
         {
-            Tween pathTween = narrator.Move(step.targetNarratorPosition, step.offsetAtCenter, step.flyDuration);
-            yield return pathTween.WaitForCompletion();
+            Tween action = narrator.Move(step.targetNarratorPosition, step.offsetAtCenter, step.targetNarratorScale, step.flyDuration);
+            yield return action.WaitForCompletion();
         }
 
         if (step.hasPlayerMovement)
@@ -49,18 +76,18 @@ public class SequenceDirector : MonoBehaviour
             playerTransition.MovePlayer(step.playerTargetPosition, step.playerTargetRotation, step.hasSceneTransition, step.sceneName, step.isGoingBackToMainScene);
         }
 
+        if (eventDispatcher != null)
+        {
+            eventDispatcher.TriggerEventsForStep(step.name);
+        }
+
         if (step.hasDialogue)
         {
-            float talkingTime = narrator.UpdateTimeAction(step.dialogueKey, step.bodyState, step.eyesState, step.mouthStartState);
+            float talkingTime = narrator.StartTalking(step.dialogueKey, step.bodyState, step.eyesState, step.mouthStartState);
             yield return new WaitForSeconds(talkingTime);
             narrator.FinishDialogue(step.mouthEndState);
             yield return new WaitForSeconds(step.timeWaitAfterTalking);
             narrator.DisableDialogueBox();
-        }
-
-        if (eventDispatcher != null)
-        {
-            eventDispatcher.TriggerEventsForStep(step.name);
         }
 
         if (step.hasInteraction)
