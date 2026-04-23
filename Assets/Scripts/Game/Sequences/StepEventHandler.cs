@@ -7,7 +7,6 @@ using UnityEngine.Events;
 public class StepEventHandler : MonoBehaviour
 {
     [Tooltip("The ID that matches your SequenceStep ScriptableObject")]
-    public string targetStepId; 
     public List<EventsWithDelay> eventsWithDelay;
 
     public void TriggerEvents()

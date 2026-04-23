@@ -60,7 +60,7 @@ public class SequenceDirector : MonoBehaviour
 
         if (eventDispatcher != null)
         {
-            eventDispatcher.TriggerEventsForStep(step.stepId);
+            eventDispatcher.TriggerEventsForStep(step.name);
         }
 
         if (step.hasInteraction)

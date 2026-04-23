@@ -13,7 +13,7 @@ public class SequenceEventDispatcher : MonoBehaviour
     {
         foreach (StepEventHandler handler in allStepEvents)
         {
-            if (handler.targetStepId == stepId)
+            if (string.Equals(handler.name, stepId))
             {
                 handler.TriggerEvents();
                 break;
