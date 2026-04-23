@@ -15,9 +15,10 @@ public class Narrator : MonoBehaviour
     [SerializeField] TextMeshProUGUI overlayText, nestedText;
     // [SerializeField] float smoothTurn = 10f;
 
-    Vector3 offsetPosition = new Vector3(-1.96f, 0.48f, 0.09f);
-    Quaternion offsetRotation = new Quaternion(0, 0, 0, 1);
-    float scaleMultiplier = 0.15f;
+    [Header("Nested Canvas Options")]
+    [SerializeField] Vector3 offsetPosition = new Vector3(-1.96f, 0.48f, 0.09f);
+    [SerializeField] Quaternion offsetRotation = new Quaternion(0, 0, 0, 1);
+    [SerializeField] float scaleMultiplier = 0.15f;
     Transform nestedCanvasTransform;
 
     void Start()
