@@ -15,18 +15,14 @@ public class Narrator : MonoBehaviour
     [SerializeField] TextMeshProUGUI overlayText, nestedText;
     // [SerializeField] float smoothTurn = 10f;
 
-    Vector3 offsetPosition;
-    Quaternion offsetRotation;
-    float scaleMultiplier;
+    Vector3 offsetPosition = new Vector3(-1.96f, 0.48f, 0.09f);
+    Quaternion offsetRotation = new Quaternion(0, 0, 0, 1);
+    float scaleMultiplier = 0.15f;
     Transform nestedCanvasTransform;
 
     void Start()
     {
         nestedCanvasTransform = nestedCanvas.transform;
-        
-        offsetPosition = transform.InverseTransformPoint(nestedCanvasTransform.position);
-        offsetRotation = Quaternion.Inverse(transform.rotation) * nestedCanvasTransform.rotation;
-        scaleMultiplier = nestedCanvasTransform.localScale.x / transform.localScale.x;
     }
 
     public Tween Move(Vector3 targetPosition, Vector3 offsetAtCenter, float targetScale, float flyDuration)
@@ -97,13 +93,5 @@ public class Narrator : MonoBehaviour
         nestedCanvasTransform.position = transform.TransformPoint(offsetPosition);
         nestedCanvasTransform.rotation = transform.rotation * offsetRotation;
         nestedCanvasTransform.localScale = transform.localScale * scaleMultiplier;
-    }
-
-     void Update()
-    {
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            UpdateNestedCanvasTransform();
-        }
     }
 }
