@@ -15,6 +15,7 @@ MonoBehaviour:
   hasNarratorMovement: 0
   targetNarratorPosition: {x: 0, y: 0, z: 0}
   offsetAtCenter: {x: 0, y: 0, z: 0}
+  targetNarratorScale: 0
   flyDuration: 0
   hasPlayerMovement: 0
   playerTargetPosition: {x: 0, y: 0, z: 0}
@@ -24,8 +25,8 @@ MonoBehaviour:
   isGoingBackToMainScene: 0
   hasDialogue: 1
   dialogueKey: narrator.dialogue.04
-  bodyState: 0
-  eyesState: 2
+  bodyState: 5
+  eyesState: 0
   mouthStartState: 1
   mouthEndState: 0
   timeWaitAfterTalking: 0

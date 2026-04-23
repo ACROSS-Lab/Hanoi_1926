@@ -14,6 +14,13 @@
       "dependencies": {},
       "hash": "15035ad90aba29cffd7bb5f9e4d67724d5e5878c"
     },
+    "com.pedev.unity-animator-transition-copier": {
+      "version": "https://github.com/qwe321qwe321qwe321/Unity-AnimatorTransitionCopier.git?path=Assets/com.pedev.unity-animator-transition-copier",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "3371f6a137b6b9419a685e54fa64be6e65d89165"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

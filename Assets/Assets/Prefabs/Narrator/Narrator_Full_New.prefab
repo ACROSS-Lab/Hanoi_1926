@@ -1140,6 +1140,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 3369231931079472601, guid: e522e55aa561835469fab35af189152c, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 2932985958566737515}
+    - targetCorrespondingSourceObject: {fileID: 3369231931079472601, guid: e522e55aa561835469fab35af189152c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8887285980466917491}
     - targetCorrespondingSourceObject: {fileID: 3369231931079472601, guid: e522e55aa561835469fab35af189152c, type: 3}
@@ -1149,11 +1152,34 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1918517429092008935}
   m_SourcePrefab: {fileID: 100100000, guid: e522e55aa561835469fab35af189152c, type: 3}
+--- !u!4 &2780740648126693587 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4222030841532477685, guid: e522e55aa561835469fab35af189152c, type: 3}
+  m_PrefabInstance: {fileID: 2017760296929439782}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3657324062632871423 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3369231931079472601, guid: e522e55aa561835469fab35af189152c, type: 3}
   m_PrefabInstance: {fileID: 2017760296929439782}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2932985958566737515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3657324062632871423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f7a89324c136d647a18e201e9753a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HeadLookAt
+  headBone: {fileID: 2780740648126693587}
+  target: {fileID: 0}
+  enableLookAt: 1
+  maxAngle: 60
+  speed: 5
+  rotationOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &8887285980466917491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1198,7 +1224,7 @@ AudioSource:
   m_GameObject: {fileID: 3657324062632871423}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7984881983717131071, guid: 0f8781be0ad85e04191d7b5caae685ae, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
