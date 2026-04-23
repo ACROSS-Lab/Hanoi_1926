@@ -29,12 +29,12 @@ public class PlayerTransition : MonoBehaviour
         }
     }
 
-    public void MovePlayer(Vector3 position, Vector3 rotation, bool hasSceneTransition, string sceneName, bool isGoingBackToMainScene)
+    public void MovePlayer(Vector3 position, bool hasRotation, Vector3 rotation, bool hasSceneTransition, string sceneName, bool isGoingBackToMainScene)
     {
-        StartCoroutine(MovePlayerCoroutine(position, rotation, hasSceneTransition, sceneName, isGoingBackToMainScene));
+        StartCoroutine(MovePlayerCoroutine(position, hasRotation, rotation, hasSceneTransition, sceneName, isGoingBackToMainScene));
     }
 
-    IEnumerator MovePlayerCoroutine(Vector3 position, Vector3 rotation, bool hasSceneTransition, string sceneName, bool isGoingBackToMainScene)
+    IEnumerator MovePlayerCoroutine(Vector3 position, bool hasRotation, Vector3 rotation, bool hasSceneTransition, string sceneName, bool isGoingBackToMainScene)
     {
         if (fadeCanvasGroup != null)
         {
@@ -43,7 +43,7 @@ public class PlayerTransition : MonoBehaviour
         }
 
         transform.position = position;
-        transform.rotation = Quaternion.Euler(rotation);
+        if (hasRotation) transform.rotation = Quaternion.Euler(rotation);
 
         if (hasSceneTransition)
         {

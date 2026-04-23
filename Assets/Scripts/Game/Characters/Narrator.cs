@@ -1,13 +1,33 @@
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Narrator : MonoBehaviour 
 {
     [SerializeField] Animator animator;
     [SerializeField] LocalizedKey localizedKey;
     [SerializeField] AudioSource audioSource;
-    [SerializeField] GameObject dialogueBox;
-    [SerializeField] float smoothTurn = 10f;
+
+    [Header("Dialogue Options")]
+    [SerializeField] GameObject dialogueBoxes;
+    [SerializeField] GameObject overlayCanvas, nestedCanvas;
+    [SerializeField] TextMeshProUGUI overlayText, nestedText;
+    // [SerializeField] float smoothTurn = 10f;
+
+    Vector3 offsetPosition;
+    Quaternion offsetRotation;
+    float scaleMultiplier;
+    Transform nestedCanvasTransform;
+
+    void Start()
+    {
+        nestedCanvasTransform = nestedCanvas.transform;
+        
+        offsetPosition = transform.InverseTransformPoint(nestedCanvasTransform.position);
+        offsetRotation = Quaternion.Inverse(transform.rotation) * nestedCanvasTransform.rotation;
+        scaleMultiplier = nestedCanvasTransform.localScale.x / transform.localScale.x;
+    }
 
     public Tween Move(Vector3 targetPosition, Vector3 offsetAtCenter, float targetScale, float flyDuration)
     {
@@ -22,11 +42,26 @@ public class Narrator : MonoBehaviour
         return action;
     }
 
-    public float StartTalking(string key, int bodyState, int eyesState, int mouthStartState)
+    public float StartTalking(string key, int bodyState, int eyesState, int mouthStartState, bool isUsingOverlay)
     {
-        dialogueBox.SetActive(true);
+        dialogueBoxes.SetActive(true);
 
         localizedKey.localizationKey = key;
+
+        if (isUsingOverlay)
+        {
+            overlayCanvas.SetActive(true);
+            nestedCanvas.SetActive(false);
+            localizedKey.textComponent = overlayText;
+        }
+        else
+        {
+            overlayCanvas.SetActive(false);
+            nestedCanvas.SetActive(true);
+            localizedKey.textComponent = nestedText;
+            UpdateNestedCanvasTransform();
+        }
+
         localizedKey.UpdateText();
         localizedKey.UpdateAudioClip();
 
@@ -47,13 +82,28 @@ public class Narrator : MonoBehaviour
 
     public void DisableDialogueBox()
     {
-        dialogueBox.SetActive(false);
+        dialogueBoxes.SetActive(false);
     }
 
-    void LateUpdate()
+    // void LateUpdate()
+    // {
+    //     Vector3 direction = Camera.main.transform.position - transform.position;
+    //     direction.y = 0;
+    //     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * smoothTurn);
+    // }
+
+    void UpdateNestedCanvasTransform()
     {
-        Vector3 direction = Camera.main.transform.position - transform.position;
-        direction.y = 0;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * smoothTurn);
+        nestedCanvasTransform.position = transform.TransformPoint(offsetPosition);
+        nestedCanvasTransform.rotation = transform.rotation * offsetRotation;
+        nestedCanvasTransform.localScale = transform.localScale * scaleMultiplier;
+    }
+
+     void Update()
+    {
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            UpdateNestedCanvasTransform();
+        }
     }
 }

@@ -73,7 +73,7 @@ public class SequenceDirector : MonoBehaviour
 
         if (step.hasPlayerMovement)
         {
-            playerTransition.MovePlayer(step.playerTargetPosition, step.playerTargetRotation, step.hasSceneTransition, step.sceneName, step.isGoingBackToMainScene);
+            playerTransition.MovePlayer(step.playerTargetPosition, step.hasPlayerRotation, step.playerTargetRotation, step.hasSceneTransition, step.sceneName, step.isGoingBackToMainScene);
         }
 
         if (eventDispatcher != null)
@@ -83,7 +83,8 @@ public class SequenceDirector : MonoBehaviour
 
         if (step.hasDialogue)
         {
-            float talkingTime = narrator.StartTalking(step.dialogueKey, step.bodyState, step.eyesState, step.mouthStartState);
+            yield return new WaitForSeconds(step.timeWaitBeforeTalking);
+            float talkingTime = narrator.StartTalking(step.dialogueKey, step.bodyState, step.eyesState, step.mouthStartState, step.isUsingOverlay);
             yield return new WaitForSeconds(talkingTime);
             narrator.FinishDialogue(step.mouthEndState);
             yield return new WaitForSeconds(step.timeWaitAfterTalking);

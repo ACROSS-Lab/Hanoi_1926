@@ -13,14 +13,17 @@ public class SequenceStep : ScriptableObject
 
     public bool hasPlayerMovement;
     [ShowIf("hasPlayerMovement")] public Vector3 playerTargetPosition;
-    [ShowIf("hasPlayerMovement")] public Vector3 playerTargetRotation;
+    [ShowIf("hasPlayerMovement")] public bool hasPlayerRotation;
+    [ShowIf("hasPlayerRotation")] public Vector3 playerTargetRotation;
     [ShowIf("hasPlayerMovement")] public bool hasSceneTransition;
     [ShowIf("hasSceneTransition")] public string sceneName;
     [ShowIf("hasSceneTransition")] public bool isGoingBackToMainScene;
 
     [Header("Phase 2: Presentation")]
     public bool hasDialogue;
+    [ShowIf("hasDialogue")] public float timeWaitBeforeTalking;
     [ShowIf("hasDialogue")] public string dialogueKey;
+    [ShowIf("hasDialogue")] public bool isUsingOverlay;
     [ShowIf("hasDialogue")] public int bodyState, eyesState;
     [ShowIf("hasDialogue")] public int mouthStartState, mouthEndState;
     [ShowIf("hasDialogue")] public float timeWaitAfterTalking;

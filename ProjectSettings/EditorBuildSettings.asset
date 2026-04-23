@@ -51,10 +51,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Code Examples/Receive Water Data.unity
     guid: e432add6f06a341039153cf5e865ad9d
   - enabled: 0
-    path: Assets/Scenes/Hanoi_1926_Test_Scene_02/Hanoi_1926_City_View.unity
+    path: Assets/Scenes/Hanoi_City_View/Hanoi_1926_City_View.unity
     guid: 8ca2a31bf3642b84fb780f23e3fdbe56
   - enabled: 0
-    path: Assets/Scenes/Hanoi_1926_Test_Scene_01/Hanoi_1926_Test_Scene_01.unity
+    path: Assets/Scenes/Hanoi_Delta_View/Hanoi_1926_Delta_View.unity
     guid: 6a5eb65fdba21fd47a1d2cf43afcd49d
   - enabled: 0
     path: Assets/Scenes/Dioramas/Diorama_01.unity
