@@ -2,6 +2,7 @@
   "dependencies": {
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
+    "com.pedev.unity-animator-transition-copier": "https://github.com/qwe321qwe321qwe321/Unity-AnimatorTransitionCopier.git?path=Assets/com.pedev.unity-animator-transition-copier",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.collab-proxy": "2.11.3",
     "com.unity.feature.development": "1.0.2",

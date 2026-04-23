@@ -26,7 +26,7 @@ MonoBehaviour:
   hasDialogue: 1
   dialogueKey: narrator.dialogue.08
   bodyState: 0
-  eyesState: 3
+  eyesState: 2
   mouthStartState: 1
   mouthEndState: 3
   timeWaitAfterTalking: 0
