@@ -72,4 +72,9 @@ public class HeadLookAt : MonoBehaviour
             _blendWeight
         );
     }
+
+    public void SetLookAtState( bool lookAt )
+    {
+        enableLookAt = lookAt;
+    }
 }
