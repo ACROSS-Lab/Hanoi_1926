@@ -15,10 +15,12 @@ MonoBehaviour:
   hasNarratorMovement: 1
   targetNarratorPosition: {x: 6.502, y: 0.41, z: 0.16}
   offsetAtCenter: {x: 0, y: 0, z: 0}
+  hasNarratorRotation: 1
+  targetNarratorRotation: {x: 0, y: -50, z: 0}
   targetNarratorScale: 1.8
   flyDuration: 0
   hasPlayerMovement: 1
-  playerTargetPosition: {x: 0, y: 0, z: 0}
+  playerTargetPosition: {x: -7.52, y: -0.671, z: 1.822}
   hasPlayerRotation: 1
   playerTargetRotation: {x: 0, y: 90, z: 0}
   hasSceneTransition: 1
@@ -28,8 +30,8 @@ MonoBehaviour:
   timeWaitBeforeTalking: 0
   dialogueKey: narrator.dialogue.diorama2.01
   isUsingOverlay: 0
-  bodyState: 3
-  eyesState: 2
+  bodyState: 4
+  eyesState: 1
   mouthStartState: 1
   mouthEndState: 3
   timeWaitAfterTalking: 0
