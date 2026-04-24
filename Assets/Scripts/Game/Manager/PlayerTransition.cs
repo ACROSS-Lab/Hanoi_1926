@@ -15,6 +15,9 @@ public class PlayerTransition : MonoBehaviour
     [Header("Object to keep")]
     [SerializeField] GameObject objectToKeep;
 
+    [Header("Hide Hands Ray")]
+    [SerializeField] GameObject[] hiddenObjects;
+
     List<GameObject> primarySceneRoots = new List<GameObject>();
     Scene mainScene;
 
@@ -66,6 +69,11 @@ public class PlayerTransition : MonoBehaviour
         primarySceneRoots.AddRange(primaryScene.GetRootGameObjects());
         primarySceneRoots.Remove(objectToKeep);
 
+        foreach (GameObject obj in hiddenObjects)
+        {
+            obj.SetActive(false);
+        }
+
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         while (!asyncLoad.isDone)
         {
@@ -98,6 +106,11 @@ public class PlayerTransition : MonoBehaviour
             {
                 rootObj.SetActive(true);
             }
+        }
+
+        foreach (GameObject obj in hiddenObjects)
+        {
+            obj.SetActive(true);
         }
     }
 }

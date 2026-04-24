@@ -60,15 +60,15 @@ public class SequenceDirector : MonoBehaviour
             yield break;
         }
 
+        if (step.hasPlayerMovement)
+        {
+            playerTransition.MovePlayer(step.playerTargetPosition, step.hasPlayerRotation, step.playerTargetRotation, step.hasSceneTransition, step.sceneName, step.isGoingBackToMainScene);
+        }
+
         if (step.hasNarratorMovement)
         {
             Tween action = narrator.Move(step.targetNarratorPosition, step.offsetAtCenter, step.targetNarratorScale, step.flyDuration);
             yield return action.WaitForCompletion();
-        }
-
-        if (step.hasPlayerMovement)
-        {
-            playerTransition.MovePlayer(step.playerTargetPosition, step.hasPlayerRotation, step.playerTargetRotation, step.hasSceneTransition, step.sceneName, step.isGoingBackToMainScene);
         }
 
         if (eventDispatcher != null)
