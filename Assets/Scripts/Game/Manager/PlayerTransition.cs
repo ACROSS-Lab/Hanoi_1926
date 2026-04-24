@@ -11,6 +11,7 @@ public class PlayerTransition : MonoBehaviour
     [Header("Fading Setup")]
     [SerializeField] CanvasGroup fadeCanvasGroup;
     [SerializeField] float fadeDuration = 0.5f;
+    [SerializeField] bool hasFadeOnStart = true;
 
     [Header("Object to keep")]
     [SerializeField] GameObject objectToKeep;
@@ -22,11 +23,11 @@ public class PlayerTransition : MonoBehaviour
     Scene mainScene;
 
     void Start()
-    {
-        if (fadeCanvasGroup != null)
+    {        
+        if (hasFadeOnStart) 
         {
-            fadeCanvasGroup.alpha = 0f;
-            fadeCanvasGroup.blocksRaycasts = false;
+            fadeCanvasGroup.alpha = 1f;
+            fadeCanvasGroup.DOFade(0f, fadeDuration);
         }
 
         mainScene = SceneManager.GetActiveScene();
@@ -112,5 +113,27 @@ public class PlayerTransition : MonoBehaviour
         {
             obj.SetActive(true);
         }
+    }
+
+    public void LoadNormalSceneFadeOut(string sceneName)
+    {
+        StartCoroutine(LoadNormalScene(sceneName));
+    }
+
+    IEnumerator LoadNormalScene(string sceneName)
+    {
+        if (fadeCanvasGroup != null)
+        {
+            fadeCanvasGroup.blocksRaycasts = true; 
+            yield return fadeCanvasGroup.DOFade(1f, fadeDuration).WaitForCompletion();
+        }
+
+        AsyncOperation asyncUnload = SceneManager.LoadSceneAsync(sceneName);
+        while (!asyncUnload.isDone)
+        {
+            yield return null;
+        }
+
+        yield return null;
     }
 }
