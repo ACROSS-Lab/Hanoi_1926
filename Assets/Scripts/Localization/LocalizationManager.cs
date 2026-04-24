@@ -9,7 +9,7 @@ public class LocalizationManager : MonoBehaviour
     private const string CsvFilePath = "Localization/LocalizationData"; 
 
     private Dictionary<string, Dictionary<string, string>> localizedData;
-    public string currentLanguage = "Vietnamese";
+    string currentLanguage = "Vietnamese";
 
     public delegate void LanguageChanged();
     public static event LanguageChanged OnLanguageChanged;
@@ -122,6 +122,7 @@ public class LocalizationManager : MonoBehaviour
 
     public void SetLanguage(string languageName)
     {
+        Debug.Log("SetLanguage: " + languageName);
         if (localizedData.ContainsKey(languageName))
         {
             currentLanguage = languageName;

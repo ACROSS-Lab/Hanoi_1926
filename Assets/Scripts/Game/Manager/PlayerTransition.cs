@@ -136,4 +136,9 @@ public class PlayerTransition : MonoBehaviour
 
         yield return null;
     }
+
+    public void SetLanguage(string languageName)
+    {
+        LocalizationManager.Instance.SetLanguage(languageName);
+    }
 }

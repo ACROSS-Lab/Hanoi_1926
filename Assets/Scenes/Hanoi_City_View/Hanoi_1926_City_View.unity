@@ -116047,7 +116047,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4808742339942753752}
   - {fileID: 8088982598141516972}
   - {fileID: 7615592486915259463}
   - {fileID: 1666187962}
@@ -336894,23 +336893,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7962090741334442032, guid: 516364dffbb37d04d81aa419a0576ae7, type: 3}
   m_PrefabInstance: {fileID: 3597718302862685533}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3749136648900847392
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4808742339942753752}
-  - component: {fileID: 8187848268952701655}
-  m_Layer: 0
-  m_Name: LocalizationManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1001 &4260235064057336505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -337141,21 +337123,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8402884722557418434, guid: 0e7ed647e99a005438f21d252beb721a, type: 3}
   m_PrefabInstance: {fileID: 4738797946701757808}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &4808742339942753752
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3749136648900847392}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 764807303}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5047689633504617023
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -337701,19 +337668,6 @@ Transform:
   - {fileID: 464339221}
   m_Father: {fileID: 764807303}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8187848268952701655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3749136648900847392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2c0fb59e797f9c4394b260c04181050, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocalizationManager
-  currentLanguage: English
 --- !u!1001 &8193997022749490017
 PrefabInstance:
   m_ObjectHideFlags: 0
