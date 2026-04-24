@@ -10,28 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
-  m_Name: Introduction_Step_05
+  m_Name: Simulation_Step_01
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: -4309, y: 70, z: -4241}
+  targetNarratorPosition: {x: -3602, y: -133, z: -5947}
   offsetAtCenter: {x: 0, y: 50, z: 0}
   targetNarratorScale: 2000
-  flyDuration: 2
-  hasPlayerMovement: 0
-  playerTargetPosition: {x: 0, y: 0, z: 0}
+  flyDuration: 3
+  hasPlayerMovement: 1
+  playerTargetPosition: {x: -3519, y: 1266, z: -1796}
   hasPlayerRotation: 0
   playerTargetRotation: {x: 0, y: 0, z: 0}
   hasSceneTransition: 0
   sceneName: 
   isGoingBackToMainScene: 0
   hasDialogue: 1
-  timeWaitBeforeTalking: 0
-  dialogueKey: narrator.dialogue.05
+  timeWaitBeforeTalking: 2
+  dialogueKey: narrator.dialogue.07
   isUsingOverlay: 0
-  bodyState: 3
-  eyesState: 2
+  bodyState: 0
+  eyesState: 3
   mouthStartState: 1
-  mouthEndState: 0
+  mouthEndState: 1
   timeWaitAfterTalking: 0
   hasInteraction: 0
   waitForAction: 0
