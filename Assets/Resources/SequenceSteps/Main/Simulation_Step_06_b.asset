@@ -37,4 +37,4 @@ MonoBehaviour:
   timeWaitAfterTalking: 0
   hasInteraction: 1
   waitForAction: 1
-  waitTimeout: 10
+  waitTimeout: 25
