@@ -648,6 +648,7 @@ GameObject:
   - component: {fileID: 2647378837295746249}
   - component: {fileID: 7058020711358934812}
   - component: {fileID: 7646214931259344505}
+  - component: {fileID: 5689423441426521364}
   m_Layer: 5
   m_Name: NestedDialogue
   m_TagString: Untagged
@@ -721,6 +722,18 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 1
+--- !u!114 &5689423441426521364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5728608721773611665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16ce8d5d26ed4d84396753d2c64d77d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LookAtCamera
 --- !u!1 &6697953811789894044
 GameObject:
   m_ObjectHideFlags: 0
@@ -1200,6 +1213,9 @@ MonoBehaviour:
   nestedCanvas: {fileID: 5728608721773611665}
   overlayText: {fileID: 4402413319699617955}
   nestedText: {fileID: 2989164971219355003}
+  offsetPosition: {x: -1.96, y: 0.48, z: 0.09}
+  offsetRotation: {x: 0, y: 0, z: 0, w: 1}
+  scaleMultiplier: 0.15
 --- !u!114 &2660818658074460871
 MonoBehaviour:
   m_ObjectHideFlags: 0

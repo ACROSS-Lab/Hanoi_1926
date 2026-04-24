@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
-  m_Name: Simulation_Step_03
+  m_Name: Simulation_Step_06_b
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: -2335, y: 501, z: -3500}
-  offsetAtCenter: {x: 0, y: 200, z: 0}
-  targetNarratorScale: 1500
-  flyDuration: 3
-  hasPlayerMovement: 0
+  targetNarratorPosition: {x: 6.502, y: 0.41, z: 0.16}
+  offsetAtCenter: {x: 0, y: 0, z: 0}
+  targetNarratorScale: 1.8
+  flyDuration: 0
+  hasPlayerMovement: 1
   playerTargetPosition: {x: 0, y: 0, z: 0}
-  hasPlayerRotation: 0
-  playerTargetRotation: {x: 0, y: 0, z: 0}
-  hasSceneTransition: 0
-  sceneName: 
+  hasPlayerRotation: 1
+  playerTargetRotation: {x: 0, y: 90, z: 0}
+  hasSceneTransition: 1
+  sceneName: Diorama_03_Quay
   isGoingBackToMainScene: 0
   hasDialogue: 1
-  timeWaitBeforeTalking: 1
-  dialogueKey: narrator.dialogue.09
+  timeWaitBeforeTalking: 0
+  dialogueKey: narrator.dialogue.diorama2.01
   isUsingOverlay: 0
   bodyState: 3
   eyesState: 2
@@ -35,4 +35,4 @@ MonoBehaviour:
   timeWaitAfterTalking: 0
   hasInteraction: 1
   waitForAction: 1
-  waitTimeout: 15
+  waitTimeout: 10

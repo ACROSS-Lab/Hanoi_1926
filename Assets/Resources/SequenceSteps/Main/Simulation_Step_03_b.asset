@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
   m_Name: Simulation_Step_03_b
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
-  hasNarratorMovement: 0
-  targetNarratorPosition: {x: 0, y: 0, z: 0}
+  hasNarratorMovement: 1
+  targetNarratorPosition: {x: 0, y: 1, z: -6}
   offsetAtCenter: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 0
+  targetNarratorScale: 1.8
   flyDuration: 0
   hasPlayerMovement: 1
   playerTargetPosition: {x: 0, y: 0, z: 0}
   hasPlayerRotation: 1
-  playerTargetRotation: {x: 0, y: 0, z: 0}
+  playerTargetRotation: {x: 0, y: 180, z: 0}
   hasSceneTransition: 1
   sceneName: Diorama_01_Sandbank
   isGoingBackToMainScene: 0
@@ -35,4 +35,4 @@ MonoBehaviour:
   timeWaitAfterTalking: 0
   hasInteraction: 1
   waitForAction: 1
-  waitTimeout: 10
+  waitTimeout: 25
