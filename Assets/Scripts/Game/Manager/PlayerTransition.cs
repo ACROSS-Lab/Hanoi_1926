@@ -12,13 +12,11 @@ public class PlayerTransition : MonoBehaviour
     [SerializeField] CanvasGroup fadeCanvasGroup;
     [SerializeField] float fadeDuration = 0.5f;
 
-    List<GameObject> primarySceneRoots = new List<GameObject>();
+    [Header("Object to keep")]
+    [SerializeField] GameObject objectToKeep;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(fadeCanvasGroup.gameObject);
-    }
+    List<GameObject> primarySceneRoots = new List<GameObject>();
+    Scene mainScene;
 
     void Start()
     {
@@ -27,6 +25,8 @@ public class PlayerTransition : MonoBehaviour
             fadeCanvasGroup.alpha = 0f;
             fadeCanvasGroup.blocksRaycasts = false;
         }
+
+        mainScene = SceneManager.GetActiveScene();
     }
 
     public void MovePlayer(Vector3 position, bool hasRotation, Vector3 rotation, bool hasSceneTransition, string sceneName, bool isGoingBackToMainScene)
@@ -64,6 +64,7 @@ public class PlayerTransition : MonoBehaviour
 
         primarySceneRoots.Clear();
         primarySceneRoots.AddRange(primaryScene.GetRootGameObjects());
+        primarySceneRoots.Remove(objectToKeep);
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         while (!asyncLoad.isDone)
@@ -72,6 +73,9 @@ public class PlayerTransition : MonoBehaviour
         }
 
         yield return null; 
+
+        SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
+
         foreach (GameObject rootObj in primarySceneRoots)
         {
             rootObj.SetActive(false);
@@ -80,6 +84,8 @@ public class PlayerTransition : MonoBehaviour
 
     IEnumerator TransitionBack(string sceneName)
     {
+        SceneManager.SetActiveScene(mainScene);
+
         AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(sceneName);
         while (!asyncUnload.isDone)
         {

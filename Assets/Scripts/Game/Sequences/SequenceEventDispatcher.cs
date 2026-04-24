@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SequenceEventDispatcher : MonoBehaviour
 {
-    [SerializeField] StepEventHandler[] allStepEvents;
+    StepEventHandler[] allStepEvents;
 
     void Awake()
     {

@@ -21,11 +21,6 @@ public class SequenceDirector : MonoBehaviour
 
     bool hasPerformedAction = false;
 
-    void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     void Start()
     {
         StartCoroutine(ExecuteSequence());
