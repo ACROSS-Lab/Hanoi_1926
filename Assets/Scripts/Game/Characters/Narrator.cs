@@ -26,7 +26,7 @@ public class Narrator : MonoBehaviour
         nestedCanvasTransform = nestedCanvas.transform;
     }
 
-    public Tween Move(Vector3 targetPosition, Vector3 offsetAtCenter, float targetScale, float flyDuration)
+    public Tween Move(Vector3 targetPosition, Vector3 offsetAtCenter, bool hasRotation, Vector3 targetRotation, float targetScale, float flyDuration)
     {
         Vector3 midPoint = Vector3.Lerp(transform.position, targetPosition, 0.5f) + offsetAtCenter;
         Vector3[] path = {transform.position, midPoint, targetPosition};
@@ -35,6 +35,7 @@ public class Narrator : MonoBehaviour
 
         action.Join(transform.DOPath(path, flyDuration, PathType.CatmullRom).SetEase(Ease.InOutSine));
         action.Join(transform.DOScale(targetScale, flyDuration).SetEase(Ease.InOutSine));
+        if (hasRotation) action.Join(transform.DORotate(targetRotation, flyDuration).SetEase(Ease.InOutSine));
 
         return action;
     }

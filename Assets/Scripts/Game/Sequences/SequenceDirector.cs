@@ -67,7 +67,7 @@ public class SequenceDirector : MonoBehaviour
 
         if (step.hasNarratorMovement)
         {
-            Tween action = narrator.Move(step.targetNarratorPosition, step.offsetAtCenter, step.targetNarratorScale, step.flyDuration);
+            Tween action = narrator.Move(step.targetNarratorPosition, step.offsetAtCenter, step.hasNarratorRotation, step.targetNarratorRotation, step.targetNarratorScale, step.flyDuration);
             yield return action.WaitForCompletion();
         }
 
