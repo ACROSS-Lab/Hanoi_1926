@@ -297,6 +297,10 @@ PrefabInstance:
       value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: 657184242118504724, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 657184242118504724, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 23
       objectReference: {fileID: 0}
@@ -1096,6 +1100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerTransition
   fadeCanvasGroup: {fileID: 2560965846637779165}
   fadeDuration: 0.5
+  hasFadeOnStart: 1
   objectToKeep: {fileID: 0}
   hiddenObjects:
   - {fileID: 2407443810420218414}

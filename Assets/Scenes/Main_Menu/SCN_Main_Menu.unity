@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 992345764}
   - component: {fileID: 992345768}
   m_Layer: 0
-  m_Name: Touchpad Flat
+  m_Name: LanguageMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

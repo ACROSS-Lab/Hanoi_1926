@@ -32,11 +32,5 @@ public class SequenceStep : ScriptableObject
 
     [Header("Phase 3: Interaction")]
     public bool hasInteraction;
-    [ShowIf("hasInteraction")] public PlayerActionType waitForAction;
     [ShowIf("hasInteraction")] public float waitTimeout;
-}
-public enum PlayerActionType 
-{ 
-    NONE,
-    CLICK,
 }
