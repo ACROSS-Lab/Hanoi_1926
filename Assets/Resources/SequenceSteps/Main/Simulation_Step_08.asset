@@ -15,6 +15,8 @@ MonoBehaviour:
   hasNarratorMovement: 0
   targetNarratorPosition: {x: 0, y: 0, z: 0}
   offsetAtCenter: {x: 0, y: 0, z: 0}
+  hasNarratorRotation: 0
+  targetNarratorRotation: {x: 0, y: 0, z: 0}
   targetNarratorScale: 0
   flyDuration: 0
   hasPlayerMovement: 0
@@ -33,6 +35,6 @@ MonoBehaviour:
   mouthStartState: 1
   mouthEndState: 3
   timeWaitAfterTalking: 0
-  hasInteraction: 1
+  hasInteraction: 0
   waitForAction: 1
   waitTimeout: 15

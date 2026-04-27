@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
-  m_Name: Simulation_Step_07
+  m_Name: z_Results_Step_10
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasNarratorMovement: 0
   targetNarratorPosition: {x: 0, y: 0, z: 0}
@@ -28,9 +28,9 @@ MonoBehaviour:
   isGoingBackToMainScene: 0
   hasDialogue: 1
   timeWaitBeforeTalking: 0
-  dialogueKey: narrator.dialogue.13
+  dialogueKey: narrator.dialogue.25
   isUsingOverlay: 0
-  bodyState: 6
+  bodyState: 3
   eyesState: 2
   mouthStartState: 1
   mouthEndState: 3
