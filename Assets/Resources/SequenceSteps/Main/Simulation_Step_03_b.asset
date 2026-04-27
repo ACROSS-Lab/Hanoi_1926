@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Simulation_Step_03_b
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: 0, y: 1, z: -6}
+  targetNarratorPosition: {x: 0, y: 0, z: -6}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
@@ -36,5 +36,4 @@ MonoBehaviour:
   mouthEndState: 3
   timeWaitAfterTalking: 0
   hasInteraction: 1
-  waitForAction: 1
   waitTimeout: 25

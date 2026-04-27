@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: Introduction_Step_05
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: -4309, y: 70, z: -4241}
-  offsetAtCenter: {x: 0, y: 50, z: 0}
-  targetNarratorScale: 2000
+  targetNarratorPosition: {x: -2, y: 0, z: -2}
+  offsetAtCenter: {x: 0, y: 0.1, z: 0}
+  hasNarratorRotation: 0
+  targetNarratorRotation: {x: 0, y: 0, z: 0}
+  targetNarratorScale: 0.7
   flyDuration: 2
   hasPlayerMovement: 0
   playerTargetPosition: {x: 0, y: 0, z: 0}
@@ -34,5 +36,4 @@ MonoBehaviour:
   mouthEndState: 0
   timeWaitAfterTalking: 0
   hasInteraction: 0
-  waitForAction: 0
   waitTimeout: 0
