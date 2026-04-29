@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class EventDirector : MonoBehaviour
 {
+    public SequenceEvent currentSequenceEvent { get; private set; }
+    public bool simulationFinished { get; private set; }
+
     SequenceEvent[] sequenceEvents;
-    SequenceEvent currentSequenceEvent;
-
-    bool simulationFinished = false;
-
+    
     void Awake()
     {
         sequenceEvents = GetComponentsInChildren<SequenceEvent>();
@@ -44,16 +44,19 @@ public class EventDirector : MonoBehaviour
         return currentSequenceEvent.VATController != null;
     }
 
-    public bool IsSimulationFinished()
-    {
-        return simulationFinished;
-    }
-
     public void PlaySimulation()
     {
+        StartCoroutine(SimulationCoroutine());
+    }
+
+    IEnumerator SimulationCoroutine()
+    {
+        simulationFinished = false;
+        yield return new WaitForSeconds(currentSequenceEvent.simulationDelayStart);
         VATController controller = currentSequenceEvent.VATController;
         controller.PlayIndex(currentSequenceEvent.animationIndex);
-        StartCoroutine(CountdownAnimtionTime());
+        yield return new WaitForSeconds(GetAnimationTime());
+        simulationFinished = true;
     }
 
     float GetAnimationTime()
@@ -62,12 +65,5 @@ public class EventDirector : MonoBehaviour
         VATAnimationData.VATAnimation animation = controller.animationData.animations[currentSequenceEvent.animationIndex];
         float duration = (animation.frameEnd - animation.frameStart + 1) / animation.framerate;
         return duration;
-    }
-
-    IEnumerator CountdownAnimtionTime()
-    {
-        simulationFinished = false;
-        yield return new WaitForSeconds(GetAnimationTime());
-        simulationFinished = true;
     }
 }

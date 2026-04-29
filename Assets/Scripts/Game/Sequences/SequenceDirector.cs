@@ -119,7 +119,7 @@ public class SequenceDirector : MonoBehaviour
             }
         }
 
-        if (step.hasSequenceEvents && eventDirector.IsSimulationFinished()) yield return null;
+        if (step.hasSequenceEvents && eventDirector.simulationFinished) yield return null;
     }
 
     public void PerformAction()

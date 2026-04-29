@@ -16,8 +16,8 @@ public class PlayerTransition : MonoBehaviour
     [Header("Object to keep")]
     [SerializeField] GameObject objectToKeep;
 
-    [Header("Hide Hands Ray")]
-    [SerializeField] GameObject[] hiddenObjects;
+    [Header("Hide Simulation")]
+    [SerializeField] EventDirector eventDirector;
 
     List<GameObject> primarySceneRoots = new List<GameObject>();
     Scene mainScene;
@@ -70,9 +70,9 @@ public class PlayerTransition : MonoBehaviour
         primarySceneRoots.AddRange(primaryScene.GetRootGameObjects());
         primarySceneRoots.Remove(objectToKeep);
 
-        foreach (GameObject obj in hiddenObjects)
+        if (eventDirector != null)
         {
-            obj.SetActive(false);
+            if (eventDirector.HasSimulationInParallel()) eventDirector.currentSequenceEvent.VATController.GetComponent<MeshRenderer>().enabled = false;
         }
 
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
@@ -109,9 +109,9 @@ public class PlayerTransition : MonoBehaviour
             }
         }
 
-        foreach (GameObject obj in hiddenObjects)
+        if (eventDirector != null)
         {
-            obj.SetActive(true);
+            if (eventDirector.HasSimulationInParallel()) eventDirector.currentSequenceEvent.VATController.GetComponent<MeshRenderer>().enabled = true;
         }
     }
 

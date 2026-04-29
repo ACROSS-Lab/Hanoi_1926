@@ -10,6 +10,7 @@ public class SequenceEvent : MonoBehaviour
     public List<EventsWithDelay> eventsWithDelay;
     public VATController VATController;
     [Dropdown("GetAnimationIndexes")] public int animationIndex;
+    public float simulationDelayStart = 0;
 
     public void TriggerEvents()
     {
