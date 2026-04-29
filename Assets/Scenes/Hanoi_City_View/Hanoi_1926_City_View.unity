@@ -103876,7 +103876,7 @@ Transform:
   m_GameObject: {fileID: 679884549}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.802, y: -0.445, z: -1.074}
+  m_LocalPosition: {x: -2.212, y: 0, z: -2.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -211093,7 +211093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StepEventHandler
   eventsWithDelay:
-  - delay: 3
+  - delay: 10
     unityEvent:
       m_PersistentCalls:
         m_Calls:
@@ -263633,7 +263633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StepEventHandler
   eventsWithDelay:
-  - delay: 3
+  - delay: 10
     unityEvent:
       m_PersistentCalls:
         m_Calls:
@@ -288653,7 +288653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StepEventHandler
   eventsWithDelay:
-  - delay: 5
+  - delay: 10
     unityEvent:
       m_PersistentCalls:
         m_Calls:
@@ -336692,7 +336692,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 17
+  debugStepIndex: 0
   currentStepIndex: 0
 --- !u!1001 &7035130944481428134
 PrefabInstance:
