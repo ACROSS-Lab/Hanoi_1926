@@ -82,7 +82,7 @@ public class SequenceDirector : MonoBehaviour
             yield return action.WaitForCompletion();
         }
 
-        eventDirector.TriggerEventsForStep();
+        if (step.hasSequenceEvents) eventDirector.TriggerEventsForStep();
 
         if (step.hasDialogue)
         {

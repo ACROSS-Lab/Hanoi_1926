@@ -41,13 +41,17 @@ public class EventDirector : MonoBehaviour
         return currentSequenceEvent.VATController != null;
     }
 
-    public void PlaySimulation(float presentationDuration)
+    public float GetAnimationTime()
     {
         VATController controller = currentSequenceEvent.VATController;
         VATAnimationData.VATAnimation animation = controller.animationData.animations[currentSequenceEvent.animationIndex];
-        float duration = (animation.frameEnd - animation.frameStart + 1)/animation.framerate;
-        float multiplier = presentationDuration / duration;
-        controller.Speed = multiplier;
+        float duration = (animation.frameEnd - animation.frameStart + 1) / animation.framerate;
+        return duration;
+    }
+
+    public void PlaySimulation(float presentationDuration)
+    {
+        VATController controller = currentSequenceEvent.VATController;
         controller.PlayIndex(currentSequenceEvent.animationIndex);
     }
 }
