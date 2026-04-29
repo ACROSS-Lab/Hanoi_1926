@@ -5,6 +5,8 @@ public class EventDirector : MonoBehaviour
     SequenceEvent[] sequenceEvents;
     SequenceEvent currentSequenceEvent;
 
+    bool simulationFinished = false;
+
     void Awake()
     {
         sequenceEvents = GetComponentsInChildren<SequenceEvent>();
@@ -19,11 +21,7 @@ public class EventDirector : MonoBehaviour
             {
                 newSquenceEvent = sequenceEvent;
                 
-                if (newSquenceEvent.VATController != currentSequenceEvent.VATController)
-                {
-                    if (currentSequenceEvent.VATController != null) currentSequenceEvent.VATController.gameObject.SetActive(false);
-                    if (newSquenceEvent.VATController != null) newSquenceEvent.VATController.gameObject.SetActive(true);
-                }
+                
                 
                 currentSequenceEvent = newSquenceEvent;
                 break;
@@ -41,7 +39,8 @@ public class EventDirector : MonoBehaviour
         return currentSequenceEvent.VATController != null;
     }
 
-    public float GetAnimationTime()
+
+    float GetAnimationTime()
     {
         VATController controller = currentSequenceEvent.VATController;
         VATAnimationData.VATAnimation animation = controller.animationData.animations[currentSequenceEvent.animationIndex];
@@ -49,7 +48,7 @@ public class EventDirector : MonoBehaviour
         return duration;
     }
 
-    public void PlaySimulation(float presentationDuration)
+    public void PlaySimulation()
     {
         VATController controller = currentSequenceEvent.VATController;
         controller.PlayIndex(currentSequenceEvent.animationIndex);
