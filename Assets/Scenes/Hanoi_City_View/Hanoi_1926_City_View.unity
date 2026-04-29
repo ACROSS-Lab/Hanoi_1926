@@ -177794,6 +177794,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5623613401902888356, guid: 280aff48afef2b44bb4b78d93ebd3cda, type: 3}
   m_PrefabInstance: {fileID: 1191303709}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1192064088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1192064089}
+  - component: {fileID: 1192064090}
+  m_Layer: 0
+  m_Name: Simulation_Step_01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1192064089
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192064088}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8088982598141516972}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1192064090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192064088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ba1930f9c63d143b9a9e07ef139942, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StepEventHandler
+  eventsWithDelay:
+  - delay: 0
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  VATController: {fileID: 1334899596}
+  animationIndex: 0
 --- !u!1001 &1192106478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -199662,7 +199713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8321285049438709604, guid: a9f03afe6fe38bc4f96c9c9af600644a, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8660690392391384542, guid: a9f03afe6fe38bc4f96c9c9af600644a, type: 3}
       propertyPath: m_LocalScale.x
@@ -211034,8 +211085,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  VATController: {fileID: 0}
-  animationIndex: 0
+  VATController: {fileID: 1334899596}
+  animationIndex: 1
 --- !u!1001 &1407355646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -314370,7 +314421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5873032471448862024, guid: 2604a4fe96217364f88a8c8ae79c172b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6542291298995103730, guid: 2604a4fe96217364f88a8c8ae79c172b, type: 3}
       propertyPath: m_LocalScale.x
@@ -336571,7 +336622,8 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 0
+  debugStepIndex: 5
+  currentStepIndex: 0
 --- !u!1001 &7035130944481428134
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -336912,6 +336964,7 @@ Transform:
   m_Children:
   - {fileID: 2083869547}
   - {fileID: 1917491556196268810}
+  - {fileID: 1192064089}
   - {fileID: 1407234636}
   - {fileID: 1822635348}
   - {fileID: 1721792169}
