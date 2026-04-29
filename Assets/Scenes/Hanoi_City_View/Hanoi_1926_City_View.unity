@@ -28927,6 +28927,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 647632904}
     m_Modifications:
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.7415448
+      objectReference: {fileID: 0}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.53306335
+      objectReference: {fileID: 0}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6495040595139196626}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PerformAction
+      objectReference: {fileID: 0}
     - target: {fileID: 1316418514726271944, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
       propertyPath: m_Name
       value: Diorama_Button_Railway
@@ -49326,7 +49346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2705199586950671148, guid: eba653a32d607a848a279a1beda3d884, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.4
+      value: -5.6000004
       objectReference: {fileID: 0}
     - target: {fileID: 2705199586950671148, guid: eba653a32d607a848a279a1beda3d884, type: 3}
       propertyPath: m_LocalPosition.z
@@ -134598,7 +134618,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 6.8398014e+25, y: 250253.58, z: 4.8575694e-20, w: 3.67447e-40}
+  m_BoundingSphereOverride: {x: 0, y: 1.9971037e-38, z: 7.22e-43, w: 3.4768883e-38}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
@@ -177843,7 +177863,7 @@ MonoBehaviour:
     unityEvent:
       m_PersistentCalls:
         m_Calls: []
-  VATController: {fileID: 1334899596}
+  VATController: {fileID: 0}
   animationIndex: 0
 --- !u!1001 &1192106478
 PrefabInstance:
@@ -211085,8 +211105,8 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  VATController: {fileID: 1334899596}
-  animationIndex: 1
+  VATController: {fileID: 0}
+  animationIndex: 0
 --- !u!1001 &1407355646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211491,6 +211511,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 647632904}
     m_Modifications:
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.7415448
+      objectReference: {fileID: 0}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.53306335
+      objectReference: {fileID: 0}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6495040595139196626}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PerformAction
+      objectReference: {fileID: 0}
     - target: {fileID: 1316418514726271944, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
       propertyPath: m_Name
       value: Diorama_Button_Sandbank
@@ -234354,7 +234394,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2705199586950671148, guid: eba653a32d607a848a279a1beda3d884, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 31.4
+      value: -5.6
       objectReference: {fileID: 0}
     - target: {fileID: 2705199586950671148, guid: eba653a32d607a848a279a1beda3d884, type: 3}
       propertyPath: m_LocalPosition.z
@@ -297093,6 +297133,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 647632904}
     m_Modifications:
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 0.9339623
+      objectReference: {fileID: 0}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 0.7415448
+      objectReference: {fileID: 0}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 0.53306335
+      objectReference: {fileID: 0}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 6495040595139196626}
+    - target: {fileID: 281361596240178019, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PerformAction
+      objectReference: {fileID: 0}
     - target: {fileID: 1316418514726271944, guid: 1905d59d3f55a8c4d873a78cdc28411e, type: 3}
       propertyPath: m_Name
       value: Diorama_Button_Quay
@@ -336622,7 +336682,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 5
+  debugStepIndex: 17
   currentStepIndex: 0
 --- !u!1001 &7035130944481428134
 PrefabInstance:

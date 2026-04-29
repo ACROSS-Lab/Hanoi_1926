@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
   m_Name: Simulation_Step_08_b
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
+  hasSequenceEvents: 0
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: 6.502, y: 0.1, z: 0.16}
+  targetNarratorPosition: {x: 11.97, y: 5.74, z: 4.14}
   offsetAtCenter: {x: 0, y: 0, z: 0}
-  hasNarratorRotation: 0
-  targetNarratorRotation: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 0
+  hasNarratorRotation: 1
+  targetNarratorRotation: {x: 0, y: -90, z: 0}
+  targetNarratorScale: 2
   flyDuration: 0
   hasPlayerMovement: 1
-  playerTargetPosition: {x: 0, y: 0, z: 0}
-  hasPlayerRotation: 0
-  playerTargetRotation: {x: 0, y: 0, z: 0}
+  playerTargetPosition: {x: 2.14, y: 6.422, z: -1.431}
+  hasPlayerRotation: 1
+  playerTargetRotation: {x: 0, y: 90, z: 0}
   hasSceneTransition: 1
   sceneName: Diorama_02_Railway
   isGoingBackToMainScene: 0
@@ -30,7 +31,7 @@ MonoBehaviour:
   timeWaitBeforeTalking: 0
   dialogueKey: narrator.dialogue.diorama3.01
   isUsingOverlay: 0
-  bodyState: 3
+  bodyState: 4
   eyesState: 2
   mouthStartState: 1
   mouthEndState: 3
