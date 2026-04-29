@@ -4,6 +4,8 @@ using NaughtyAttributes;
 [CreateAssetMenu(fileName = "Sequence Step", menuName = "Sequence Step")]
 public class SequenceStep : ScriptableObject
 {
+    public bool hasSequenceEvents;
+
     [Header("Phase 1: Movement")]
     public bool hasNarratorMovement;
     [ShowIf("hasNarratorMovement")] public Vector3 targetNarratorPosition;

@@ -14,7 +14,7 @@ public class SequenceDirector : MonoBehaviour
     [SerializeField] Narrator narrator;
 
     [Header("Event Management")]
-    [SerializeField] SequenceEventDispatcher eventDispatcher;
+    [SerializeField] EventDirector eventDirector;
 
     [Header("Debugging")]
     [SerializeField] int debugStepIndex = 0;
@@ -40,6 +40,12 @@ public class SequenceDirector : MonoBehaviour
     {
         if (fastForward)
         {
+            if (step.hasSequenceEvents)
+            {
+                eventDirector.SetCurrentSequenceEvent(step.name);
+                eventDirector.TriggerEventsForStep();
+            }
+
             if (step.hasNarratorMovement)
             {
                 narrator.transform.position = step.targetNarratorPosition;
@@ -52,12 +58,17 @@ public class SequenceDirector : MonoBehaviour
                 playerTransition.transform.rotation = Quaternion.Euler(step.playerTargetRotation);
             }
 
-            if (eventDispatcher != null)
-            {
-                eventDispatcher.TriggerEventsForStep(step.name);
-            }
-
             yield break;
+        }
+
+        if (step.hasSequenceEvents) 
+        {
+            eventDirector.SetCurrentSequenceEvent(step.name);
+
+            if (eventDirector.HasSimulationInParallel())
+            {
+                // eventDirector.PlaySimulation(step.)
+            }
         }
 
         if (step.hasPlayerMovement)
@@ -71,10 +82,7 @@ public class SequenceDirector : MonoBehaviour
             yield return action.WaitForCompletion();
         }
 
-        if (eventDispatcher != null)
-        {
-            eventDispatcher.TriggerEventsForStep(step.name);
-        }
+        eventDirector.TriggerEventsForStep();
 
         if (step.hasDialogue)
         {
@@ -113,5 +121,6 @@ public class SequenceDirector : MonoBehaviour
     public void PerformAction()
     {
         hasPerformedAction = true;
+        Debug.Log("Performed Action");
     }
 }
