@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class EventDirector : MonoBehaviour
@@ -14,16 +15,20 @@ public class EventDirector : MonoBehaviour
 
     public void SetCurrentSequenceEvent(string stepId)
     {
-        SequenceEvent newSquenceEvent;
         foreach (SequenceEvent sequenceEvent in sequenceEvents)
         {
             if (string.Equals(sequenceEvent.name, stepId))
             {
-                newSquenceEvent = sequenceEvent;
+                VATController currentController = currentSequenceEvent?.VATController;
+                VATController newController = sequenceEvent.VATController;
                 
-                
-                
-                currentSequenceEvent = newSquenceEvent;
+                if (newController != null && newController != currentController)
+                {
+                    if (currentController != null) currentController.gameObject.SetActive(false);
+                    newController.gameObject.SetActive(true);
+                }
+        
+                currentSequenceEvent = sequenceEvent;
                 break;
             }
         }
@@ -39,6 +44,17 @@ public class EventDirector : MonoBehaviour
         return currentSequenceEvent.VATController != null;
     }
 
+    public bool IsSimulationFinished()
+    {
+        return simulationFinished;
+    }
+
+    public void PlaySimulation()
+    {
+        VATController controller = currentSequenceEvent.VATController;
+        controller.PlayIndex(currentSequenceEvent.animationIndex);
+        StartCoroutine(CountdownAnimtionTime());
+    }
 
     float GetAnimationTime()
     {
@@ -48,9 +64,10 @@ public class EventDirector : MonoBehaviour
         return duration;
     }
 
-    public void PlaySimulation()
+    IEnumerator CountdownAnimtionTime()
     {
-        VATController controller = currentSequenceEvent.VATController;
-        controller.PlayIndex(currentSequenceEvent.animationIndex);
+        simulationFinished = false;
+        yield return new WaitForSeconds(GetAnimationTime());
+        simulationFinished = true;
     }
 }

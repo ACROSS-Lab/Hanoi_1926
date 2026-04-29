@@ -18,6 +18,7 @@ public class SequenceDirector : MonoBehaviour
 
     [Header("Debugging")]
     [SerializeField] int debugStepIndex = 0;
+    [SerializeField] int currentStepIndex = 0;
 
     bool hasPerformedAction = false;
 
@@ -33,6 +34,7 @@ public class SequenceDirector : MonoBehaviour
             SequenceStep step = sequenceSteps[i];
             bool fastForward = i < debugStepIndex;
             yield return StartCoroutine(ExecuteStep(step, fastForward));
+            currentStepIndex = i;
         }
     }
 
@@ -67,7 +69,7 @@ public class SequenceDirector : MonoBehaviour
 
             if (eventDirector.HasSimulationInParallel())
             {
-                // eventDirector.PlaySimulation(step.)
+                eventDirector.PlaySimulation();
             }
         }
 
@@ -116,6 +118,8 @@ public class SequenceDirector : MonoBehaviour
                 yield return null;
             }
         }
+
+        if (step.hasSequenceEvents && eventDirector.IsSimulationFinished()) yield return null;
     }
 
     public void PerformAction()
