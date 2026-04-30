@@ -46,7 +46,7 @@ public class VATController : MonoBehaviour
     //  UNITY LIFECYCLE
     // =============================================
 
-    void OnEnable()
+    void Awake()
     {
         animState = new VATAnimStateMachine();
         if (binder == null)
