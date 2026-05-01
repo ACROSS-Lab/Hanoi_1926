@@ -28,7 +28,7 @@ MonoBehaviour:
   sceneName: 
   isGoingBackToMainScene: 0
   hasDialogue: 1
-  timeWaitBeforeTalking: 0
+  timeWaitBeforeTalking: 2
   dialogueKey: narrator.dialogue.04
   isUsingOverlay: 0
   bodyState: 5
