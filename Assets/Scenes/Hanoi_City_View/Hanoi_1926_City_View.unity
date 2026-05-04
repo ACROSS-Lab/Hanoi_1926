@@ -21097,6 +21097,14 @@ MonoBehaviour:
   VATController: {fileID: 615775411}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 7
+    day: 23
+    hour: 0
+  endTime:
+    month: 7
+    day: 23
+    hour: 9
 --- !u!1001 &108939739
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -76453,6 +76461,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!1001 &465256784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125384,6 +125400,7 @@ Transform:
   - {fileID: 1666187962}
   - {fileID: 864407541}
   - {fileID: 1024683213}
+  - {fileID: 6788875859646859863}
   - {fileID: 2043534392}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -152668,6 +152685,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!1001 &944103900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190688,6 +190713,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5623613401902888356, guid: 280aff48afef2b44bb4b78d93ebd3cda, type: 3}
   m_PrefabInstance: {fileID: 1191303709}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1191351460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6500014455618626440, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+  m_PrefabInstance: {fileID: 5654136014438362277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1192064088
 GameObject:
   m_ObjectHideFlags: 0
@@ -190740,6 +190776,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!1001 &1192106478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -197647,6 +197691,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!1001 &1241021126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211553,6 +211605,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8123250085496039170, guid: 17d3c5f71a7ff1c418bf3f99a3aa172b, type: 3}
   m_PrefabInstance: {fileID: 1329717657}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1330303365 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2348092396126304573, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+  m_PrefabInstance: {fileID: 5654136014438362277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1330840653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225407,6 +225470,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!1001 &1407355646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252306,6 +252377,14 @@ MonoBehaviour:
   VATController: {fileID: 1064592971}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 7
+    day: 23
+    hour: 9
+  endTime:
+    month: 7
+    day: 24
+    hour: 15
 --- !u!1001 &1557377691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252790,6 +252869,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2937931765959104658, guid: feffd464e7346724a92a91bb47caeff4, type: 3}
   m_PrefabInstance: {fileID: 1558955086}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1559416773 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8160565423429720159, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+  m_PrefabInstance: {fileID: 5654136014438362277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1559907835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280507,6 +280597,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!4 &1722025510 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2403507060662654080, guid: 67e6372e37076d141858250b0ed819ff, type: 3}
@@ -299659,6 +299757,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!4 &1823559202 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2705199586950671148, guid: eba653a32d607a848a279a1beda3d884, type: 3}
@@ -306817,6 +306923,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!1001 &1864309374
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -316444,6 +316558,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!1001 &1919854438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -329826,6 +329948,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!1001 &2008919320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -342257,6 +342387,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!1001 &2083874949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352123,6 +352261,14 @@ MonoBehaviour:
   VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
+  startTime:
+    month: 0
+    day: 0
+    hour: 0
+  endTime:
+    month: 0
+    day: 0
+    hour: 0
 --- !u!1001 &3597718302862685533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352595,6 +352741,125 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 594684546320923051, guid: 0005aaf16dd7c0945a984c0eb9787e39, type: 3}
   m_PrefabInstance: {fileID: 5279328124223476373}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5654136014438362277
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 764807303}
+    m_Modifications:
+    - target: {fileID: 1541978040932273574, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 7615592486915259464}
+    - target: {fileID: 2348092396126304573, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_text
+      value: '
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 350
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 105.74652
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1814
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0000014603138
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.04026
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.08753
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708852574724363748, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_Name
+      value: TimeCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 6500014455618626440, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_text
+      value: '
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160565423429720159, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_text
+      value: '
+
+'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 325d7a0a993508f4090149402a40c011, type: 3}
 --- !u!114 &6197533774078462313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352607,6 +352872,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6ff754c59f282488d513bc94848db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SequenceEventDispatcher
+  monthText: {fileID: 1191351460}
+  dayText: {fileID: 1330303365}
+  hourText: {fileID: 1559416773}
 --- !u!114 &6495040595139196626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352744,6 +353012,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 985755059}
   m_SourcePrefab: {fileID: 100100000, guid: c00e296548ef68f4888bd3e3ec5abc6e, type: 3}
+--- !u!224 &6788875859646859863 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3067287939027583378, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+  m_PrefabInstance: {fileID: 5654136014438362277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7035130944481428134
 PrefabInstance:
   m_ObjectHideFlags: 0

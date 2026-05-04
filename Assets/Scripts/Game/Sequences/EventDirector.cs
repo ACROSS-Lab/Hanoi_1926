@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class EventDirector : MonoBehaviour
@@ -6,11 +7,24 @@ public class EventDirector : MonoBehaviour
     public SequenceEvent currentSequenceEvent { get; private set; }
     public bool simulationFinished { get; private set; }
 
+    [SerializeField] TextMeshProUGUI monthText, dayText, hourText;
+
     SequenceEvent[] sequenceEvents;
     
     void Awake()
     {
         sequenceEvents = GetComponentsInChildren<SequenceEvent>();
+    }
+
+    void Start()
+    {
+        GameTime starDate = new GameTime()
+        {
+            month = 7,
+            day = 23,
+            hour = 0
+        };
+        starDate.UpdateUITimeTexts(monthText, dayText, hourText);
     }
 
     public void SetCurrentSequenceEvent(string stepId)
@@ -53,17 +67,14 @@ public class EventDirector : MonoBehaviour
     {
         simulationFinished = false;
         yield return new WaitForSeconds(currentSequenceEvent.simulationDelayStart);
-        VATController controller = currentSequenceEvent.VATController;
-        controller.PlayIndex(currentSequenceEvent.animationIndex);
-        yield return new WaitForSeconds(GetAnimationTime());
-        simulationFinished = true;
-    }
 
-    float GetAnimationTime()
-    {
         VATController controller = currentSequenceEvent.VATController;
-        VATAnimationData.VATAnimation animation = controller.animationData.animations[currentSequenceEvent.animationIndex];
-        float duration = (animation.frameEnd - animation.frameStart + 1) / animation.framerate;
-        return duration;
+        float duration = currentSequenceEvent.GetAnimationTime();
+
+        controller.PlayIndex(currentSequenceEvent.animationIndex);
+        currentSequenceEvent.AdvanceTime(monthText, dayText, hourText);
+        
+        yield return new WaitForSeconds(duration);
+        simulationFinished = true;
     }
 }

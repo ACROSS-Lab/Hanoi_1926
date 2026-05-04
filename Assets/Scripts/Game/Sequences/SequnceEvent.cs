@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,8 +10,12 @@ public class SequenceEvent : MonoBehaviour
 {
     public List<EventsWithDelay> eventsWithDelay;
     public VATController VATController;
-    [Dropdown("GetAnimationIndexes")] public int animationIndex;
-    public float simulationDelayStart = 0;
+    [ShowIf("hasController")] [Dropdown("GetAnimationIndexes")] public int animationIndex;
+    [ShowIf("hasController")] public float simulationDelayStart = 0;
+    [ShowIf("hasController")] public GameTime startTime, endTime;
+
+    bool hasController => VATController != null;
+    GameTime currentTime;
 
     public void TriggerEvents()
     {
@@ -44,6 +49,41 @@ public class SequenceEvent : MonoBehaviour
             }
         }
         return indexes;
+    }
+
+    public float GetAnimationTime()
+    {
+        if (VATController == null) return 0;
+        VATAnimationData.VATAnimation animation = VATController.animationData.animations[animationIndex];
+        float duration = (animation.frameEnd - animation.frameStart + 1) / animation.framerate;
+        return duration;
+    }
+
+    public void AdvanceTime(TextMeshProUGUI monthText,TextMeshProUGUI dayText, TextMeshProUGUI timeText)
+    {
+        StartCoroutine(LerpTimeRoutine(monthText, dayText, timeText));
+    }
+
+    private IEnumerator LerpTimeRoutine(TextMeshProUGUI monthText, TextMeshProUGUI dayText, TextMeshProUGUI timeText)
+    {
+        float startHours = startTime.ToTotalHours();
+        float endHours = endTime.ToTotalHours();
+        
+        float duration = GetAnimationTime();
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            float currentTotalHours = Mathf.Lerp(startHours, endHours, t);
+            currentTime = GameTime.FromTotalHours(currentTotalHours);
+            currentTime.UpdateUITimeTexts(monthText, dayText, timeText);
+            yield return null;
+        }
+
+        currentTime = GameTime.FromTotalHours(endHours);
+        currentTime.UpdateUITimeTexts(monthText, dayText, timeText);
     }
 }
 
