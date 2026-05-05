@@ -64181,7 +64181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StepEventHandler
   eventsWithDelay:
-  - delay: 11
+  - delay: 8
     unityEvent:
       m_PersistentCalls:
         m_Calls:
@@ -76538,7 +76538,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  VATController: {fileID: 0}
+  VATController: {fileID: 688674342}
   animationIndex: 0
   simulationDelayStart: 0
   startTime:
@@ -231889,9 +231889,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3306698765401698308, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
   m_PrefabInstance: {fileID: 1433212369}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1433212371 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2916214143756821606, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
+--- !u!198 &1433212373 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 118473420995496436, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
   m_PrefabInstance: {fileID: 1433212369}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1433353850
@@ -281062,7 +281062,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  VATController: {fileID: 688674342}
+  VATController: {fileID: 0}
   animationIndex: 0
   simulationDelayStart: 0
   startTime:
@@ -300093,7 +300093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StepEventHandler
   eventsWithDelay:
-  - delay: 3
+  - delay: 2
     unityEvent:
       m_PersistentCalls:
         m_Calls:
@@ -300133,7 +300133,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - delay: 4
+  - delay: 3
     unityEvent:
       m_PersistentCalls:
         m_Calls:
@@ -300161,9 +300161,9 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-        - m_Target: {fileID: 1433212371}
+        - m_Target: {fileID: 1433212373}
           m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-          m_MethodName: 
+          m_MethodName: Play
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -353693,7 +353693,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 3
+  debugStepIndex: 17
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:
