@@ -119,7 +119,7 @@ public class SequenceDirector : MonoBehaviour
             }
         }
 
-        if (step.hasSequenceEvents)
+        if (step.hasSequenceEvents && eventDirector.HasSimulationInParallel())
         {
             while (!eventDirector.simulationFinished)
             {
