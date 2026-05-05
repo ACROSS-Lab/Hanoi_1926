@@ -42,89 +42,144 @@ public class SequenceDirector : MonoBehaviour
     {
         if (fastForward)
         {
-            if (step.hasSequenceEvents)
-            {
-                eventDirector.SetCurrentSequenceEvent(step.name);
-                eventDirector.TriggerEventsForStep();
-            }
-
-            if (step.hasNarratorMovement)
-            {
-                narrator.transform.position = step.targetNarratorPosition;
-                narrator.transform.localScale = new Vector3(step.targetNarratorScale, step.targetNarratorScale, step.targetNarratorScale);  
-            }
-
-            if (step.hasPlayerMovement)
-            {
-                playerTransition.transform.position = step.playerTargetPosition;
-                playerTransition.transform.rotation = Quaternion.Euler(step.playerTargetRotation);
-            }
-
+            ApplyFastForward(step);
             yield break;
         }
 
-        if (step.hasSequenceEvents) 
+        yield return HandleEventsStart(step);
+        HandlePlayer(step);
+        yield return HandleNarrator(step);
+        yield return HandleEventsStart(step);
+        yield return HandleDialogue(step);
+        yield return HandleInteraction(step);
+        yield return HandleParallelSimulation(step);
+    }
+
+    void ApplyFastForward(SequenceStep step)
+    {
+        if (step.hasSequenceEvents)
         {
             eventDirector.SetCurrentSequenceEvent(step.name);
-
-            if (eventDirector.HasSimulationInParallel())
-            {
-                eventDirector.PlaySimulation();
-            }
-        }
-
-        if (step.hasPlayerMovement)
-        {
-            playerTransition.MovePlayer(step.playerTargetPosition, step.hasPlayerRotation, step.playerTargetRotation, step.hasSceneTransition, step.sceneName, step.isGoingBackToMainScene);
+            eventDirector.TriggerEventsForStep();
         }
 
         if (step.hasNarratorMovement)
         {
-            Tween action = narrator.Move(step.targetNarratorPosition, step.offsetAtCenter, step.hasNarratorRotation, step.targetNarratorRotation, step.targetNarratorScale, step.flyDuration);
-            yield return action.WaitForCompletion();
+            narrator.transform.position = step.targetNarratorPosition;
+            narrator.transform.localScale = Vector3.one * step.targetNarratorScale;
         }
 
-        if (step.hasSequenceEvents) eventDirector.TriggerEventsForStep();
-
-        if (step.hasDialogue)
+        if (step.hasPlayerMovement)
         {
-            yield return new WaitForSeconds(step.timeWaitBeforeTalking);
-            float talkingTime = narrator.StartTalking(step.dialogueKey, step.bodyState, step.eyesState, step.mouthStartState, step.isUsingOverlay);
-            yield return new WaitForSeconds(talkingTime);
-            narrator.FinishDialogue(step.mouthEndState);
-            yield return new WaitForSeconds(step.timeWaitAfterTalking);
-            narrator.DisableDialogueBox();
+            playerTransition.transform.SetPositionAndRotation(
+                step.playerTargetPosition,
+                Quaternion.Euler(step.playerTargetRotation)
+            );
+        }
+    }
+
+    IEnumerator HandleEventsStart(SequenceStep step)
+    {
+        if (!step.hasSequenceEvents) yield break;
+
+        eventDirector.SetCurrentSequenceEvent(step.name);
+
+        if (eventDirector.HasSimulationInParallel())
+        {
+            eventDirector.PlaySimulation();
         }
 
-        if (step.hasInteraction)
+        yield break;
+    }
+
+    void HandlePlayer(SequenceStep step)
+    {
+        if (!step.hasPlayerMovement) return;
+
+        playerTransition.MovePlayer(
+            step.playerTargetPosition,
+            step.hasPlayerRotation,
+            step.playerTargetRotation,
+            step.hasSceneTransition,
+            step.sceneName,
+            step.isGoingBackToMainScene
+        );
+    }
+
+    IEnumerator HandleNarrator(SequenceStep step)
+    {
+        if (!step.hasNarratorMovement) yield break;
+
+        Tween action = narrator.Move(
+            step.targetNarratorPosition,
+            step.offsetAtCenter,
+            step.hasNarratorRotation,
+            step.targetNarratorRotation,
+            step.targetNarratorScale,
+            step.flyDuration
+        );
+
+        yield return action.WaitForCompletion();
+    }
+
+    IEnumerator HandleDialogue(SequenceStep step)
+    {
+        if (!step.hasDialogue) yield break;
+
+        yield return new WaitForSeconds(step.timeWaitBeforeTalking);
+
+        float talkingTime = narrator.StartTalking(
+            step.dialogueKey,
+            step.bodyState,
+            step.eyesState,
+            step.mouthStartState,
+            step.isUsingOverlay
+        );
+
+        yield return new WaitForSeconds(talkingTime);
+
+        narrator.FinishDialogue(step.mouthEndState);
+
+        yield return new WaitForSeconds(step.timeWaitAfterTalking);
+
+        narrator.DisableDialogueBox();
+    }
+
+    IEnumerator HandleInteraction(SequenceStep step)
+    {
+        if (!step.hasInteraction) yield break;
+
+        hasPerformedAction = false;
+
+        float timer = 0f;
+        bool useTimeout = step.waitTimeout > 0f;
+
+        while (!hasPerformedAction)
         {
-            hasPerformedAction = false;
-
-            float timer = 0;
-            bool hasTimeOut = step.waitTimeout > 0;
-
-            while (!hasPerformedAction)
+            if (useTimeout)
             {
-                if (hasTimeOut)
+                timer += Time.deltaTime;
+                if (timer >= step.waitTimeout)
                 {
-                    timer += Time.deltaTime;
-                    if (timer >= step.waitTimeout)
-                    {
-                        Debug.Log("Time out reached, performing default action");
-                        hasPerformedAction = true;
-                        break;
-                    }
+                    Debug.Log("Timeout reached, performing default action");
+                    break;
                 }
-                yield return null;
             }
+
+            yield return null;
         }
 
-        if (step.hasSequenceEvents && eventDirector.HasSimulationInParallel())
+        hasPerformedAction = true;
+    }
+
+    IEnumerator HandleParallelSimulation(SequenceStep step)
+    {
+        if (!step.hasSequenceEvents) yield break;
+        if (!eventDirector.HasSimulationInParallel()) yield break;
+
+        while (!eventDirector.simulationFinished)
         {
-            while (!eventDirector.simulationFinished)
-            {
-                yield return null;
-            }
+            yield return null;
         }
     }
 
