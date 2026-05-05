@@ -58,33 +58,6 @@ public class SequenceEvent : MonoBehaviour
         float duration = (animation.frameEnd - animation.frameStart + 1) / animation.framerate;
         return duration;
     }
-
-    public void AdvanceTime(TextMeshProUGUI monthText,TextMeshProUGUI dayText, TextMeshProUGUI timeText)
-    {
-        StartCoroutine(LerpTimeRoutine(monthText, dayText, timeText));
-    }
-
-    private IEnumerator LerpTimeRoutine(TextMeshProUGUI monthText, TextMeshProUGUI dayText, TextMeshProUGUI timeText)
-    {
-        float startHours = startTime.ToTotalHours();
-        float endHours = endTime.ToTotalHours();
-        
-        float duration = GetAnimationTime();
-        float elapsed = 0f;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / duration;
-            float currentTotalHours = Mathf.Lerp(startHours, endHours, t);
-            currentTime = GameTime.FromTotalHours(currentTotalHours);
-            currentTime.UpdateUITimeTexts(monthText, dayText, timeText);
-            yield return null;
-        }
-
-        currentTime = GameTime.FromTotalHours(endHours);
-        currentTime.UpdateUITimeTexts(monthText, dayText, timeText);
-    }
 }
 
 [Serializable]

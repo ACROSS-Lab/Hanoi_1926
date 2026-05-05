@@ -78,18 +78,4 @@ public struct GameTime
 
         return time;
     }
-
-    public void UpdateUITimeTexts(TextMeshProUGUI monthText, TextMeshProUGUI dayText, TextMeshProUGUI timeText)
-    {
-        string key = monthKeys[month - 1];
-        monthText.text = LocalizationManager.Instance.GetLocalizedValue(key);  
-        dayText.text = day.ToString("00");
-
-        bool isAM = hour < 12;
-        int displayHour = hour % 12;
-        if (displayHour == 0) displayHour = 12;
-
-        string amPm = isAM ? "AM" : "PM";
-        timeText.text = $"{displayHour:D2}:00 {amPm}";
-    }
 }

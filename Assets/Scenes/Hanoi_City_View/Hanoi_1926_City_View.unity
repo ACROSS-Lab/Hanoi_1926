@@ -190790,17 +190790,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5623613401902888356, guid: 280aff48afef2b44bb4b78d93ebd3cda, type: 3}
   m_PrefabInstance: {fileID: 1191303709}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1191351460 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6500014455618626440, guid: 325d7a0a993508f4090149402a40c011, type: 3}
-  m_PrefabInstance: {fileID: 5654136014438362277}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &1192064088
 GameObject:
   m_ObjectHideFlags: 0
@@ -211678,17 +211667,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8123250085496039170, guid: 17d3c5f71a7ff1c418bf3f99a3aa172b, type: 3}
   m_PrefabInstance: {fileID: 1329717657}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1330303365 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2348092396126304573, guid: 325d7a0a993508f4090149402a40c011, type: 3}
-  m_PrefabInstance: {fileID: 5654136014438362277}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1330840653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252886,17 +252864,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2937931765959104658, guid: feffd464e7346724a92a91bb47caeff4, type: 3}
   m_PrefabInstance: {fileID: 1558955086}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1559416773 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8160565423429720159, guid: 325d7a0a993508f4090149402a40c011, type: 3}
-  m_PrefabInstance: {fileID: 5654136014438362277}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1559907835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -352709,6 +352676,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 764807303}
     m_Modifications:
+    - target: {fileID: 1032463537887788927, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032463537887788927, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032463537887788927, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032463537887788927, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032463537887788927, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1032463537887788927, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1541978040932273574, guid: 325d7a0a993508f4090149402a40c011, type: 3}
       propertyPath: m_Camera
       value: 
@@ -352799,6 +352790,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4373511747990744358, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373511747990744358, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373511747990744358, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373511747990744358, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373511747990744358, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4373511747990744358, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4708852574724363748, guid: 325d7a0a993508f4090149402a40c011, type: 3}
       propertyPath: m_Name
       value: TimeCanvas
@@ -352820,6 +352835,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+--- !u!114 &5654136014438362278 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6369427529288977226, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+  m_PrefabInstance: {fileID: 5654136014438362277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe36feb7d8c8b54493ae3d83aabacff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameTimeManager
 --- !u!114 &6197533774078462313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352832,9 +352858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d6ff754c59f282488d513bc94848db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SequenceEventDispatcher
-  monthText: {fileID: 1191351460}
-  dayText: {fileID: 1330303365}
-  hourText: {fileID: 1559416773}
+  gameTimeManager: {fileID: 5654136014438362278}
 --- !u!114 &6495040595139196626
 MonoBehaviour:
   m_ObjectHideFlags: 0

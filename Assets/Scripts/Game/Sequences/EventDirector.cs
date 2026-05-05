@@ -7,24 +7,13 @@ public class EventDirector : MonoBehaviour
     public SequenceEvent currentSequenceEvent { get; private set; }
     public bool simulationFinished { get; private set; }
 
-    [SerializeField] TextMeshProUGUI monthText, dayText, hourText;
+    [SerializeField] GameTimeManager gameTimeManager;
 
     SequenceEvent[] sequenceEvents;
     
     void Awake()
     {
         sequenceEvents = GetComponentsInChildren<SequenceEvent>();
-    }
-
-    void Start()
-    {
-        GameTime starDate = new GameTime()
-        {
-            month = 7,
-            day = 23,
-            hour = 0
-        };
-        starDate.UpdateUITimeTexts(monthText, dayText, hourText);
     }
 
     public void SetCurrentSequenceEvent(string stepId)
@@ -72,7 +61,7 @@ public class EventDirector : MonoBehaviour
         float duration = currentSequenceEvent.GetAnimationTime();
 
         controller.PlayIndex(currentSequenceEvent.animationIndex);
-        currentSequenceEvent.AdvanceTime(monthText, dayText, hourText);
+        gameTimeManager.AdvanceTime(currentSequenceEvent.startTime, currentSequenceEvent.endTime, duration);
         
         yield return new WaitForSeconds(duration);
         simulationFinished = true;
