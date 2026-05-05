@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: Simulation_Plane_04_VATAnimationData
   m_EditorClassIdentifier: OpenVATRuntime::VATAnimationData
   animations:
-  - name: Default
+  - name: Simulation_4_01
     frameStart: 1
-    frameEnd: 289
-    framerate: 30
-    looping: 1
+    frameEnd: 190
+    framerate: 15
+    looping: 0
+  - name: Simulation_4_02
+    frameStart: 190
+    frameEnd: 288
+    framerate: 15
+    looping: 0
