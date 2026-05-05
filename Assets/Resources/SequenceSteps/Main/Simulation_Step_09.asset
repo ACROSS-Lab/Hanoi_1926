@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: Simulation_Step_09
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 1
-  hasNarratorMovement: 0
-  targetNarratorPosition: {x: 0, y: 0, z: 0}
-  offsetAtCenter: {x: 0, y: 0, z: 0}
+  hasNarratorMovement: 1
+  targetNarratorPosition: {x: -2.3, y: -0.15, z: -3.67}
+  offsetAtCenter: {x: 0, y: 0.2, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 0
-  flyDuration: 0
-  hasPlayerMovement: 0
-  playerTargetPosition: {x: 0, y: 0, z: 0}
+  targetNarratorScale: 1
+  flyDuration: 3
+  hasPlayerMovement: 1
+  playerTargetPosition: {x: -1.635, y: -0.63, z: -0.269}
   hasPlayerRotation: 0
   playerTargetRotation: {x: 0, y: 0, z: 0}
   hasSceneTransition: 0
@@ -31,10 +31,10 @@ MonoBehaviour:
   timeWaitBeforeTalking: 0
   dialogueKey: narrator.dialogue.18
   isUsingOverlay: 0
-  bodyState: 3
+  bodyState: 0
   eyesState: 2
   mouthStartState: 1
   mouthEndState: 3
-  timeWaitAfterTalking: 0
+  timeWaitAfterTalking: 6
   hasInteraction: 0
   waitTimeout: 15

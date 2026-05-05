@@ -11,14 +11,15 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 8ded1a3c17322084b9891d26038201c5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ALPHATEST_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 2450
   stringTagMap:
-    RenderType: Opaque
+    RenderType: TransparentCutout
   disabledShaderPasses:
   - SHADOWCASTER
   - MOTIONVECTORS
@@ -44,8 +45,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 0
-    - _AlphaToMask: 0
+    - _Alpha: 0
+    - _AlphaClip: 1
+    - _AlphaToMask: 1
     - _Blend: 2
     - _BlendDirection: 0
     - _BlendDuration: 0
@@ -65,6 +67,7 @@ Material:
     - _LoopA: 1
     - _LoopB: 1
     - _Metallic: 0
+    - _Opacity_Falloff: 0.11
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 0
@@ -87,6 +90,8 @@ Material:
     - _Basecolor: {r: 0.3372549, g: 0.53333336, b: 0.3647059, a: 0}
     - _MaxA: {r: 0, g: 0, b: 0.1, a: 0}
     - _MinA: {r: 0, g: 0, b: 0, a: 0}
+    - _Zone_Center: {r: -1.81, g: 0, b: -1.35, a: 0}
+    - _Zone_Size: {r: 3.22, g: 0, b: 2.35, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &8706072003692751222
