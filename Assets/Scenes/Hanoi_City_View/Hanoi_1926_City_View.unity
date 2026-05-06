@@ -76542,12 +76542,12 @@ MonoBehaviour:
   animationIndex: 0
   simulationDelayStart: 0
   startTime:
-    month: 0
-    day: 0
+    month: 7
+    day: 30
     hour: 0
   endTime:
-    month: 0
-    day: 0
+    month: 8
+    day: 10
     hour: 0
 --- !u!1001 &465256784
 PrefabInstance:
@@ -111420,12 +111420,12 @@ MonoBehaviour:
   animationIndex: 0
   simulationDelayStart: 0
   startTime:
-    month: 0
-    day: 0
+    month: 7
+    day: 29
     hour: 0
   endTime:
-    month: 0
-    day: 0
+    month: 7
+    day: 30
     hour: 0
 --- !u!4 &666259259 stripped
 Transform:
@@ -272130,7 +272130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20eaf2bfc8543794988ffae121774177, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 76.9
+      value: 115
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 20eaf2bfc8543794988ffae121774177, type: 3}
       propertyPath: m_LocalPosition.z
@@ -272186,7 +272186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 20eaf2bfc8543794988ffae121774177, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 2147483647
+      value: 126
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -300566,12 +300566,12 @@ MonoBehaviour:
   animationIndex: 1
   simulationDelayStart: 0
   startTime:
-    month: 0
-    day: 0
+    month: 7
+    day: 30
     hour: 0
   endTime:
-    month: 0
-    day: 0
+    month: 7
+    day: 30
     hour: 0
 --- !u!4 &1823559202 stripped
 Transform:
@@ -354118,7 +354118,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 0
+  debugStepIndex: 9
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:
