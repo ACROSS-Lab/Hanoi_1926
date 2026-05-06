@@ -48,28 +48,27 @@ public class EventDirector : MonoBehaviour
     {
         simulationFinished = false;
 
-        if (currentController != currentSequenceEvent.VATController)
+        VATController newController = currentSequenceEvent.VATController;
+        bool isSwitching = currentController != newController;
+        if (isSwitching)
         {
-            if (currentController != null) currentController.gameObject.SetActive(false);
-            currentController = currentSequenceEvent.VATController;
-            currentController.gameObject.SetActive(true);
+            newController.gameObject.SetActive(true);
         }
 
         yield return new WaitForSeconds(currentSequenceEvent.simulationDelayStart);
+        yield return new WaitUntil(() => newController.hasAnimState);
 
-        VATController controller = currentSequenceEvent.VATController;
-        Debug.Log(controller.name);
+        newController.PlayIndex(currentSequenceEvent.animationIndex);
+
+        yield return new WaitForSeconds(0.1f);
+        if (currentController != null && isSwitching) currentController.gameObject.SetActive(false);
+        currentController = newController;
+
         float duration = currentSequenceEvent.GetAnimationTime();
-
-        while (!controller.hasAnimState) 
-        {
-            yield return null;
-        }
-
-        controller.PlayIndex(currentSequenceEvent.animationIndex);
         gameTimeManager.AdvanceTime(currentSequenceEvent.startTime, currentSequenceEvent.endTime, duration);
         
         yield return new WaitForSeconds(duration);
+
         simulationFinished = true;
     }
 }

@@ -49,7 +49,6 @@ public class SequenceDirector : MonoBehaviour
         yield return HandleEventsStart(step);
         HandlePlayer(step);
         yield return HandleNarrator(step);
-        yield return HandleEventsStart(step);
         yield return HandleDialogue(step);
         yield return HandleInteraction(step);
         yield return HandleParallelSimulation(step);

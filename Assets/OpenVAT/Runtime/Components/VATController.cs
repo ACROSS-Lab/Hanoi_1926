@@ -90,6 +90,8 @@ public class VATController : MonoBehaviour
         }
 
         ApplyState(force: true);
+
+        Pause();
     }
 
     // =============================================
