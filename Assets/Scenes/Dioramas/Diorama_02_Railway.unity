@@ -10647,7 +10647,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1523086031}
-  - component: {fileID: 1523086032}
   m_Layer: 0
   m_Name: PlayerPos
   m_TagString: Untagged
@@ -10670,14 +10669,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!81 &1523086032
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1523086030}
-  m_Enabled: 0
 --- !u!1001 &1523200589
 PrefabInstance:
   m_ObjectHideFlags: 0
