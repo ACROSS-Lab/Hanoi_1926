@@ -22,19 +22,7 @@ public class EventDirector : MonoBehaviour
         foreach (SequenceEvent sequenceEvent in sequenceEvents)
         {
             if (string.Equals(sequenceEvent.name, stepId))
-            {
-                // VATController currentController = currentSequenceEvent?.VATController;
-                // VATController newController = sequenceEvent.VATController;
-                
-                // Debug.Log("Current controller: " + currentController);
-                // Debug.Log("SetCurrentSequenceEvent: " + sequenceEvent.name + ", " + newController);
-                
-                // if (newController != null && newController != currentController)
-                // {
-                //     if (currentController != null) currentController.gameObject.SetActive(false);
-                //     newController.gameObject.SetActive(true);
-                // }
-        
+            {        
                 currentSequenceEvent = sequenceEvent;
                 break;
             }

@@ -83,6 +83,7 @@ public class SequenceDirector : MonoBehaviour
         if (!step.hasSequenceEvents) yield break;
 
         eventDirector.SetCurrentSequenceEvent(step.name);
+        eventDirector.TriggerEventsForStep();
 
         if (eventDirector.HasSimulationInParallel())
         {
