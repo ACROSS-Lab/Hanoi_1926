@@ -100796,36 +100796,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 735407193040273925, guid: a969e06691f84d94d9c6516c11112180, type: 3}
   m_PrefabInstance: {fileID: 1657793812}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &605998945 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5348964749828010170, guid: e8998eb58c1b8014096cbc187c399dba, type: 3}
-  m_PrefabInstance: {fileID: 989673498}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &605998946 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6958181339061488846, guid: e8998eb58c1b8014096cbc187c399dba, type: 3}
   m_PrefabInstance: {fileID: 989673498}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605998945}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c3e30ff63cae0845b0fa6e198742d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: OpenVATRuntime::VATController
---- !u!114 &605998950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 605998945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f9a2571c733354988c84ea199d09fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VATDebugger
-  vat: {fileID: 605998946}
-  stopIndex: 0
 --- !u!1001 &606272417
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102180,31 +102161,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9110615708171977236, guid: bf21805336c50b847a30004b13cf3fee, type: 3}
   m_PrefabInstance: {fileID: 615364873}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &615775409 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8042884326170707936, guid: 5db60a043ff3b3e48b340d6ce5b035c8, type: 3}
-  m_PrefabInstance: {fileID: 1580807670}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &615775410
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615775409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f9a2571c733354988c84ea199d09fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VATDebugger
-  vat: {fileID: 615775411}
-  stopIndex: 0
 --- !u!114 &615775411 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6706490136094032859, guid: 5db60a043ff3b3e48b340d6ce5b035c8, type: 3}
   m_PrefabInstance: {fileID: 1580807670}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615775409}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c3e30ff63cae0845b0fa6e198742d23, type: 3}
@@ -106006,41 +105968,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6893917374155644567, guid: 500d50e9758368d49849f0902d9fc24d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 637812202}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 500d50e9758368d49849f0902d9fc24d, type: 3}
---- !u!1 &637812200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6893917374155644567, guid: 500d50e9758368d49849f0902d9fc24d, type: 3}
-  m_PrefabInstance: {fileID: 637812199}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &637812201 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 604533576818144271, guid: 500d50e9758368d49849f0902d9fc24d, type: 3}
   m_PrefabInstance: {fileID: 637812199}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637812200}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c3e30ff63cae0845b0fa6e198742d23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: OpenVATRuntime::VATController
---- !u!114 &637812202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 637812200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f9a2571c733354988c84ea199d09fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VATDebugger
-  vat: {fileID: 637812201}
-  stopIndex: 0
 --- !u!4 &637812203 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6118085114439173165, guid: 500d50e9758368d49849f0902d9fc24d, type: 3}
@@ -123349,6 +123289,10 @@ PrefabInstance:
     - target: {fileID: 2916214143756821606, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
       propertyPath: m_Name
       value: FX_Splash_New_GiaQuat
+      objectReference: {fileID: 0}
+    - target: {fileID: 2916214143756821606, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3306698765401698308, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
       propertyPath: m_LocalScale.x
@@ -159359,31 +159303,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7787871863717954443, guid: 318e0686b87e4b44f97183da8a8ca427, type: 3}
   m_PrefabInstance: {fileID: 984102682}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &984196805 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8034721896772479504, guid: 46365920d29efa94081b97b07af9a964, type: 3}
-  m_PrefabInstance: {fileID: 1863325399}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &984196806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984196805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28f9a2571c733354988c84ea199d09fd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::VATDebugger
-  vat: {fileID: 984196807}
-  stopIndex: 0
 --- !u!114 &984196807 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5847439133934892786, guid: 46365920d29efa94081b97b07af9a964, type: 3}
   m_PrefabInstance: {fileID: 1863325399}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 984196805}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c3e30ff63cae0845b0fa6e198742d23, type: 3}
@@ -160159,10 +160084,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5348964749828010170, guid: e8998eb58c1b8014096cbc187c399dba, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 605998950}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8998eb58c1b8014096cbc187c399dba, type: 3}
 --- !u!4 &989673499 stripped
 Transform:
@@ -232120,6 +232042,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Splash_AiiMo
       objectReference: {fileID: 0}
+    - target: {fileID: 2916214143756821606, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3306698765401698308, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -256427,10 +256353,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8042884326170707936, guid: 5db60a043ff3b3e48b340d6ce5b035c8, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 615775410}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5db60a043ff3b3e48b340d6ce5b035c8, type: 3}
 --- !u!4 &1580807671 stripped
 Transform:
@@ -273361,6 +273284,10 @@ PrefabInstance:
     - target: {fileID: 2916214143756821606, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
       propertyPath: m_Name
       value: FX_Splash_OldGiaQuat
+      objectReference: {fileID: 0}
+    - target: {fileID: 2916214143756821606, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3306698765401698308, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
       propertyPath: m_LocalScale.x
@@ -307570,10 +307497,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8034721896772479504, guid: 46365920d29efa94081b97b07af9a964, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 984196806}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46365920d29efa94081b97b07af9a964, type: 3}
 --- !u!4 &1863325400 stripped
 Transform:
@@ -314395,7 +314319,7 @@ MonoBehaviour:
   useRandomVolume: 0
   volumeMin: 0.8
   volumeMax: 1
-  playOnAwake: 1
+  playOnAwake: 0
 --- !u!4 &1900842475 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8812275166687209658, guid: 64de9472df1b80a4f82c2294f2e8eb9b, type: 3}
@@ -331802,7 +331726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c0fb59e797f9c4394b260c04181050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationManager
-  currentLanguage: French
+  currentLanguage: English
 --- !u!4 &2015688264
 Transform:
   m_ObjectHideFlags: 0
@@ -345786,6 +345710,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Splash_Lam_Du
       objectReference: {fileID: 0}
+    - target: {fileID: 2916214143756821606, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3306698765401698308, guid: 5e74cbcdd0bef96439d95bf753d3e210, type: 3}
       propertyPath: m_LocalScale.x
       value: 1
@@ -354098,6 +354026,18 @@ PrefabInstance:
       value: '
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032212641695410746, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: distanceFromCamera.x
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032212641695410746, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: distanceFromCamera.y
+      value: 0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9032212641695410746, guid: 325d7a0a993508f4090149402a40c011, type: 3}
+      propertyPath: distanceFromCamera.z
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
