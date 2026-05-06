@@ -15,7 +15,6 @@ public class SequenceEvent : MonoBehaviour
     [ShowIf("hasController")] public GameTime startTime, endTime;
 
     bool hasController => VATController != null;
-    GameTime currentTime;
 
     public void TriggerEvents()
     {

@@ -41,6 +41,7 @@ public class VATController : MonoBehaviour
 
     /// <summary>True while the animation is paused.</summary>
     public bool IsPaused => animState != null && animState.IsPaused;
+    public bool hasAnimState => animState != null;
 
     // =============================================
     //  UNITY LIFECYCLE

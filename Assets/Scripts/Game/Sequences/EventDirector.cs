@@ -10,6 +10,7 @@ public class EventDirector : MonoBehaviour
     [SerializeField] GameTimeManager gameTimeManager;
 
     SequenceEvent[] sequenceEvents;
+    VATController currentController;
     
     void Awake()
     {
@@ -22,14 +23,17 @@ public class EventDirector : MonoBehaviour
         {
             if (string.Equals(sequenceEvent.name, stepId))
             {
-                VATController currentController = currentSequenceEvent?.VATController;
-                VATController newController = sequenceEvent.VATController;
+                // VATController currentController = currentSequenceEvent?.VATController;
+                // VATController newController = sequenceEvent.VATController;
                 
-                if (newController != null && newController != currentController)
-                {
-                    if (currentController != null) currentController.gameObject.SetActive(false);
-                    newController.gameObject.SetActive(true);
-                }
+                // Debug.Log("Current controller: " + currentController);
+                // Debug.Log("SetCurrentSequenceEvent: " + sequenceEvent.name + ", " + newController);
+                
+                // if (newController != null && newController != currentController)
+                // {
+                //     if (currentController != null) currentController.gameObject.SetActive(false);
+                //     newController.gameObject.SetActive(true);
+                // }
         
                 currentSequenceEvent = sequenceEvent;
                 break;
@@ -55,10 +59,24 @@ public class EventDirector : MonoBehaviour
     IEnumerator SimulationCoroutine()
     {
         simulationFinished = false;
+
+        if (currentController != currentSequenceEvent.VATController)
+        {
+            if (currentController != null) currentController.gameObject.SetActive(false);
+            currentController = currentSequenceEvent.VATController;
+            currentController.gameObject.SetActive(true);
+        }
+
         yield return new WaitForSeconds(currentSequenceEvent.simulationDelayStart);
 
         VATController controller = currentSequenceEvent.VATController;
+        Debug.Log(controller.name);
         float duration = currentSequenceEvent.GetAnimationTime();
+
+        while (!controller.hasAnimState) 
+        {
+            yield return null;
+        }
 
         controller.PlayIndex(currentSequenceEvent.animationIndex);
         gameTimeManager.AdvanceTime(currentSequenceEvent.startTime, currentSequenceEvent.endTime, duration);
