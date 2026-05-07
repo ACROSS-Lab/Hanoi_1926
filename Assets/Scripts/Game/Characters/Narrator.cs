@@ -14,17 +14,6 @@ public class Narrator : MonoBehaviour
     [SerializeField] TextMeshProUGUI overlayText, nestedText;
     // [SerializeField] float smoothTurn = 10f;
 
-    [Header("Nested Canvas Options")]
-    [SerializeField] Vector3 offsetPosition = new Vector3(-1.96f, 0.48f, 0.09f);
-    [SerializeField] Quaternion offsetRotation = new Quaternion(0, 0, 0, 1);
-    [SerializeField] float scaleMultiplier = 0.15f;
-    Transform nestedCanvasTransform;
-
-    void Start()
-    {
-        nestedCanvasTransform = nestedCanvas.transform;
-    }
-
     public Tween Move(Vector3 targetPosition, Vector3 offsetAtCenter, bool hasRotation, Vector3 targetRotation, float targetScale, float flyDuration)
     {
         Vector3 midPoint = Vector3.Lerp(transform.position, targetPosition, 0.5f) + offsetAtCenter;
@@ -56,7 +45,7 @@ public class Narrator : MonoBehaviour
             overlayCanvas.SetActive(false);
             nestedCanvas.SetActive(true);
             localizedKey.textComponent = nestedText;
-            UpdateNestedCanvasTransform();
+            nestedCanvas.GetComponent<TrajectoryCanvasFollower>().SetPosition();
         }
 
         localizedKey.UpdateText();
@@ -80,19 +69,5 @@ public class Narrator : MonoBehaviour
     public void DisableDialogueBox()
     {
         dialogueBoxes.SetActive(false);
-    }
-
-    // void LateUpdate()
-    // {
-    //     Vector3 direction = Camera.main.transform.position - transform.position;
-    //     direction.y = 0;
-    //     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * smoothTurn);
-    // }
-
-    void UpdateNestedCanvasTransform()
-    {
-        nestedCanvasTransform.position = transform.TransformPoint(offsetPosition);
-        nestedCanvasTransform.rotation = transform.rotation * offsetRotation;
-        nestedCanvasTransform.localScale = transform.localScale * scaleMultiplier;
     }
 }
