@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: Simulation_Step_06_c
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 0
-  hasNarratorMovement: 1
+  hasNarratorMovement: 0
   targetNarratorPosition: {x: -1, y: 0, z: -3}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
   targetNarratorScale: 1
   flyDuration: 0
-  hasPlayerMovement: 1
+  hasPlayerMovement: 0
   playerTargetPosition: {x: -1.802, y: -1, z: -1.074}
   hasPlayerRotation: 1
   playerTargetRotation: {x: 0, y: 180, z: 0}
   hasSceneTransition: 1
-  sceneName: Diorama_03_Quay
-  isGoingBackToMainScene: 1
-  hasDialogue: 0
-  timeWaitBeforeTalking: 0
-  dialogueKey: narrator.dialogue.diorama1.01
+  sceneName: 0
+  isGoingBackToMainScene: 0
+  hasDialogue: 1
+  timeWaitBeforeTalking: 2
+  dialogueKey: narrator.dialogue.diorama2.02
   isUsingOverlay: 0
   bodyState: 3
   eyesState: 2

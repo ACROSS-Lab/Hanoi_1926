@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
   m_Name: Simulation_Step_06_b
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
+  hasSequenceEvents: 0
   hasNarratorMovement: 1
   targetNarratorPosition: {x: 6.502, y: 0.2, z: 0.16}
   offsetAtCenter: {x: 0, y: 0, z: 0}
@@ -35,5 +36,5 @@ MonoBehaviour:
   mouthStartState: 1
   mouthEndState: 3
   timeWaitAfterTalking: 0
-  hasInteraction: 1
+  hasInteraction: 0
   waitTimeout: 25
