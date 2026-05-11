@@ -28,7 +28,7 @@ MonoBehaviour:
   sceneName: Diorama_02_Railway
   isGoingBackToMainScene: 0
   hasDialogue: 1
-  timeWaitBeforeTalking: 0
+  timeWaitBeforeTalking: 3
   dialogueKey: narrator.dialogue.diorama3.01
   isUsingOverlay: 0
   bodyState: 4
