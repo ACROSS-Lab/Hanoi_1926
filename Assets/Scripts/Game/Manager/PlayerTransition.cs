@@ -48,9 +48,11 @@ public class PlayerTransition : MonoBehaviour
 
         if (hasSceneTransition)
         {
-            if (isGoingBackToMainScene) StartCoroutine(TransitionBack(sceneName));
-            else StartCoroutine(TransitionToSideScene(sceneName));
+            if (isGoingBackToMainScene) yield return TransitionBack(sceneName);
+            else yield return TransitionToSideScene(sceneName);
         }
+
+        yield return new WaitForSeconds(1f);
         
         if (fadeCanvasGroup != null)
         {

@@ -152,18 +152,14 @@ public class SequenceDirector : MonoBehaviour
         hasPerformedAction = false;
 
         float timer = 0f;
-        bool useTimeout = step.waitTimeout > 0f;
 
         while (!hasPerformedAction)
         {
-            if (useTimeout)
+            timer += Time.deltaTime;
+            if (timer >= step.waitTimeout)
             {
-                timer += Time.deltaTime;
-                if (timer >= step.waitTimeout)
-                {
-                    Debug.Log("Timeout reached, performing default action");
-                    break;
-                }
+                Debug.Log("Timeout reached, performing default action");
+                break;
             }
 
             yield return null;
