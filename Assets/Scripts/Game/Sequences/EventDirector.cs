@@ -65,7 +65,7 @@ public class EventDirector : MonoBehaviour
         currentController = newController;
 
         float duration = currentSequenceEvent.GetAnimationTime();
-        gameTimeManager.AdvanceTime(currentSequenceEvent.startTime, currentSequenceEvent.endTime, duration);
+        gameTimeManager.AdvanceTime(currentSequenceEvent.startTime, currentSequenceEvent.endTime, currentSequenceEvent.startHeight, currentSequenceEvent.endHeight, duration);
         
         yield return new WaitForSeconds(duration);
 

@@ -13,6 +13,7 @@ public class SequenceEvent : MonoBehaviour
     [ShowIf("hasController")] [Dropdown("GetAnimationIndexes")] public int animationIndex;
     [ShowIf("hasController")] public float simulationDelayStart = 0;
     [ShowIf("hasController")] public GameTime startTime, endTime;
+    [ShowIf("hasController")] public float startHeight, endHeight;
 
     bool hasController => VATController != null;
 

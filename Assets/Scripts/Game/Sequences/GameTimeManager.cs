@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class GameTimeManager : MonoBehaviour 
 {
+    [Header("Text Components")]
     [SerializeField] TextMeshProUGUI dayText;
     [SerializeField] TextMeshProUGUI monthText;
     [SerializeField] TextMeshProUGUI hourText;
+    [SerializeField] TextMeshProUGUI heightText;
 
+    [Header("Start Value")]
     [SerializeField] GameTime startSimulationTime = new GameTime()
     {
         month = 7,
         day = 23,
         hour = 0
     };
+    [SerializeField] float startHeight;
 
     int lastRenderedDay = -1;
     int lastRenderedMonth = -1;
@@ -21,10 +25,10 @@ public class GameTimeManager : MonoBehaviour
 
     void Start()
     {
-        UpdateUITexts(startSimulationTime);
+        UpdateUITexts(startSimulationTime, startHeight);
     }
 
-    void UpdateUITexts(GameTime currentTime)
+    void UpdateUITexts(GameTime currentTime, float height)
     {
         if (currentTime.day != lastRenderedDay)
         {
@@ -44,14 +48,16 @@ public class GameTimeManager : MonoBehaviour
             hourText.text = $"{currentTime.hour:D2}h";
             lastRenderedHour = currentTime.hour;
         }
+
+        heightText.text = $"{height:0.00}m";
     }
 
-    public void AdvanceTime(GameTime startTime, GameTime endTime, float duration)
+    public void AdvanceTime(GameTime startTime, GameTime endTime, float startHeight, float endHeight, float duration)
     {
-        StartCoroutine(LerpTimeRoutine(startTime, endTime, duration));
+        StartCoroutine(LerpTimeRoutine(startTime, endTime, startHeight, endHeight, duration));
     }
 
-    private IEnumerator LerpTimeRoutine(GameTime startTime, GameTime endTime, float duration)
+    private IEnumerator LerpTimeRoutine(GameTime startTime, GameTime endTime, float startHeight, float endHeight, float duration)
     {
         GameTime currentTime;
 
@@ -64,14 +70,18 @@ public class GameTimeManager : MonoBehaviour
         {
             elapsed += Time.deltaTime;
             float t = elapsed / duration;
+
             float currentTotalHours = Mathf.Lerp(startHours, endHours, t);
             currentTime = GameTime.FromTotalHours(currentTotalHours);
-            UpdateUITexts(currentTime);
+
+            float currentHeight = Mathf.Lerp(startHeight, endHeight, t);
+
+            UpdateUITexts(currentTime, currentHeight);
             yield return null;
         }
 
         currentTime = GameTime.FromTotalHours(endHours);
-        UpdateUITexts(currentTime);
+        UpdateUITexts(currentTime, endHeight);
     }
 
 }
