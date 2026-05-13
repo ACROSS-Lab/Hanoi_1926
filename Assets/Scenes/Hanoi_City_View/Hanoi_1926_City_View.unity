@@ -337362,7 +337362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c0fb59e797f9c4394b260c04181050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationManager
-  currentLanguage: French
+  currentLanguage: English
 --- !u!4 &2015688264
 Transform:
   m_ObjectHideFlags: 0
@@ -360289,7 +360289,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 30
+  debugStepIndex: 0
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:
