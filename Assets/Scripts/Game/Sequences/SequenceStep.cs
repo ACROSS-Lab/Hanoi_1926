@@ -28,11 +28,49 @@ public class SequenceStep : ScriptableObject
     [ShowIf("hasDialogue")] public float timeWaitBeforeTalking;
     [ShowIf("hasDialogue")] public string dialogueKey;
     [ShowIf("hasDialogue")] public bool isUsingOverlay;
-    [ShowIf("hasDialogue")] public int bodyState, eyesState;
-    [ShowIf("hasDialogue")] public int mouthStartState, mouthEndState;
+    [ShowIf("hasDialogue")] [Dropdown("GetEyesStates")] public int eyesState;
+    [ShowIf("hasDialogue")] [Dropdown("GetBodyStates")] public int bodyStartState, bodyEndState; 
+    [ShowIf("hasDialogue")] [Dropdown("GetMouthStates")] public int mouthStartState, mouthEndState;
     [ShowIf("hasDialogue")] public float timeWaitAfterTalking;
 
     [Header("Phase 3: Interaction")]
     public bool hasInteraction;
     [ShowIf("hasInteraction")] public float waitTimeout;
+
+    DropdownList<int> GetBodyStates()
+    {
+        return new DropdownList<int>()
+        {
+            {"Idle", 0},
+            {"Talking", 1},
+            {"Pointing Up", 2},
+            {"Pointing Down", 3},
+            {"Idle 2", 4},
+            {"Looking Down", 5},
+            {"Surprised", 6},
+            {"Pointing Down", 7}
+        };
+    }
+
+    DropdownList<int> GetEyesStates()
+    {
+        return new DropdownList<int>()
+        {
+            {"Idle", 0},
+            {"Looking Around", 1},
+            {"Sad", 2},
+            {"Surprised", 3},
+        };
+    }
+
+    DropdownList<int> GetMouthStates()
+    {
+        return new DropdownList<int>()
+        {
+            {"Idle", 0},
+            {"Talking", 1},
+            {"Sad", 2},
+            {"Surprised", 3},
+        };
+    }
 }

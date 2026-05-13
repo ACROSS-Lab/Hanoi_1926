@@ -28,7 +28,7 @@ public class Narrator : MonoBehaviour
         return action;
     }
 
-    public float StartTalking(string key, int bodyState, int eyesState, int mouthStartState, bool isUsingOverlay)
+    public float StartTalking(string key, int bodyStartState, int eyesState, int mouthStartState, bool isUsingOverlay)
     {
         dialogueBoxes.SetActive(true);
 
@@ -51,7 +51,7 @@ public class Narrator : MonoBehaviour
         localizedKey.UpdateText();
         localizedKey.UpdateAudioClip();
 
-        animator.SetInteger("BodyState", bodyState);
+        animator.SetInteger("BodyState", bodyStartState);
         animator.SetInteger("EyesState", eyesState);
         animator.SetInteger("MouthState", mouthStartState);
 
@@ -61,9 +61,11 @@ public class Narrator : MonoBehaviour
         return talkingTime;
     }
 
-    public void FinishDialogue(int mouthEndState)
+    public void FinishDialogue(int bodyEndState, int mouthEndState)
     {
+        animator.SetInteger("BodysState", bodyEndState);
         animator.SetInteger("MouthState", mouthEndState);
+       
     }
 
     public void DisableDialogueBox()

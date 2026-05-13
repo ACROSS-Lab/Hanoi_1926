@@ -130,7 +130,7 @@ public class SequenceDirector : MonoBehaviour
 
         float talkingTime = narrator.StartTalking(
             step.dialogueKey,
-            step.bodyState,
+            step.bodyStartState,
             step.eyesState,
             step.mouthStartState,
             step.isUsingOverlay
@@ -138,7 +138,7 @@ public class SequenceDirector : MonoBehaviour
 
         yield return new WaitForSeconds(talkingTime);
 
-        narrator.FinishDialogue(step.mouthEndState);
+        narrator.FinishDialogue(step.bodyEndState, step.mouthEndState);
 
         yield return new WaitForSeconds(step.timeWaitAfterTalking);
 
