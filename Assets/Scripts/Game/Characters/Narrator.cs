@@ -63,7 +63,7 @@ public class Narrator : MonoBehaviour
 
     public void FinishDialogue(int bodyEndState, int mouthEndState)
     {
-        animator.SetInteger("BodysState", bodyEndState);
+        animator.SetInteger("BodyState", bodyEndState);
         animator.SetInteger("MouthState", mouthEndState);
        
     }
