@@ -13,28 +13,29 @@ MonoBehaviour:
   m_Name: Simulation_Step_08_c
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 0
-  hasNarratorMovement: 1
-  targetNarratorPosition: {x: -2, y: 0, z: -3}
+  hasNarratorMovement: 0
+  targetNarratorPosition: {x: 11.38, y: 7.41, z: -4.48}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 1
-  targetNarratorRotation: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 1
+  targetNarratorRotation: {x: 0, y: -90, z: 0}
+  targetNarratorScale: 2
   flyDuration: 0
-  hasPlayerMovement: 1
-  playerTargetPosition: {x: -1.802, y: -1, z: -1.074}
+  hasPlayerMovement: 0
+  playerTargetPosition: {x: 1.827, y: 5.873, z: -1.65}
   hasPlayerRotation: 1
-  playerTargetRotation: {x: 0, y: 180, z: 0}
+  playerTargetRotation: {x: 0, y: 90, z: 0}
   hasSceneTransition: 1
   sceneName: Diorama_02_Railway
-  isGoingBackToMainScene: 1
-  hasDialogue: 0
-  timeWaitBeforeTalking: 0
-  dialogueKey: narrator.dialogue.diorama1.01
+  isGoingBackToMainScene: 0
+  hasDialogue: 1
+  timeWaitBeforeTalking: 3
+  dialogueKey: narrator.dialogue.diorama3.02
   isUsingOverlay: 0
-  bodyState: 3
   eyesState: 2
+  bodyStartState: 0
+  bodyEndState: 0
   mouthStartState: 1
   mouthEndState: 3
   timeWaitAfterTalking: 0
-  hasInteraction: 0
-  waitTimeout: 30
+  hasInteraction: 1
+  waitTimeout: 25

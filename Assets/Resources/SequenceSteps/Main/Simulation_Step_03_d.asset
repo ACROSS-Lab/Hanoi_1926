@@ -13,28 +13,28 @@ MonoBehaviour:
   m_Name: Simulation_Step_03_d
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 0
-  hasNarratorMovement: 1
-  targetNarratorPosition: {x: -2, y: 0, z: -3}
+  hasNarratorMovement: 0
+  targetNarratorPosition: {x: -1.81, y: 0.619, z: 5.6}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 1
   targetNarratorRotation: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 1
+  targetNarratorScale: 1.8
   flyDuration: 0
-  hasPlayerMovement: 1
-  playerTargetPosition: {x: -1.802, y: -1, z: -1.074}
+  hasPlayerMovement: 0
+  playerTargetPosition: {x: 0, y: -0.5, z: 0}
   hasPlayerRotation: 1
-  playerTargetRotation: {x: 0, y: 180, z: 0}
+  playerTargetRotation: {x: 0, y: 0, z: 0}
   hasSceneTransition: 1
-  sceneName: Diorama_01_Sandbank
-  isGoingBackToMainScene: 1
-  hasDialogue: 0
-  timeWaitBeforeTalking: 0
-  dialogueKey: narrator.dialogue.diorama1.01
+  sceneName: 
+  isGoingBackToMainScene: 0
+  hasDialogue: 1
+  timeWaitBeforeTalking: 2
+  dialogueKey: narrator.dialogue.diorama1.03
   isUsingOverlay: 0
-  bodyState: 3
-  eyesState: 2
+  bodyState: 1
+  eyesState: 0
   mouthStartState: 1
-  mouthEndState: 3
+  mouthEndState: 0
   timeWaitAfterTalking: 0
-  hasInteraction: 0
-  waitTimeout: 30
+  hasInteraction: 1
+  waitTimeout: 25

@@ -28,8 +28,8 @@ MonoBehaviour:
   sceneName: 
   isGoingBackToMainScene: 0
   hasDialogue: 1
-  timeWaitBeforeTalking: 10
-  dialogueKey: narrator.dialogue.13
+  timeWaitBeforeTalking: 3
+  dialogueKey: narrator.dialogue.18
   isUsingOverlay: 0
   bodyState: 6
   eyesState: 2
