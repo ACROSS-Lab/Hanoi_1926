@@ -29,12 +29,12 @@ MonoBehaviour:
   isGoingBackToMainScene: 0
   hasDialogue: 1
   timeWaitBeforeTalking: 4
-  dialogueKey: narrator.dialogue.10
+  dialogueKey: narrator.dialogue.12
   isUsingOverlay: 0
   bodyState: 0
   eyesState: 3
   mouthStartState: 1
   mouthEndState: 2
-  timeWaitAfterTalking: 0
+  timeWaitAfterTalking: 6
   hasInteraction: 0
   waitTimeout: 0

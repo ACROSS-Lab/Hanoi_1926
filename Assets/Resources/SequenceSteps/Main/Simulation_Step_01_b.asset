@@ -27,14 +27,14 @@ MonoBehaviour:
   hasSceneTransition: 0
   sceneName: 
   isGoingBackToMainScene: 0
-  hasDialogue: 0
-  timeWaitBeforeTalking: 4
-  dialogueKey: narrator.dialogue.10
+  hasDialogue: 1
+  timeWaitBeforeTalking: 10
+  dialogueKey: narrator.dialogue.13
   isUsingOverlay: 0
   bodyState: 0
-  eyesState: 3
+  eyesState: 2
   mouthStartState: 1
-  mouthEndState: 1
+  mouthEndState: 0
   timeWaitAfterTalking: 0
   hasInteraction: 0
   waitTimeout: 0
