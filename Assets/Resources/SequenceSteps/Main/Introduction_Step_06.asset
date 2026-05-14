@@ -32,7 +32,7 @@ MonoBehaviour:
   dialogueKey: narrator.dialogue.06
   isUsingOverlay: 0
   eyesState: 3
-  bodyStartState: 7
+  bodyStartState: 4
   bodyEndState: 1
   mouthStartState: 1
   mouthEndState: 0

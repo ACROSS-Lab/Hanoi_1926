@@ -34,8 +34,8 @@ MonoBehaviour:
   eyesState: 3
   bodyStartState: 1
   bodyEndState: 4
-  mouthStartState: 2
-  mouthEndState: 0
+  mouthStartState: 1
+  mouthEndState: 2
   timeWaitAfterTalking: 6
   hasInteraction: 0
   waitTimeout: 0
