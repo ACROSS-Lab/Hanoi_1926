@@ -18,7 +18,7 @@ MonoBehaviour:
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 0.8
+  targetNarratorScale: 0.6
   flyDuration: 3
   hasPlayerMovement: 0
   playerTargetPosition: {x: 0, y: 0, z: 0}
@@ -31,10 +31,11 @@ MonoBehaviour:
   timeWaitBeforeTalking: 0
   dialogueKey: narrator.dialogue.23
   isUsingOverlay: 0
-  bodyState: 3
   eyesState: 2
+  bodyStartState: 3
+  bodyEndState: 3
   mouthStartState: 1
-  mouthEndState: 3
+  mouthEndState: 2
   timeWaitAfterTalking: 0
   hasInteraction: 1
   waitTimeout: 25

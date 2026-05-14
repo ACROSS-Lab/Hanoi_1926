@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
-  m_Name: nExploration_Step_02
+  m_Name: zz_End_Step_02
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
-  hasSequenceEvents: 0
+  hasSequenceEvents: 1
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: -1.015, y: 0.036, z: -1.129}
-  offsetAtCenter: {x: 0, y: 0.05, z: 0}
+  targetNarratorPosition: {x: -1.785, y: -0.991, z: -3.497}
+  offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 0.2
-  flyDuration: 2
+  targetNarratorScale: 0.01
+  flyDuration: 1
   hasPlayerMovement: 0
   playerTargetPosition: {x: 0, y: 0, z: 0}
   hasPlayerRotation: 0
@@ -27,15 +27,15 @@ MonoBehaviour:
   hasSceneTransition: 0
   sceneName: 
   isGoingBackToMainScene: 0
-  hasDialogue: 1
+  hasDialogue: 0
   timeWaitBeforeTalking: 0
-  dialogueKey: narrator.dialogue.09
+  dialogueKey: narrator.dialogue.33
   isUsingOverlay: 0
-  eyesState: 1
-  bodyStartState: 3
-  bodyEndState: 4
+  eyesState: 2
+  bodyStartState: 0
+  bodyEndState: 0
   mouthStartState: 1
-  mouthEndState: 0
+  mouthEndState: 3
   timeWaitAfterTalking: 0
-  hasInteraction: 1
-  waitTimeout: 7
+  hasInteraction: 0
+  waitTimeout: 15

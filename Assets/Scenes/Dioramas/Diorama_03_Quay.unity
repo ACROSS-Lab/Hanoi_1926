@@ -20941,10 +20941,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1037889220}
     m_Modifications:
-    - target: {fileID: 4017932002806578070, guid: 79acc3fa1e7126f488df2ad08265f8a2, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: c7db2d85893e0e74abd27504079bf673, type: 2}
     - target: {fileID: 4067418270338945516, guid: a45a8966eae497742825471fe9f30781, type: 3}
       propertyPath: m_Controller
       value: 
@@ -20993,6 +20989,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4017932002806578070, guid: 79acc3fa1e7126f488df2ad08265f8a2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c7db2d85893e0e74abd27504079bf673, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -25314,10 +25314,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1037889220}
     m_Modifications:
-    - target: {fileID: 4017932002806578070, guid: 79acc3fa1e7126f488df2ad08265f8a2, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 42841fce80aa7114ea21706e1bf23e6e, type: 2}
     - target: {fileID: 119670445443479471, guid: 13dde22e78bcaf84f82b983d283e17d3, type: 3}
       propertyPath: m_Name
       value: PNJ_04
@@ -25362,6 +25358,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4017932002806578070, guid: 79acc3fa1e7126f488df2ad08265f8a2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 42841fce80aa7114ea21706e1bf23e6e, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26046,10 +26046,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1037889220}
     m_Modifications:
-    - target: {fileID: 4017932002806578070, guid: 79acc3fa1e7126f488df2ad08265f8a2, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: af94752bf3794ff4f997a9ce81fa30e6, type: 2}
     - target: {fileID: 2444596928741432069, guid: 4d435bf1747d29d44bdc447e6b9481c8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.026435405
@@ -26094,6 +26090,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PNJ_05
       objectReference: {fileID: 0}
+    - target: {fileID: 4017932002806578070, guid: 79acc3fa1e7126f488df2ad08265f8a2, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: af94752bf3794ff4f997a9ce81fa30e6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28557,7 +28557,7 @@ PrefabInstance:
     - target: {fileID: 2611156702804241248, guid: d904ffcd1b0ce0e448d0cc5ef4fc12dc, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 26cc41d78c8b9db42bdfb949cd272937, type: 2}
+      objectReference: {fileID: 9100000, guid: 0bd0f609602fa054bbd02cf9d2fcd5eb, type: 2}
     - target: {fileID: 3781019976125710269, guid: d904ffcd1b0ce0e448d0cc5ef4fc12dc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.455

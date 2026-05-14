@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 0
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: -1, y: 0, z: -3}
+  targetNarratorPosition: {x: -2.394, y: 0.08, z: -2.255}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 1
-  flyDuration: 0
+  targetNarratorScale: 0.5
+  flyDuration: 0.1
   hasPlayerMovement: 1
   playerTargetPosition: {x: -1.802, y: -1, z: -1.074}
   hasPlayerRotation: 1
@@ -31,8 +31,9 @@ MonoBehaviour:
   timeWaitBeforeTalking: 0
   dialogueKey: narrator.dialogue.diorama1.01
   isUsingOverlay: 0
-  bodyState: 3
   eyesState: 2
+  bodyStartState: 0
+  bodyEndState: 0
   mouthStartState: 1
   mouthEndState: 3
   timeWaitAfterTalking: 0
