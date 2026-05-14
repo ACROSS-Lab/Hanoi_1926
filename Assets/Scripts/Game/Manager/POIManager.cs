@@ -8,7 +8,7 @@ public class POIManager : MonoBehaviour
     [SerializeField] float rangeSign = 1f, rangeDetails = 0.5f;
     [SerializeField] float viewDotThreshold = 0.3f;
 
-    readonly List<PointOfInterest> poiList = new List<PointOfInterest>();
+    static readonly List<PointOfInterest> poiList = new List<PointOfInterest>();
     Transform camTransform;
 
     void Awake()
@@ -29,7 +29,7 @@ public class POIManager : MonoBehaviour
         }
     }
 
-    public void Register(PointOfInterest poi)
+    public static void Register(PointOfInterest poi)
     {
         if (!poiList.Contains(poi))
         {
@@ -37,7 +37,7 @@ public class POIManager : MonoBehaviour
         }
     }
 
-    public void Unregister(PointOfInterest poi)
+    public static void Unregister(PointOfInterest poi)
     {
         poiList.Remove(poi);
     }

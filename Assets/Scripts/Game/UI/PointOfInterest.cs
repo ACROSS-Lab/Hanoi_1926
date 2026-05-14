@@ -49,11 +49,11 @@ public class PointOfInterest : MonoBehaviour
 
     void OnEnable()
     {
-        POIManager.Instance.Register(this);
+        POIManager.Register(this);
     }
 
     void OnDisable()
     {   
-        POIManager.Instance.Unregister(this);
+        POIManager.Unregister(this);
     }
 }
