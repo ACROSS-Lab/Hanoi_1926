@@ -26,7 +26,6 @@ public class PointOfInterest : MonoBehaviour
             GameObject canvas = PrefabUtility.InstantiatePrefab(prefabAsset) as GameObject;
             Transform canvasTransform = canvas.transform;
             canvasTransform.SetParent(transform);
-            canvasTransform.localScale = Vector3.one;
 
             Bounds bounds = GetComponent<MeshRenderer>().bounds;
             Vector3 center = bounds.center;
