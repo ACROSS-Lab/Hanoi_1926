@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 2677698435830407651}
   - component: {fileID: 2684924199161159714}
   - component: {fileID: 2222891022837114074}
+  - component: {fileID: 8798273044727836010}
   m_Layer: 5
   m_Name: Sign
   m_TagString: Untagged
@@ -472,3 +473,23 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 5
+--- !u!114 &8798273044727836010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7490086027615301026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cef8396c8a351884ab319b2733096422, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpritePopIn
+  duration: 1
+  easeType: 23
+  audioSource: {fileID: 0}
+  popSound: {fileID: 8300000, guid: a72602edf59dc204498a9616425372da, type: 3}
+  volume: 0.3
+  pitch: 0.8
+  randomizePitch: 1
+  pitchVariance: 0.2
