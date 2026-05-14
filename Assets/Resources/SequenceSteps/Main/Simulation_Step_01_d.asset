@@ -31,10 +31,11 @@ MonoBehaviour:
   timeWaitBeforeTalking: 4
   dialogueKey: narrator.dialogue.15
   isUsingOverlay: 0
-  bodyState: 0
   eyesState: 3
+  bodyStartState: 6
+  bodyEndState: 6
   mouthStartState: 1
-  mouthEndState: 1
+  mouthEndState: 3
   timeWaitAfterTalking: 0
   hasInteraction: 0
   waitTimeout: 0

@@ -48,7 +48,9 @@ public class SequenceStep : ScriptableObject
             {"Idle 2", 4},
             {"Looking Down", 5},
             {"Surprised", 6},
-            {"Pointing Right", 7}
+            {"Pointing Right", 7},
+            {"Waving", 8},
+            {"Open Right Hand", 9}
         };
     }
 

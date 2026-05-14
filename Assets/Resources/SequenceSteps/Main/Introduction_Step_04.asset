@@ -31,8 +31,9 @@ MonoBehaviour:
   timeWaitBeforeTalking: 2
   dialogueKey: narrator.dialogue.04
   isUsingOverlay: 0
-  bodyState: 5
   eyesState: 0
+  bodyStartState: 5
+  bodyEndState: 5
   mouthStartState: 1
   mouthEndState: 0
   timeWaitAfterTalking: 0
