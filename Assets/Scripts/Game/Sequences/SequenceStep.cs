@@ -28,9 +28,9 @@ public class SequenceStep : ScriptableObject
     [ShowIf("hasDialogue")] public float timeWaitBeforeTalking;
     [ShowIf("hasDialogue")] public string dialogueKey;
     [ShowIf("hasDialogue")] public bool isUsingOverlay;
-    [ShowIf("hasDialogue")] [Dropdown("GetEyesStates")] public int eyesState;
-    [ShowIf("hasDialogue")] [Dropdown("GetBodyStates")] public int bodyStartState, bodyEndState; 
-    [ShowIf("hasDialogue")] [Dropdown("GetMouthStates")] public int mouthStartState, mouthEndState;
+    [ShowIf("hasDialogue")] [Dropdown("GetEyesStates")] [OnValueChanged("OnDropdownChanged")] public int eyesState;
+    [ShowIf("hasDialogue")] [Dropdown("GetBodyStates")] [OnValueChanged("OnDropdownChanged")] public int bodyStartState, bodyEndState; 
+    [ShowIf("hasDialogue")] [Dropdown("GetMouthStates")] [OnValueChanged("OnDropdownChanged")] public int mouthStartState, mouthEndState;
     [ShowIf("hasDialogue")] public float timeWaitAfterTalking;
 
     [Header("Phase 3: Interaction")]
@@ -72,5 +72,13 @@ public class SequenceStep : ScriptableObject
             {"Sad", 2},
             {"Surprised", 3},
         };
+    }
+
+    void OnDropdownChanged()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(this);
+        UnityEditor.AssetDatabase.SaveAssetIfDirty(this);
+        #endif
     }
 }
