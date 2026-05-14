@@ -7,7 +7,7 @@ narrator.dialogue.01,"Hello, my name is Hoai, I live in the Red River Delta. It 
 narrator.dialogue.02,For a month now the water level of the river has been rising steadily.,Đã một tháng nay mực nước sông không ngừng dâng cao.,Depuis un mois la hauteur d’eau du fleuve ne cesse d’augmenter.,
 narrator.dialogue.03,The local authorities fear a flood…,Các cơ quan chức năng địa phương lo ngại một trận lũ lụt…,Les autorités locales redoutent une crue…,
 narrator.dialogue.04,"Fortunately, the delta is protected by a network of dikes stretching over 2,500 kilometres, but it is difficult to maintain.","May mắn thay, đồng bằng được bảo vệ bởi một mạng lưới đê điều dài hơn 2.500 kilomet, nhưng rất khó bảo dưỡng.","Heureusement, le delta est protégé par un réseau de digues qui fait plus de 2500 kilomètres, mais il est difficile à entretenir.",
-narrator.dialogue.05,"If the dikes on the Gia Lâm side were to break, the damage to crops and homes would be enormous.","Nếu các con đê phía Gia Lâm bị vỡ, thiệt hại đối với mùa màng và nhà cửa sẽ rất lớn.","Si les digues côté Gia Lâm venaient à rompre, les dégâts seraient considérables sur les cultures et les habitations.",ss
+narrator.dialogue.05,"If the dikes on the Gia Lâm side were to break, the damage to crops and homes would be enormous.","Nếu các con đê phía Gia Lâm bị vỡ, thiệt hại đối với mùa màng và nhà cửa sẽ rất lớn.","Si les digues côté Gia Lâm venaient à rompre, les dégâts seraient considérables sur les cultures et les habitations.",
 narrator.dialogue.06,"I am also worried about Hà Nội, even though the dikes are better maintained and higher on this side, the city is on alert.","Tôi cũng lo lắng cho Hà Nội, dù các con đê phía này được bảo dưỡng tốt hơn và cao hơn, thành phố đang trong tình trạng báo động.","J’ai aussi peur pour Hà Nội, même si les digues sont mieux entretenues et plus hautes de ce côté, la ville est en alerte. ",
 narrator.dialogue.07,"Soon you will be able to watch the rising waters in fast-forward, but before that, let's take a closer look at Hà Nội in 1926!","Chẳng bao lâu nữa bạn sẽ có thể xem cảnh nước dâng theo chế độ tua nhanh, nhưng trước đó hãy cùng ngắm nhìn Hà Nội năm 1926 gần hơn!","D’ici peu, tu vas pouvoir observer en accéléré la montée de l’eau mais avant ça, allons voir le Hà Nội de 1926 de plus près ! ",
 narrator.dialogue.08,Don't hesitate to lean in for more details.,Hãy cứ nghiêng người lại để xem thêm chi tiết.,"Pour voir plus de détails, n’hésite pas à te pencher.",
@@ -68,3 +68,6 @@ Red.River.MonsoonLevel,Normal monsoon level,Mức lũ mùa mưa thường,Niveau
 Red.River.MajorFlood,Major flood,Lũ lớn,Crue importante,
 Red.River.ExtremeFlood,Extreme flood,Lũ cực đoan,Crue exceptionnelle,
 Red.River.1926Peak,1926 flood peak,Đỉnh lũ năm 1926,Pic de la crue 1926,
+,,,,
+,,,,
+poi.opera,Opera,Nhà hát,Opéra,
