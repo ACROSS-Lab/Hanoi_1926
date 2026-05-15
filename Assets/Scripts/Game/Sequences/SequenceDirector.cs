@@ -32,7 +32,10 @@ public class SequenceDirector : MonoBehaviour
         for (int i = 0; i < sequenceSteps.Length; i++)
         {
             SequenceStep step = sequenceSteps[i];
-            bool fastForward = i < debugStepIndex;
+            bool fastForward = false;
+            #if UNITY_EDITOR
+            fastForward = i < debugStepIndex;
+            #endif
             yield return StartCoroutine(ExecuteStep(step, fastForward));
             currentStepIndex = i;
         }
@@ -40,11 +43,13 @@ public class SequenceDirector : MonoBehaviour
 
     IEnumerator ExecuteStep(SequenceStep step, bool fastForward)
     {
+        #if UNITY_EDITOR
         if (fastForward)
         {
             ApplyFastForward(step);
             yield break;
         }
+        #endif
 
         yield return HandleEventsStart(step);
         HandlePlayer(step);

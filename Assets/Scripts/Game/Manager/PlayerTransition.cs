@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using WebSocketSharp;
+using UnityEngine.InputSystem;
 
 public class PlayerTransition : MonoBehaviour
 {
@@ -15,9 +17,11 @@ public class PlayerTransition : MonoBehaviour
 
     [Header("Object to keep")]
     [SerializeField] GameObject objectToKeep;
+    [SerializeField] SequenceDirector sequenceDirector;
 
     List<GameObject> primarySceneRoots = new List<GameObject>();
     Scene mainScene;
+    string additiveSceneName;
 
     void Start()
     {        
@@ -28,6 +32,14 @@ public class PlayerTransition : MonoBehaviour
         }
 
         mainScene = SceneManager.GetActiveScene();
+    }
+
+    void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame) 
+        {
+            LoadNormalSceneFadeOut(null);
+        }
     }
 
     public void MovePlayer(Vector3 position, bool hasRotation, Vector3 rotation, bool hasSceneTransition, string sceneName, bool isGoingBackToMainScene)
@@ -64,6 +76,7 @@ public class PlayerTransition : MonoBehaviour
     IEnumerator TransitionToSideScene(string sceneName)
     {
         Scene primaryScene = SceneManager.GetActiveScene();
+        additiveSceneName = sceneName;
 
         primarySceneRoots.Clear();
         primarySceneRoots.AddRange(primaryScene.GetRootGameObjects());
@@ -102,6 +115,9 @@ public class PlayerTransition : MonoBehaviour
                 rootObj.SetActive(true);
             }
         }
+
+        additiveSceneName = null;
+        Debug.Log("Back to main scene");
     }
 
     public void LoadNormalSceneFadeOut(string sceneName)
@@ -111,6 +127,13 @@ public class PlayerTransition : MonoBehaviour
 
     IEnumerator LoadNormalScene(string sceneName)
     {
+        Debug.Log(additiveSceneName);
+        if (!additiveSceneName.IsNullOrEmpty())
+        {
+            if (sequenceDirector != null) sequenceDirector.PerformAction();
+            yield break;
+        }
+
         if (fadeCanvasGroup != null)
         {
             fadeCanvasGroup.blocksRaycasts = true; 
