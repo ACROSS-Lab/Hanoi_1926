@@ -27,6 +27,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _Elevation_Texture:
+        m_Texture: {fileID: 2800000, guid: fcf2e476deb27224687de3ea9056efe2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _PosTexA:
         m_Texture: {fileID: 2800000, guid: 956515ad5d72b2b48913f943e3640881, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -88,6 +92,7 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _Basecolor: {r: 0.3372549, g: 0.53333336, b: 0.3647059, a: 0}
+    - _Elevation_Color: {r: 0.37254897, g: 0.5019608, b: 0.23921567, a: 1}
     - _MaxA: {r: 0, g: 0, b: 0.1, a: 0}
     - _MinA: {r: 0, g: 0, b: 0, a: 0}
     - _Zone_Center: {r: -1.81, g: 0, b: -1.35, a: 0}
