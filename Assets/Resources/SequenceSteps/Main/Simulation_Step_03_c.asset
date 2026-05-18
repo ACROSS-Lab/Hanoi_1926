@@ -37,5 +37,5 @@ MonoBehaviour:
   mouthStartState: 1
   mouthEndState: 2
   timeWaitAfterTalking: 0
-  hasInteraction: 0
-  waitTimeout: 25
+  hasInteraction: 1
+  waitTimeout: 20
