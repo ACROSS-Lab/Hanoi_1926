@@ -489,7 +489,7 @@ MonoBehaviour:
   easeType: 23
   audioSource: {fileID: 0}
   popSound: {fileID: 8300000, guid: a72602edf59dc204498a9616425372da, type: 3}
-  volume: 0.3
+  volume: 0.1
   pitch: 0.8
   randomizePitch: 1
   pitchVariance: 0.2
