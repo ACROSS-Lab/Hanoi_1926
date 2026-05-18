@@ -27,7 +27,8 @@ public class PointOfInterest : MonoBehaviour
             Transform canvasTransform = canvas.transform;
             canvasTransform.SetParent(transform);
 
-            Bounds bounds = GetComponent<MeshRenderer>().bounds;
+            MeshRenderer fisrtMesh = GetComponentsInChildren<MeshRenderer>()[0];
+            Bounds bounds = fisrtMesh.bounds;
             Vector3 center = bounds.center;
             float height = bounds.extents.y * 2 + heightOffset;
             canvasTransform.position = new Vector3(center.x, height, center.z);
