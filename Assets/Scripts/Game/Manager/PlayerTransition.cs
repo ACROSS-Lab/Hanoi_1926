@@ -15,9 +15,10 @@ public class PlayerTransition : MonoBehaviour
     [SerializeField] float fadeDuration = 0.5f;
     [SerializeField] bool hasFadeOnStart = true;
 
-    [Header("Object to keep")]
+    [Header("Diorama Transition")]
     [SerializeField] GameObject objectToKeep;
     [SerializeField] SequenceDirector sequenceDirector;
+    [SerializeField] GameObject exitDioramaButton;
 
     List<GameObject> primarySceneRoots = new List<GameObject>();
     Scene mainScene;
@@ -123,16 +124,17 @@ public class PlayerTransition : MonoBehaviour
     public void LoadNormalSceneFadeOut(string sceneName)
     {
         StartCoroutine(LoadNormalScene(sceneName));
+        Debug.Log("LoadNormalSceneFadeOut");
     }
 
     IEnumerator LoadNormalScene(string sceneName)
     {
-        Debug.Log(additiveSceneName);
-        if (!additiveSceneName.IsNullOrEmpty())
+        if (additiveSceneName != null)
         {
-            if (sequenceDirector != null) sequenceDirector.PerformAction();
-            yield break;
+            yield return SceneManager.UnloadSceneAsync(additiveSceneName);
         }
+
+        Debug.Log("Loading new scene...");
 
         if (fadeCanvasGroup != null)
         {
@@ -152,5 +154,13 @@ public class PlayerTransition : MonoBehaviour
     public void SetLanguage(string languageName)
     {
         LocalizationManager.Instance.SetLanguage(languageName);
+    }
+
+    public void SetupDioramaExitButton()
+    {
+        if (exitDioramaButton == null) return;
+
+        exitDioramaButton.SetActive(true);
+        exitDioramaButton.transform.position = transform.position;
     }
 }

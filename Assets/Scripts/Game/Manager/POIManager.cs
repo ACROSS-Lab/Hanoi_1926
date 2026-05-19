@@ -6,7 +6,7 @@ public class POIManager : MonoBehaviour
     public static POIManager Instance { get; private set; }
 
     [SerializeField] float rangeSign = 1f, rangeDetails = 0.5f;
-    [SerializeField] float viewDotThreshold = 0.3f;
+    float viewDotThreshold = 0.7f;
 
     static readonly List<PointOfInterest> poiList = new List<PointOfInterest>();
     Transform camTransform;
