@@ -157234,6 +157234,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 735407193040273925, guid: a969e06691f84d94d9c6516c11112180, type: 3}
   m_PrefabInstance: {fileID: 942202619}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &942271370 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3116853662849769367, guid: ce1fca5e01cd1ce48be46c10d28e75e5, type: 3}
+  m_PrefabInstance: {fileID: 7615592486915259462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &942676803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160298,6 +160303,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::POIManager
   rangeSign: 1
   rangeDetails: 0.5
+  viewDotThreshold: 0.7
+  leftFingerTip: {fileID: 942271370}
+  rightFingerTip: {fileID: 1876165092}
 --- !u!4 &959142410
 Transform:
   m_ObjectHideFlags: 0
@@ -160307,7 +160315,7 @@ Transform:
   m_GameObject: {fileID: 959142408}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5273, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -319004,6 +319012,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2705199586950671148, guid: eba653a32d607a848a279a1beda3d884, type: 3}
   m_PrefabInstance: {fileID: 1875483012}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1876165092 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5002525034795097841, guid: ce1fca5e01cd1ce48be46c10d28e75e5, type: 3}
+  m_PrefabInstance: {fileID: 7615592486915259462}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1877538677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333696,7 +333709,7 @@ GameObject:
   - component: {fileID: 1966095038}
   - component: {fileID: 1966095039}
   m_Layer: 0
-  m_Name: AndroidResetListener
+  m_Name: AndroidListener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -364419,7 +364432,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 12
+  debugStepIndex: 15
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:

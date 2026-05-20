@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class AndroidListener : MonoBehaviour
 {
+
     [SerializeField] PlayerTransition playerTransition;
     [SerializeField] float timeToReturnToMainScene = 5f;
     [SerializeField] string menuSceneName;
@@ -10,6 +11,7 @@ public class AndroidListener : MonoBehaviour
     bool wasMounted = true;
     float timeHeadsetRemoved;
 
+    #if !UNITY_EDITOR
     void Start()
     {
         if (Application.platform == RuntimePlatform.Android)
@@ -58,4 +60,5 @@ public class AndroidListener : MonoBehaviour
             wasMounted = isMounted;
         }
     }
+    #endif
 }
