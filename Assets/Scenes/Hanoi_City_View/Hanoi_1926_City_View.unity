@@ -333873,7 +333873,7 @@ GameObject:
   - component: {fileID: 1966095038}
   - component: {fileID: 1966095039}
   m_Layer: 0
-  m_Name: Reset_Sensor
+  m_Name: AndroidResetListener
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -333901,11 +333901,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966095037}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d81dded7924e8e48b28a98654681d25, type: 3}
+  m_Script: {fileID: 11500000, guid: fc3398ac488a7ba478ae4748e21254fb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PresenceListener
+  m_EditorClassIdentifier: Assembly-CSharp::AndroidListener
   playerTransition: {fileID: 7615592486915259465}
   timeToReturnToMainScene: 5
   menuSceneName: SCN_Main_Menu

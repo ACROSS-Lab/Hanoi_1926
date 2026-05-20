@@ -170,7 +170,7 @@ PlayerSettings:
   androidMaxAspectRatio: 2.4
   androidMinAspectRatio: 1
   applicationIdentifier:
-    Android: com.IRDAcross.Hanoi1926.v2
+    Android: com.IRDAcross.Hanoi1926
     Standalone: com.Unity-Technologies.VR-Template
   buildNumber:
     Standalone: 0
