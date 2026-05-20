@@ -1,4 +1,4 @@
-Key,French,Vietnamese,English,Unnamed: 4
+ ,French,Vietnamese,English,Unnamed: 4
 mainMenu.start  ,Commencer,,,
 mainMenu.end    ,Fin,,,
 mainMenu.options,Options,,,
@@ -19,7 +19,7 @@ narrator.dialogue.13,"Catastrophe ! Le fleuve Rouge va bientôt atteindre 12 mè
 narrator.dialogue.14,Des diguettes de renfort sont en train d’être construites du côté de Hà Nội.,Các đê gia cố đang được xây dựng ở phía Hà Nội.,Reinforcement dikes are being built on the Hà Nội side.,
 narrator.dialogue.15,"La pression est trop forte, l’ancienne digue de Gia Quất ne va pas tarder à céder…","Áp lực quá lớn, con đê cũ Gia Quất sắp sụp đổ..","The pressure is too great, the old Gia Quất dike is about to give way..",
 narrator.dialogue.16,Quel malheur.. l’ancienne digue de Gia Quất vient de céder.,Thật bất hạnh.. con đê cũ Gia Quất vừa bị vỡ.,What a tragedy.. the old Gia Quất dike has just collapsed.,
-narrator.dialogue.17,"Regarde ce qu'il se passe sur le banc de sable ! Les paillotes sont en train d'être inondées. Allons voir ça de plus près, clique sur la zone en surbrillance pour regarder la scène à hauteur d'homme ! ","Nhìn xem điều gì đang xảy ra trên bãi cát! Những túp lều tranh đang bị ngập. Hãy đến gần hơn, nhấp vào vùng được tô sáng để xem cảnh này từ tầm mắt người!","Look at what is happening on the sandbank! The thatched huts are being flooded. Let's go closer, click on the highlighted area to see the scene at eye level!",
+narrator.dialogue.17, ,"Nhìn xem điều gì đang xảy ra trên bãi cát! Những túp lều tranh đang bị ngập. Hãy đến gần hơn, nhấp vào vùng được tô sáng để xem cảnh này từ tầm mắt người!","Look at what is happening on the sandbank! The thatched huts are being flooded. Let's go closer, click on the highlighted area to see the scene at eye level!",
 narrator.dialogue.18,Regarde la nouvelle digue de Gia Quất ! ,Hãy nhìn con đê Gia Quất mới!,Look at the new Gia Quất dike!,
 narrator.dialogue.19,"La nouvelle digue de Gia Quất vient de rompre ! Mais ce n’est pas terminé, regarde celles de Ái Mộ et Lâm Du. ","Con đê Gia Quất mới vừa bị vỡ! Nhưng chưa hết, hãy nhìn những con đê ở Ái Mộ và Lâm Du.","The new Gia Quất dike has just broken! But it is not over, look at the ones at Ái Mộ and Lâm Du.",
 narrator.dialogue.20,"Les digues de Ái Mộ et Lâm Du viennent de rompre ! C’est terrible, Gia Lâm est inondé. Des troupes sont envoyées pour sauver les habitants. ","Các con đê ở Ái Mộ và Lâm Du vừa bị vỡ! Thật khủng khiếp, Gia Lâm đã bị ngập lụt. Quân đội đang được điều động để cứu người dân.","The dikes at Ái Mộ and Lâm Du have just broken! It is terrible, Gia Lâm is flooded. Troops are being sent to rescue the inhabitants.",
@@ -89,10 +89,10 @@ poi.Imperial.Citadel.of.Thang.Long,Cité impériale de \nThang Long,Hoàng thàn
 poi.Quan.Thanh.Temple,Temple Quán Thánh \n(Pagode du grand bouddha),Temple Quán Thánh,Quan Thanh Temple,
 poi.Hoa.Lo.Prison,Prison Hỏa Lò,Nhà tù Hỏa Lò,Hoa Lo Prison,
 poi.Saint.Josephs.Cathedral,Cathédrale Saint-Joseph\n de Hanoï,Nhà thờ Chính tòa \nThánh Giuse,Saint Joseph's Cathedral,
-poi.Long.Bien.Bridge,test,Tên cũ là cầu Paul Doumer\n(Cầu Long Biên)\n1903,Doumer Bridge\n(Long Bien Bridge)\n1903,
-poi.Palace.of.the.Resident.Superior.of.Tonkin,Palais du Résident\nSupérieur du Tonkin \n(Aujourd'hui : Palais du Tonkin),Dinh Toàn Quyền Bắc Kỳ\n,Palace of the Resident \nSuperior of Tonkin,Pont Paul-Doumer 
-poi.Indochinese.University,Université indochinoise,Đại học Đông Dương ,Indochinese University,(Pont Long Biên)
-poi.Kim.Ngân.Temple,Temple Kim Ngân ,Đình Kim Ngân ,Kim Ngân Temple ,1903
+poi.Long.Bien.Bridge,Pont Paul-Doumer \n(Pont Long Biên)\n1903,Tên cũ là cầu Paul Doumer\n(Cầu Long Biên)\n1903,Doumer Bridge\n(Long Bien Bridge)\n1903,
+poi.Palace.of.the.Resident.Superior.of.Tonkin,Palais du Résident\nSupérieur du Tonkin \n(Aujourd'hui : Palais du Tonkin),Dinh Toàn Quyền Bắc Kỳ\n,Palace of the Resident \nSuperior of Tonkin,
+poi.Indochinese.University,Université indochinoise,Đại học Đông Dương ,Indochinese University,
+poi.Kim.Ngân.Temple,Temple Kim Ngân ,Đình Kim Ngân ,Kim Ngân Temple ,
 poi.Bach.Ma.Temple,Temple Bạch Mã,Đền Bạch Mã,Bạch Mã Temple,
 poi.Lycée.Albert.Sarraut,Lycée Albert Sarraut ,Trường Trung học \nphổ thông Trần Phú,Lycée Albert Sarraut,
 poi.Hang.Co.Railway.Station,Gare Hàng Co,Ga Hàng Cỏ,Hang Co Railway Station,
