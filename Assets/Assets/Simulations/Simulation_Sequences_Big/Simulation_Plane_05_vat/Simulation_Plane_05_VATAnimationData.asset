@@ -17,4 +17,4 @@ MonoBehaviour:
     frameStart: 1
     frameEnd: 290
     framerate: 30
-    looping: 1
+    looping: 0

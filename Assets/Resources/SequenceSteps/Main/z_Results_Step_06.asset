@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
   m_Name: z_Results_Step_06
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
-  hasSequenceEvents: 1
+  hasSequenceEvents: 0
   hasNarratorMovement: 0
   targetNarratorPosition: {x: 0, y: 0, z: 0}
   offsetAtCenter: {x: 0, y: 0, z: 0}
@@ -32,7 +32,7 @@ MonoBehaviour:
   dialogueKey: narrator.dialogue.30
   isUsingOverlay: 0
   eyesState: 0
-  bodyStartState: 0
+  bodyStartState: 4
   bodyEndState: 4
   mouthStartState: 1
   mouthEndState: 0

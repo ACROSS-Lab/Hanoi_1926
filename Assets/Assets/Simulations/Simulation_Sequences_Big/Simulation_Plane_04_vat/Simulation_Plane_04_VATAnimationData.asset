@@ -17,9 +17,9 @@ MonoBehaviour:
     frameStart: 1
     frameEnd: 190
     framerate: 15
-    looping: 1
+    looping: 0
   - name: Simulation_4_02
     frameStart: 191
     frameEnd: 289
     framerate: 15
-    looping: 1
+    looping: 0

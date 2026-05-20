@@ -16,5 +16,5 @@ MonoBehaviour:
   - name: Default
     frameStart: 1
     frameEnd: 198
-    framerate: 30
+    framerate: 15
     looping: 0
