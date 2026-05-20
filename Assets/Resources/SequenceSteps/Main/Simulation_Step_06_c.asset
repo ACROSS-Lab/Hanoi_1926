@@ -28,7 +28,7 @@ MonoBehaviour:
   sceneName: 0
   isGoingBackToMainScene: 0
   hasDialogue: 1
-  timeWaitBeforeTalking: 2
+  timeWaitBeforeTalking: 6
   dialogueKey: narrator.dialogue.diorama2.02
   isUsingOverlay: 0
   eyesState: 2
@@ -38,4 +38,4 @@ MonoBehaviour:
   mouthEndState: 2
   timeWaitAfterTalking: 0
   hasInteraction: 1
-  waitTimeout: 25
+  waitTimeout: 20

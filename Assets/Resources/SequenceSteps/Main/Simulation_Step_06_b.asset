@@ -28,7 +28,7 @@ MonoBehaviour:
   sceneName: Diorama_03_Quay
   isGoingBackToMainScene: 0
   hasDialogue: 1
-  timeWaitBeforeTalking: 3
+  timeWaitBeforeTalking: 6
   dialogueKey: narrator.dialogue.diorama2.01
   isUsingOverlay: 0
   eyesState: 1
