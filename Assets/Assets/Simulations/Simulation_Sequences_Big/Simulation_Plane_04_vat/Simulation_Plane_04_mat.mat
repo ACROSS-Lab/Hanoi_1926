@@ -65,7 +65,7 @@ Material:
     - _FPSB: 30
     - _FrameEndA: 1
     - _FrameEndB: 1
-    - _FrameInterpolation: 0
+    - _FrameInterpolation: 1
     - _FrameStartA: 1
     - _FrameStartB: 1
     - _LoopA: 1
