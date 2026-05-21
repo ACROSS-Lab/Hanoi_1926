@@ -13,6 +13,10 @@ public class POIManager : MonoBehaviour
     [SerializeField] Transform leftFingerTip;
     [SerializeField] Transform rightFingerTip;
 
+    [Header("Transition durations")]
+    [SerializeField] float popDuration = 0.5f;
+    [SerializeField] float fadeDuration = 0.2f;
+
     bool leftActive, rightActive;
 
     static readonly List<PointOfInterest> poiList = new List<PointOfInterest>();
@@ -32,7 +36,7 @@ public class POIManager : MonoBehaviour
     {
         for (int i = 0; i < poiList.Count; i++)
         {
-            ChangeState(poiList[i], 0);
+            poiList[i].ChangeState(0, popDuration, fadeDuration);
         }
     }
 
@@ -73,7 +77,7 @@ public class POIManager : MonoBehaviour
         
         if (dot < viewDotThreshold)
         {
-            ChangeState(poi, 0);
+            poi.ChangeState(0, popDuration, fadeDuration);
             return;
         }
 
@@ -81,57 +85,25 @@ public class POIManager : MonoBehaviour
 
         if (headSqrDistance > rangeSign * rangeSign)
         {
-            ChangeState(poi, 0);
+            poi.ChangeState(0, popDuration, fadeDuration);
         }
         else if (headSqrDistance <= rangeDetails * rangeDetails)
         {
-            ChangeState(poi, 2);
-            RotateCanvasTowardsCamera(poi);
+            poi.ChangeState(2, popDuration, fadeDuration);
         }
         else
         {
-            RotateCanvasTowardsCamera(poi);
             float leftSqrDistance = (leftPos - poi.transform.position).sqrMagnitude;
             float rightSqrDistance = (rightPos - poi.transform.position).sqrMagnitude;
 
             if (leftSqrDistance < rangeDetails * rangeDetails || rightSqrDistance < rangeDetails * rangeDetails)
             {
-                ChangeState(poi, 2);
+                poi.ChangeState(2, popDuration, fadeDuration);
             }
             else
             {
-                ChangeState(poi, 1);
+                poi.ChangeState(1, popDuration, fadeDuration);
             }
         }
-    }
-
-    void ChangeState(PointOfInterest poi, int newState)
-    {
-        if (poi.currentState == newState) return;
-
-        poi.currentState = newState;
-
-        switch (newState)
-        {
-            case 0: 
-                if (poi.sign.activeSelf) poi.sign.SetActive(false);
-                if (poi.details.activeSelf) poi.details.SetActive(false);
-                break;
-            case 1: 
-                if (!poi.sign.activeSelf) poi.sign.SetActive(true);
-                if (poi.details.activeSelf) poi.details.SetActive(false);
-                break;
-            case 2: 
-                if (poi.sign.activeSelf) poi.sign.SetActive(false);
-                if (!poi.details.activeSelf) poi.details.SetActive(true);
-                break;
-        }
-    }
-
-    void RotateCanvasTowardsCamera(PointOfInterest poi)
-    {
-        GameObject canvas = poi.canvas;
-        Vector3 directionToCamera = camTransform.position - canvas.transform.position;
-        canvas.transform.rotation = Quaternion.LookRotation(directionToCamera);
     }
 }

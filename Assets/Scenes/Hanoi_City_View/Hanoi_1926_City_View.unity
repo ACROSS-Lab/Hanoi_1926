@@ -159744,6 +159744,8 @@ MonoBehaviour:
   viewDotThreshold: 0.7
   leftFingerTip: {fileID: 942271370}
   rightFingerTip: {fileID: 1876165092}
+  popDuration: 0.5
+  fadeDuration: 0.2
 --- !u!4 &959142410
 Transform:
   m_ObjectHideFlags: 0
@@ -363828,16 +363830,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f9b75db2ebb197342a5c015461af962e, type: 2}
   - {fileID: 11400000, guid: 127f1d1503da88248aec04ef5e78d586, type: 2}
   - {fileID: 11400000, guid: 066a99fe0513e7540a284fa3714c435e, type: 2}
-  - {fileID: 11400000, guid: d7b127b42250d4141b2f1e8a0ebf32a8, type: 2}
+  - {fileID: 11400000, guid: 6d7f340f276d8d4448fdf5883493de0a, type: 2}
   - {fileID: 11400000, guid: 87bb0268ad0402c438c9291771702ff2, type: 2}
-  - {fileID: 11400000, guid: e982951262d8f9f44b2e976b57659523, type: 2}
+  - {fileID: 11400000, guid: 1d4de6772abf25b479b26fab498ba45f, type: 2}
   - {fileID: 11400000, guid: 10e4983b402c9844d89f87ba0b51fb8f, type: 2}
   - {fileID: 11400000, guid: 2b08b35f24413d948b8e837a0f411d54, type: 2}
   - {fileID: 11400000, guid: 6d00dd81fd7489d46938b9655f430cee, type: 2}
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 15
+  debugStepIndex: 8
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:

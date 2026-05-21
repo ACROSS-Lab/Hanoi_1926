@@ -9,6 +9,11 @@ public class VibeOverride : MonoBehaviour
     List<Animator> animators = new List<Animator>();
     Dictionary<Animator, RuntimeAnimatorController> originalControllers = new Dictionary<Animator, RuntimeAnimatorController>();
 
+    public bool leftShaka { get; set; }
+    public bool rightShaka { get; set; }
+
+    bool isVibing = false;
+
     void Start()
     {
         foreach (Animator character in characters.GetComponentsInChildren<Animator>())
@@ -18,7 +23,27 @@ public class VibeOverride : MonoBehaviour
         }
     }
 
-    public void StartVibing()
+    void Update()
+    {
+        if (leftShaka && rightShaka)
+        {
+            if (!isVibing)
+            {
+                isVibing = true;
+                StartVibing();
+            }
+        }
+        else
+        {
+            if (isVibing)
+            {
+                isVibing = false;
+                StopVibing();
+            }
+        }
+    }
+
+    void StartVibing()
     {
         for (int i = 0; i < animators.Count; i++)
         {
@@ -27,7 +52,7 @@ public class VibeOverride : MonoBehaviour
         }
     }
 
-    public void StopVibing()
+    void StopVibing()
     {
         for (int i = 0; i < animators.Count; i++)
         {

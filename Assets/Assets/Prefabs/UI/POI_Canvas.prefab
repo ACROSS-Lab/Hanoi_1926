@@ -84,7 +84,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!1 &3264963703391082059
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5042433333925856439}
   - component: {fileID: 7997617211914040545}
   - component: {fileID: 3661913925921495361}
+  - component: {fileID: 3937930186984995169}
   m_Layer: 5
   m_Name: Details
   m_TagString: Untagged
@@ -164,6 +165,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!225 &3937930186984995169
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3264963703391082059}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &4464266009545788408
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +422,7 @@ GameObject:
   - component: {fileID: 2684924199161159714}
   - component: {fileID: 2222891022837114074}
   - component: {fileID: 8798273044727836010}
+  - component: {fileID: 3314554679534195830}
   m_Layer: 5
   m_Name: Sign
   m_TagString: Untagged
@@ -480,7 +494,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7490086027615301026}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cef8396c8a351884ab319b2733096422, type: 3}
   m_Name: 
@@ -493,3 +507,15 @@ MonoBehaviour:
   pitch: 0.8
   randomizePitch: 1
   pitchVariance: 0.2
+--- !u!225 &3314554679534195830
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7490086027615301026}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
