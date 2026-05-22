@@ -10,14 +10,22 @@ using UnityEditor;
 
 public class PointOfInterest : MonoBehaviour 
 {
+    [Header("Visual Settings")]
     public GameObject canvas, sign, details;
     [SerializeField] float heightOffset = 0.001f;
     [HideInInspector] public int currentState = -1;
+
+    [Header("Audio Settings")]
+    [SerializeField][Range(0f, 1f)] float volume = 0.1f;
+    [SerializeField][Range(0.8f, 1.2f)] float pitch = 0.8f;
+    [SerializeField] bool randomizePitch = true;
+    [SerializeField][Range(0f, 0.2f)] float pitchVariance = 0.2f;
     
     Vector3 originalScale;
     Tween scaleTween, contentTween;
     CanvasGroup signGroup, detailsGroup;
-    Transform camTransform;
+    Transform canvasTransform, camTransform;
+    AudioSource audioSource;
 
     #if UNITY_EDITOR
     void Reset()
@@ -57,13 +65,7 @@ public class PointOfInterest : MonoBehaviour
 
     void OnEnable()
     {
-        POIManager.Register(this);
-
-        originalScale = transform.localScale;
-        signGroup = sign.GetComponent<CanvasGroup>();
-        detailsGroup = details.GetComponent<CanvasGroup>();
-
-        camTransform = Camera.main.transform;
+        POIManager.Register(this);        
     }
 
     void OnDisable()
@@ -71,12 +73,22 @@ public class PointOfInterest : MonoBehaviour
         POIManager.Unregister(this);
     }
 
+    void Start()
+    {
+        canvasTransform = canvas.transform;
+        originalScale = canvasTransform.localScale;
+        signGroup = sign.GetComponent<CanvasGroup>();
+        detailsGroup = details.GetComponent<CanvasGroup>();
+        camTransform = Camera.main.transform;
+        audioSource = canvas.GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (currentState != 0)
         {
-            Vector3 directionToCamera = camTransform.position - canvas.transform.position;
-            canvas.transform.rotation = Quaternion.LookRotation(directionToCamera);
+            Vector3 directionToCamera = camTransform.position - canvasTransform.position;
+            canvasTransform.rotation = Quaternion.LookRotation(directionToCamera);
         }
     }
 
@@ -107,22 +119,30 @@ public class PointOfInterest : MonoBehaviour
 
     void SetState1(float popDuration, float fadeDuration)
     {
-        if (currentState == 0) TriggerPopIn(popDuration);
+        if (currentState == 0)
+        {
+            TriggerPopIn(popDuration);
+            PlayPopSound();
+        } 
         ShowSign(fadeDuration);
     }
 
     void SetState2(float popDuration, float fadeDuration)
     {
-        if (currentState == 0) TriggerPopIn(popDuration);
+        if (currentState == 0)
+        {
+            TriggerPopIn(popDuration);
+            PlayPopSound();
+        } 
         ShowDetails(fadeDuration);
     }
 
     void TriggerPopIn(float duration)
     {
         scaleTween?.Kill();
-        float ratio = transform.localScale.x / originalScale.x;
+        float ratio = canvasTransform.localScale.x / originalScale.x;
         float dynamicDuration = duration * Mathf.Clamp01(1 - ratio);
-        scaleTween = transform.DOScale(originalScale, dynamicDuration)
+        scaleTween = canvasTransform.DOScale(originalScale, dynamicDuration)
                             .SetEase(Ease.OutBack)
                             .SetAutoKill(true);
     }
@@ -130,9 +150,9 @@ public class PointOfInterest : MonoBehaviour
     void TriggerPopOut(float duration)
     {
         scaleTween?.Kill();
-        float ratio = transform.localScale.x / originalScale.x;
+        float ratio = canvasTransform.localScale.x / originalScale.x;
         float dynamicDuration = duration * Mathf.Clamp01(ratio);
-        scaleTween = transform.DOScale(Vector3.zero, dynamicDuration)
+        scaleTween = canvasTransform.DOScale(Vector3.zero, dynamicDuration)
                             .SetEase(Ease.InBack)
                             .SetAutoKill(true)
                             .OnComplete(() => {sign.SetActive(false); details.SetActive(false);});
@@ -158,5 +178,16 @@ public class PointOfInterest : MonoBehaviour
             .Join(signGroup.DOFade(1f, duration))
             .OnStart(() => {signGroup.alpha = 0f;})
             .OnComplete(() => {details.SetActive(false);});
+    }
+
+    void PlayPopSound()
+    {
+        if (audioSource == null || audioSource.clip == null) return;
+
+        audioSource.pitch = randomizePitch
+            ? pitch + Random.Range(-pitchVariance, pitchVariance)
+            : pitch;
+
+        audioSource.PlayOneShot(audioSource.clip, volume);
     }
 }
