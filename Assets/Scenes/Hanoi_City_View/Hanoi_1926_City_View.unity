@@ -78290,7 +78290,7 @@ MonoBehaviour:
     day: 10
     hour: 0
   startHeight: 11.5
-  endHeight: 6.6
+  endHeight: 7.5
 --- !u!1001 &465256784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -157268,15 +157268,15 @@ MonoBehaviour:
   animationIndex: 0
   simulationDelayStart: 0
   startTime:
-    month: 0
-    day: 0
+    month: 8
+    day: 11
     hour: 0
   endTime:
-    month: 0
+    month: 11
     day: 0
     hour: 0
-  startHeight: 0
-  endHeight: 0
+  startHeight: 7.5
+  endHeight: 6.6
 --- !u!1001 &944103900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -364954,8 +364954,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 066a99fe0513e7540a284fa3714c435e, type: 2}
   - {fileID: 11400000, guid: 6d7f340f276d8d4448fdf5883493de0a, type: 2}
   - {fileID: 11400000, guid: d7b127b42250d4141b2f1e8a0ebf32a8, type: 2}
-  - {fileID: 11400000, guid: 1d4de6772abf25b479b26fab498ba45f, type: 2}
   - {fileID: 11400000, guid: e982951262d8f9f44b2e976b57659523, type: 2}
+  - {fileID: 11400000, guid: 734fb26f19b11e544812e4e3cdd57858, type: 2}
+  - {fileID: 11400000, guid: 734fb26f19b11e544812e4e3cdd57858, type: 2}
   - {fileID: 11400000, guid: 2b08b35f24413d948b8e837a0f411d54, type: 2}
   - {fileID: 11400000, guid: 6d00dd81fd7489d46938b9655f430cee, type: 2}
   playerTransition: {fileID: 7615592486915259465}
