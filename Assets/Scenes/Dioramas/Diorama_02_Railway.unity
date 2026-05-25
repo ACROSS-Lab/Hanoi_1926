@@ -16165,10 +16165,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HandTracking
       objectReference: {fileID: 0}
-    - target: {fileID: 8390735764152674974, guid: 330240367cdc32d448d413ed302e881b, type: 3}
-      propertyPath: m_Handedness
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
