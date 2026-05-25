@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 0
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: -1.015, y: 0.036, z: -1.129}
+  targetNarratorPosition: {x: -1.077, y: 0.036, z: -1.005}
   offsetAtCenter: {x: 0, y: 0.05, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
