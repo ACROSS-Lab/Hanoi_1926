@@ -2,6 +2,7 @@
 mainMenu.start  ,,,Commencer
 mainMenu.end    ,,,Fin
 mainMenu.options,,,Options
+mainMenu.Leave,"Experience complete, please place the headset back on its stand.","Trải nghiệm đã kết thúc, vui lòng đặt kính thực tế ảo trở lại giá đỡ.","Expérience terminée, merci de reposer le casque sur son support."
 ,,,
 narrator.dialogue.01,"Hello, my name is Hoai, I live in the Red River Delta. It is July 23, 1926.","Xin chào, tôi tên là Hoài, tôi sống ở đồng bằng sông Hồng. Hôm nay là ngày 23 tháng 7 năm 1926.","Bonjour, je m’appelle Hoai, j’habite le delta du Fleuve rouge. Nous sommes le 23 Juillet 1926."
 narrator.dialogue.02,For a month now the water level of the river has been rising steadily.,Đã hơn một tháng nay mực nước sông không ngừng dâng cao.,Depuis un mois la hauteur d’eau du fleuve ne cesse d’augmenter.
@@ -96,3 +97,4 @@ poi.Kim.Ngân.Temple ,Kim Ngân Temple\n16th century,Đình Kim Ngân\nThế k�
 poi.Bach.Ma.Temple ,Bạch Mã Temple,Đền Bạch Mã\nThế kỷ 9,Temple Bạch Mã\nIXe siècle\n
 poi.Lycée.Albert.Sarraut,Lycée Albert Sarraut\n(Trần Phú - Hoàn Kiếm High School)\n1919,Trường Albert Sarraut\n(Trường Trung học phổ thông Trần Phú)\n1919,Lycée Albert Sarraut\n(Lycée Trần Phú)\n1919
 poi.Hang.Co.Railway.Station,Hang Co Railway Station\n(Hanoi central station) \n1902,Ga Hàng Cỏ\n(Ga Hà Nội)\n1902,Gare Hàng Co\n(Gare de Hanoï)\n1902
+poi.HanoiCourtHouse,Hanoi Courthouse\n(Supreme People's Court of Vietnam)\n1906,Palais de Justice de Hanoï\n(Cour populaire suprême du Vietnam)\n1906,Tòa Án Hà Nội\n(Tòa án nhân dân tối cao Việt Nam)\n1906
