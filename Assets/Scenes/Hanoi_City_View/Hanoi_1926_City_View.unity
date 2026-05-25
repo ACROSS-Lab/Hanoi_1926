@@ -189392,6 +189392,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8557501231278790806, guid: d96c77aec6d902449a8541938db4df4a, type: 3}
+      propertyPath: m_LODs.Array.data[1].screenRelativeHeight
+      value: 0.108991615
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -250077,6 +250081,18 @@ PrefabInstance:
     - target: {fileID: 2019173383679142120, guid: 05983b3b17b6fe64781647a627896262, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512087240725815193, guid: 05983b3b17b6fe64781647a627896262, type: 3}
+      propertyPath: m_LODs.Array.data[0].screenRelativeHeight
+      value: 0.41691655
+      objectReference: {fileID: 0}
+    - target: {fileID: 6609316050415310897, guid: 05983b3b17b6fe64781647a627896262, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8677524145895657567, guid: 05983b3b17b6fe64781647a627896262, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
