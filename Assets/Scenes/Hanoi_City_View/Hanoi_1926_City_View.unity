@@ -198942,7 +198942,7 @@ GameObject:
   - component: {fileID: 1218543263}
   - component: {fileID: 1218543264}
   m_Layer: 0
-  m_Name: z_Results_Step_08
+  m_Name: z_Results_Step_09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198992,7 +198992,35 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - delay: 15
+        - m_Target: {fileID: 388895357}
+          m_TargetAssemblyTypeName: HeadLookAt, Assembly-CSharp
+          m_MethodName: SetLookAtState
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+  - delay: 6
+    unityEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 388895357}
+          m_TargetAssemblyTypeName: HeadLookAt, Assembly-CSharp
+          m_MethodName: SetLookAtState
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - delay: 10
     unityEvent:
       m_PersistentCalls:
         m_Calls:
@@ -364954,15 +364982,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 066a99fe0513e7540a284fa3714c435e, type: 2}
   - {fileID: 11400000, guid: 6d7f340f276d8d4448fdf5883493de0a, type: 2}
   - {fileID: 11400000, guid: d7b127b42250d4141b2f1e8a0ebf32a8, type: 2}
+  - {fileID: 11400000, guid: 1d4de6772abf25b479b26fab498ba45f, type: 2}
   - {fileID: 11400000, guid: e982951262d8f9f44b2e976b57659523, type: 2}
-  - {fileID: 11400000, guid: 734fb26f19b11e544812e4e3cdd57858, type: 2}
   - {fileID: 11400000, guid: 734fb26f19b11e544812e4e3cdd57858, type: 2}
   - {fileID: 11400000, guid: 2b08b35f24413d948b8e837a0f411d54, type: 2}
   - {fileID: 11400000, guid: 6d00dd81fd7489d46938b9655f430cee, type: 2}
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 31
+  debugStepIndex: 41
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:
