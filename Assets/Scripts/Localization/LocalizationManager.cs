@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Text; 
+using System.Text;
+using System.Text.RegularExpressions;
 
 public class LocalizationManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class LocalizationManager : MonoBehaviour
 
     public delegate void LanguageChanged();
     public static event LanguageChanged OnLanguageChanged;
+
+    private List<ColorText> colorTexts = new List<ColorText>();
 
     private void Awake()
     {
@@ -40,6 +43,12 @@ public class LocalizationManager : MonoBehaviour
             return;
         }
 
+        ColorTexts colorTexts = Resources.Load<ColorTexts>("Localization/ColorTexts");
+        if (colorTexts != null)
+        {
+            this.colorTexts = colorTexts.colorTexts;
+        }
+
         // The line splitting logic is safe, as line breaks inside quotes are handled by the parser.
         string[] lines = csvFile.text.Split(new[] { '\r', '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
         if (lines.Length < 2) return;
@@ -61,6 +70,7 @@ public class LocalizationManager : MonoBehaviour
             {
                 string language = headers[j].Trim();
                 string value = values[j].Trim(); // The parser handles quotes, so we can still trim.
+                value = ApplyAutoColors(value);
                 localizedData[language][key] = value;
             }
         }
@@ -118,6 +128,34 @@ public class LocalizationManager : MonoBehaviour
 
         fields.Add(currentField.ToString());
         return fields;
+    }
+
+    private string ApplyAutoColors(string originalText)
+    {
+        if (string.IsNullOrEmpty(originalText) || colorTexts.Count == 0) 
+            return originalText;
+
+        string modifiedText = originalText;
+
+        foreach (var text in colorTexts)
+        {
+            if (string.IsNullOrEmpty(text.text)) continue;
+
+            // Convert the Unity Color wheel value into a Hex string (e.g., #FF0000)
+            string hexColor = "#" + ColorUtility.ToHtmlStringRGB(text.color);
+
+            // Escape the word in case it has special regex characters like ?, ., or *
+            string pattern = Regex.Escape(text.text);
+
+            // $0 is a special regex trick. It means "put the exact text you found right here".
+            // This ensures if it finds "Sunday", it doesn't accidentally replace it with lowercase "sunday".
+            string replacement = $"<color={hexColor}>$0</color>";
+
+            // Replace the text, ignoring upper/lower case differences
+            modifiedText = Regex.Replace(modifiedText, pattern, replacement, RegexOptions.IgnoreCase);
+        }
+
+        return modifiedText;
     }
 
     public void SetLanguage(string languageName)
