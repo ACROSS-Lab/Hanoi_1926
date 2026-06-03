@@ -12,12 +12,11 @@ public class POIManager : MonoBehaviour
     [Header("Finger tips transform")]
     [SerializeField] Transform leftFingerTip;
     [SerializeField] Transform rightFingerTip;
+    [SerializeField] float fingerDirectionDotThreshold = 0.85f;
 
     [Header("Transition durations")]
     [SerializeField] float popDuration = 0.5f;
     [SerializeField] float fadeDuration = 0.2f;
-
-    bool leftActive, rightActive;
 
     static readonly List<PointOfInterest> poiList = new List<PointOfInterest>();
     Transform camTransform;
@@ -58,19 +57,13 @@ public class POIManager : MonoBehaviour
         Vector3 camPos = camTransform.position;
         Vector3 camForward = camTransform.forward;
 
-        leftActive = leftFingerTip != null && leftFingerTip.gameObject.activeInHierarchy;
-        rightActive = rightFingerTip != null && rightFingerTip.gameObject.activeInHierarchy;
-
-        Vector3 leftPos = leftActive ? leftFingerTip.position : Vector3.positiveInfinity;
-        Vector3 rightPos = rightActive ? rightFingerTip.position : Vector3.positiveInfinity;
-
         for (int i = 0; i < poiList.Count; i++)
         {
-            ProcessCanvas(poiList[i], camPos, camForward, leftPos, rightPos);
+            ProcessCanvas(poiList[i], camPos, camForward, leftFingerTip, rightFingerTip);
         }
     }
 
-    void ProcessCanvas(PointOfInterest poi, Vector3 camPos, Vector3 camForward, Vector3 leftPos, Vector3 rightPos)
+    void ProcessCanvas(PointOfInterest poi, Vector3 camPos, Vector3 camForward, Transform leftFingerTip, Transform rightFingerTip)
     {
         Vector3 dirToTarget = poi.transform.position - camPos;
         float dot = Vector3.Dot(camForward, dirToTarget.normalized);
@@ -93,10 +86,7 @@ public class POIManager : MonoBehaviour
         }
         else
         {
-            float leftSqrDistance = (leftPos - poi.transform.position).sqrMagnitude;
-            float rightSqrDistance = (rightPos - poi.transform.position).sqrMagnitude;
-
-            if (leftSqrDistance < rangeDetails * rangeDetails || rightSqrDistance < rangeDetails * rangeDetails)
+            if (IsPointingAt(leftFingerTip, poi.transform.position) || IsPointingAt(rightFingerTip, poi.transform.position))
             {
                 poi.ChangeState(2, popDuration, fadeDuration);
             }
@@ -105,5 +95,19 @@ public class POIManager : MonoBehaviour
                 poi.ChangeState(1, popDuration, fadeDuration);
             }
         }
+    }
+
+    bool IsPointingAt(Transform fingerTip, Vector3 destination)
+    {
+        bool active = fingerTip != null && fingerTip.gameObject.activeInHierarchy;
+        if (!active) return false;
+
+        Vector3 fingerTipPos = fingerTip.position;
+        float sqrDistance = (fingerTipPos - destination).sqrMagnitude;
+        if (sqrDistance > rangeDetails * rangeDetails) return false;
+
+        Vector3 direction = destination - fingerTipPos;
+        float dot = Vector3.Dot(fingerTip.forward, direction.normalized);
+        return dot > fingerDirectionDotThreshold;
     }
 }
