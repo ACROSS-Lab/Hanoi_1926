@@ -871,7 +871,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!95 &2371599614945205746
 Animator:
   serializedVersion: 7
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4029624576
+    rgba: 724513024
   m_fontColor: {r: 0, g: 0.19215688, b: 0.18431373, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2648,7 +2648,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3645133834
+    rgba: 340022282
   m_fontColor: {r: 0.03893734, g: 0.3301887, b: 0.2677777, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -2786,8 +2786,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4291747583
-  m_fontColor: {r: 0, g: 0.19215688, b: 0.18431373, a: 1}
+    rgba: 4289517311
+  m_fontColor: {r: 1, g: 0.839636, b: 0.6745283, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
