@@ -251309,7 +251309,7 @@ Transform:
   m_GameObject: {fileID: 1312815951}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.0000005066394}
-  m_LocalPosition: {x: -1941, y: 1115, z: -5741}
+  m_LocalPosition: {x: -1941, y: 1329, z: -5741}
   m_LocalScale: {x: 118.1805, y: 118.1805, z: 118.1805}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -428215,7 +428215,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 12
+  debugStepIndex: 32
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:
