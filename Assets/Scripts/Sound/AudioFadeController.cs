@@ -29,10 +29,11 @@ public class AudioFadeController : MonoBehaviour
 
     public void FadeOutAndDisable()
     {
+        if (!gameObject.activeInHierarchy) return;
+
         if (_currentFade != null) StopCoroutine(_currentFade);
         _currentFade = StartCoroutine(Fade(_audioSource.volume, 0f, fadeOutDuration, disableAfter: true));
     }
-
     private IEnumerator Fade(float from, float to, float duration, bool disableAfter = false)
     {
         float elapsed = 0f;
