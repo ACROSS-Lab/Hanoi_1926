@@ -462142,6 +462142,10 @@ PrefabInstance:
       propertyPath: textComponent
       value: 
       objectReference: {fileID: 422393260}
+    - target: {fileID: 4240802246783370417, guid: cbe8b2a094aa0d1498f5e96a33706ed8, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4713841465798147918, guid: cbe8b2a094aa0d1498f5e96a33706ed8, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4281282816

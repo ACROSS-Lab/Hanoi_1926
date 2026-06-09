@@ -871,7 +871,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!95 &2371599614945205746
 Animator:
   serializedVersion: 7
@@ -970,7 +970,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 724513024
+    rgba: 4281282816
   m_fontColor: {r: 0, g: 0.19215688, b: 0.18431373, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Niveau Mousson normal
+  m_text: Niveau saison des pluies normal
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -2648,7 +2648,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 340022282
+    rgba: 4282668042
   m_fontColor: {r: 0.03893734, g: 0.3301887, b: 0.2677777, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
