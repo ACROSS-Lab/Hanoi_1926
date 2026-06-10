@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Cityversion_Step_07
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 0
-  hasNarratorMovement: 0
-  targetNarratorPosition: {x: 0, y: 0, z: 0}
+  hasNarratorMovement: 1
+  targetNarratorPosition: {x: -1.545, y: 0.161, z: -1.942}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 0
-  flyDuration: 0
+  targetNarratorScale: 0.3
+  flyDuration: 2
   hasPlayerMovement: 1
   playerTargetPosition: {x: -1.8, y: -1, z: -1}
   hasPlayerRotation: 0

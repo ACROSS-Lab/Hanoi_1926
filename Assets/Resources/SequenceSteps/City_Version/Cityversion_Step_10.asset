@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 0
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: -1.177, y: 0.036, z: -0.851}
+  targetNarratorPosition: {x: -1.177, y: 0.035, z: -0.851}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
@@ -32,7 +32,7 @@ MonoBehaviour:
   dialogueKey: cityversion.narrator.dialogue.10
   isUsingOverlay: 0
   eyesState: 0
-  bodyStartState: 4
+  bodyStartState: 3
   bodyEndState: 0
   mouthStartState: 1
   mouthEndState: 0

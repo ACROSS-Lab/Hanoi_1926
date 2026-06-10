@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Cityversion_Step_14
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 0
-  hasNarratorMovement: 0
-  targetNarratorPosition: {x: 0, y: 0, z: 0}
+  hasNarratorMovement: 1
+  targetNarratorPosition: {x: -0.3323, y: 0.0212, z: -1.6467}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 0
-  flyDuration: 0
+  targetNarratorScale: 0.2
+  flyDuration: 2
   hasPlayerMovement: 0
   playerTargetPosition: {x: 0, y: 0, z: 0}
   hasPlayerRotation: 0
@@ -32,7 +32,7 @@ MonoBehaviour:
   dialogueKey: cityversion.narrator.dialogue.14
   isUsingOverlay: 0
   eyesState: 0
-  bodyStartState: 4
+  bodyStartState: 3
   bodyEndState: 0
   mouthStartState: 1
   mouthEndState: 0

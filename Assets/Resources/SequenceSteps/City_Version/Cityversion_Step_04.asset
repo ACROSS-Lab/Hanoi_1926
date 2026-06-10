@@ -32,7 +32,7 @@ MonoBehaviour:
   dialogueKey: cityversion.narrator.dialogue.04
   isUsingOverlay: 0
   eyesState: 0
-  bodyStartState: 4
+  bodyStartState: 1
   bodyEndState: 0
   mouthStartState: 1
   mouthEndState: 0
