@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
   m_Name: Cityversion_Step_10
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
-  hasSequenceEvents: 0
+  hasSequenceEvents: 1
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: -1.177, y: 0.035, z: -0.851}
+  targetNarratorPosition: {x: -0.617, y: 0.035, z: -1.241}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}

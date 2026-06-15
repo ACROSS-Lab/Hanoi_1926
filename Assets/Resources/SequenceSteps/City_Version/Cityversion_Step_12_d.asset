@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
-  m_Name: Cityversion_Step_11_b
+  m_Name: Cityversion_Step_12_d
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
-  hasSequenceEvents: 0
+  hasSequenceEvents: 1
   hasNarratorMovement: 0
   targetNarratorPosition: {x: 0, y: 0, z: 0}
   offsetAtCenter: {x: 0, y: 0, z: 0}
@@ -21,12 +21,12 @@ MonoBehaviour:
   targetNarratorScale: 0
   flyDuration: 0
   hasPlayerMovement: 1
-  playerTargetPosition: {x: 0, y: 0, z: 0}
+  playerTargetPosition: {x: -1.8, y: -1, z: -1}
   hasPlayerRotation: 0
   playerTargetRotation: {x: 0, y: 0, z: 0}
   hasSceneTransition: 1
   sceneName: Diorama_04_City
-  isGoingBackToMainScene: 0
+  isGoingBackToMainScene: 1
   hasDialogue: 0
   timeWaitBeforeTalking: 0
   dialogueKey: cityversion.narrator.dialogue.11
@@ -37,5 +37,5 @@ MonoBehaviour:
   mouthStartState: 1
   mouthEndState: 0
   timeWaitAfterTalking: 2
-  hasInteraction: 1
+  hasInteraction: 0
   waitTimeout: 15

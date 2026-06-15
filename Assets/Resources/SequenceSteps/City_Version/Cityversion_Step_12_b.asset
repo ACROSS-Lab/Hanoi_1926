@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
-  m_Name: Cityversion_Step_11_c
+  m_Name: Cityversion_Step_12_b
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 0
   hasNarratorMovement: 0
@@ -20,11 +20,11 @@ MonoBehaviour:
   targetNarratorRotation: {x: 0, y: 0, z: 0}
   targetNarratorScale: 0
   flyDuration: 0
-  hasPlayerMovement: 0
+  hasPlayerMovement: 1
   playerTargetPosition: {x: 0, y: 0, z: 0}
   hasPlayerRotation: 0
   playerTargetRotation: {x: 0, y: 0, z: 0}
-  hasSceneTransition: 0
+  hasSceneTransition: 1
   sceneName: Diorama_04_City
   isGoingBackToMainScene: 0
   hasDialogue: 0

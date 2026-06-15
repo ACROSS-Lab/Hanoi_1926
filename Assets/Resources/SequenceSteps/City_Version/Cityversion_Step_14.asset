@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
   hasSequenceEvents: 0
   hasNarratorMovement: 1
-  targetNarratorPosition: {x: -0.3323, y: 0.0212, z: -1.6467}
-  offsetAtCenter: {x: 0, y: 0, z: 0}
-  hasNarratorRotation: 0
+  targetNarratorPosition: {x: -0.2523, y: 0.0212, z: -1.267}
+  offsetAtCenter: {x: 0, y: 0.1, z: 0}
+  hasNarratorRotation: 1
   targetNarratorRotation: {x: 0, y: 0, z: 0}
   targetNarratorScale: 0.2
-  flyDuration: 2
+  flyDuration: 3
   hasPlayerMovement: 0
   playerTargetPosition: {x: 0, y: 0, z: 0}
   hasPlayerRotation: 0

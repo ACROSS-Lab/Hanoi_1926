@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
   m_Name: Cityversion_Step_12
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
-  hasSequenceEvents: 0
-  hasNarratorMovement: 1
-  targetNarratorPosition: {x: -1.22, y: 0.035, z: -0.249}
+  hasSequenceEvents: 1
+  hasNarratorMovement: 0
+  targetNarratorPosition: {x: 0, y: 0, z: 0}
   offsetAtCenter: {x: 0, y: 0, z: 0}
-  hasNarratorRotation: 1
-  targetNarratorRotation: {x: 0, y: -90, z: 0}
-  targetNarratorScale: 0.2
-  flyDuration: 2.5
+  hasNarratorRotation: 0
+  targetNarratorRotation: {x: 0, y: 0, z: 0}
+  targetNarratorScale: 0
+  flyDuration: 0
   hasPlayerMovement: 0
   playerTargetPosition: {x: 0, y: 0, z: 0}
   hasPlayerRotation: 0
@@ -32,10 +32,10 @@ MonoBehaviour:
   dialogueKey: cityversion.narrator.dialogue.12
   isUsingOverlay: 0
   eyesState: 0
-  bodyStartState: 3
-  bodyEndState: 0
+  bodyStartState: 4
+  bodyEndState: 3
   mouthStartState: 1
   mouthEndState: 0
-  timeWaitAfterTalking: 3
-  hasInteraction: 0
-  waitTimeout: 0
+  timeWaitAfterTalking: 2
+  hasInteraction: 1
+  waitTimeout: 15

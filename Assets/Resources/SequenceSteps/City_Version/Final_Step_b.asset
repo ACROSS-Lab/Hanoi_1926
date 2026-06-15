@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
-  m_Name: Cityversion_Step_15
+  m_Name: Final_Step_b
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
-  hasSequenceEvents: 0
-  hasNarratorMovement: 1
-  targetNarratorPosition: {x: -0.3323, y: 0.0212, z: -1.6467}
+  hasSequenceEvents: 1
+  hasNarratorMovement: 0
+  targetNarratorPosition: {x: -1.294, y: 0.035, z: -1.703}
   offsetAtCenter: {x: 0, y: 0, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
-  targetNarratorScale: 0.2
-  flyDuration: 2
+  targetNarratorScale: 0
+  flyDuration: 3
   hasPlayerMovement: 0
   playerTargetPosition: {x: 0, y: 0, z: 0}
   hasPlayerRotation: 0
@@ -27,15 +27,15 @@ MonoBehaviour:
   hasSceneTransition: 0
   sceneName: 
   isGoingBackToMainScene: 0
-  hasDialogue: 1
+  hasDialogue: 0
   timeWaitBeforeTalking: 0
-  dialogueKey: cityversion.narrator.dialogue.15
+  dialogueKey: cityversion.narrator.Goodbye
   isUsingOverlay: 0
   eyesState: 0
-  bodyStartState: 3
-  bodyEndState: 0
-  mouthStartState: 1
+  bodyStartState: 8
+  bodyEndState: 8
+  mouthStartState: 0
   mouthEndState: 0
-  timeWaitAfterTalking: 3
+  timeWaitAfterTalking: 0
   hasInteraction: 0
   waitTimeout: 0
