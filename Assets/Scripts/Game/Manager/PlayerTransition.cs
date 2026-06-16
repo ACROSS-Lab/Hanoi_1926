@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
-using WebSocketSharp;
 using UnityEngine.InputSystem;
 
 public class PlayerTransition : MonoBehaviour

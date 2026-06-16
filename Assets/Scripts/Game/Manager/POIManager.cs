@@ -6,7 +6,8 @@ public class POIManager : MonoBehaviour
     public static POIManager Instance { get; private set; }
 
     [Header("Range Thresholds")]
-    [SerializeField] float rangeSign = 1f, rangeDetails = 0.5f;
+    [SerializeField] float rangeSign = 1f; 
+    [SerializeField] float rangeDetails = 0.5f;
     [SerializeField] float viewDotThreshold = 0.7f;
 
     [Header("Finger tips transform")]
