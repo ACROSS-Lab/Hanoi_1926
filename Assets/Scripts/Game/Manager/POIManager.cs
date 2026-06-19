@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -24,11 +23,13 @@ public class POIManager : MonoBehaviour
     [Header("Images Display")]
     [SerializeField] GameObject imageDisplay;
     [SerializeField] Image image;
-    [SerializeField] Material outlineMaterial;
+    [SerializeField] string propertyName;
 
     static readonly List<PointOfInterest> poiList = new List<PointOfInterest>();
     Transform camTransform;
     PointOfInterest displayingPOI;
+    MaterialPropertyBlock propertyBlock;
+    int propertyID;
 
     void Awake()
     {
@@ -38,6 +39,10 @@ public class POIManager : MonoBehaviour
     void Start()
     {
         camTransform = Camera.main.transform;
+
+        propertyBlock = new MaterialPropertyBlock();
+        propertyID = Shader.PropertyToID(propertyName);
+
     }
 
     void OnDisable()
@@ -132,16 +137,9 @@ public class POIManager : MonoBehaviour
         {
             foreach (MeshRenderer renderer in renderers)
             {
-                if (renderer.materials.Length > 0)
-                {
-                    Material[] newMats = new Material[renderer.materials.Length + 1];
-                    for (int i = 0; i < renderer.materials.Length; i++)
-                    {
-                        newMats[i] = renderer.materials[i];
-                    }
-                    newMats[newMats.Length - 1] = outlineMaterial;
-                    renderer.materials = newMats;
-                }
+                renderer.GetPropertyBlock(propertyBlock);
+                propertyBlock.SetFloat(propertyID, 1f);
+                renderer.SetPropertyBlock(propertyBlock);
             }
         }
 
@@ -159,20 +157,11 @@ public class POIManager : MonoBehaviour
             if (displayingPOI != null) 
             {
                 MeshRenderer[] renderers = displayingPOI.GetComponentsInChildren<MeshRenderer>();
-                if (renderers.Length > 0)
+                foreach (MeshRenderer renderer in renderers)
                 {
-                    foreach (MeshRenderer renderer in renderers)
-                    {
-                        if (renderer.materials.Length > 1)
-                        {
-                            Material[] newMats = new Material[renderer.materials.Length - 1];
-                            for (int i = 0; i < newMats.Length; i++)
-                            {
-                                newMats[i] = renderer.materials[i];
-                            }
-                            renderer.materials = newMats;
-                        }
-                    }
+                    renderer.GetPropertyBlock(propertyBlock);
+                    propertyBlock.SetFloat(propertyID, 0f);
+                    renderer.SetPropertyBlock(propertyBlock);
                 }
             }
         }

@@ -6005,7 +6005,7 @@ MonoBehaviour:
   fadeDuration: 0.2
   imageDisplay: {fileID: 1576861934}
   image: {fileID: 1084174628}
-  outlineMaterial: {fileID: 2100000, guid: 5ac5c5e7de680cf46a046c838d9f83e9, type: 2}
+  propertyName: _Highlight
 --- !u!4 &959142410
 Transform:
   m_ObjectHideFlags: 0
