@@ -1,7 +1,10 @@
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
-using System.Collections;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit;
+
+
 
 
 #if UNITY_EDITOR
@@ -14,6 +17,7 @@ public class PointOfInterest : MonoBehaviour
     public GameObject canvas, sign, details;
     [SerializeField] float heightOffset = 0.001f;
     [HideInInspector] public int currentState = -1;
+    public Sprite displayTexture;
 
     [Header("Audio Settings")]
     [SerializeField][Range(0f, 1f)] float volume = 0.1f;
@@ -26,6 +30,7 @@ public class PointOfInterest : MonoBehaviour
     CanvasGroup signGroup, detailsGroup;
     Transform canvasTransform, camTransform;
     AudioSource audioSource;
+    XRSimpleInteractable interactable;
 
     #if UNITY_EDITOR
     void Reset()
@@ -63,14 +68,29 @@ public class PointOfInterest : MonoBehaviour
     }
     #endif
 
+    void Awake()
+    {
+        interactable = GetComponent<XRSimpleInteractable>();
+    }
+
     void OnEnable()
     {
         POIManager.Register(this);        
+
+        if (interactable != null)
+        {
+            interactable.selectEntered.AddListener(SelectEnter);
+        }
     }
 
     void OnDisable()
     {   
         POIManager.Unregister(this);
+
+        if (interactable != null)
+        {
+            interactable.selectEntered.RemoveListener(SelectEnter);
+        }
     }
 
     void Start()
@@ -189,5 +209,11 @@ public class PointOfInterest : MonoBehaviour
             : pitch;
 
         audioSource.PlayOneShot(audioSource.clip, volume);
+    }
+
+    void SelectEnter(SelectEnterEventArgs args)
+    {
+        if (currentState == 0) return;
+        POIManager.Instance.SetDisplayPOI(this);
     }
 }

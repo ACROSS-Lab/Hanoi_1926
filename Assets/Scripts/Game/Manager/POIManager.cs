@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class POIManager : MonoBehaviour 
 {
@@ -19,8 +21,14 @@ public class POIManager : MonoBehaviour
     [SerializeField] float popDuration = 0.5f;
     [SerializeField] float fadeDuration = 0.2f;
 
+    [Header("Images Display")]
+    [SerializeField] GameObject imageDisplay;
+    [SerializeField] Image image;
+    [SerializeField] Material outlineMaterial;
+
     static readonly List<PointOfInterest> poiList = new List<PointOfInterest>();
     Transform camTransform;
+    PointOfInterest displayingPOI;
 
     void Awake()
     {
@@ -62,6 +70,8 @@ public class POIManager : MonoBehaviour
         {
             ProcessCanvas(poiList[i], camPos, camForward, leftFingerTip, rightFingerTip);
         }
+
+        CheckIfDisplayROIOutOfRange();
     }
 
     void ProcessCanvas(PointOfInterest poi, Vector3 camPos, Vector3 camForward, Transform leftFingerTip, Transform rightFingerTip)
@@ -110,5 +120,76 @@ public class POIManager : MonoBehaviour
         Vector3 direction = destination - fingerTipPos;
         float dot = Vector3.Dot(fingerTip.forward, direction.normalized);
         return dot > fingerDirectionDotThreshold;
+    }
+
+    public void SetDisplayPOI(PointOfInterest poi)
+    {
+        ResetDisplayPOI(poi);
+        imageDisplay.SetActive(true);
+
+        MeshRenderer[] renderers = poi.GetComponentsInChildren<MeshRenderer>();
+        if (renderers.Length > 0)
+        {
+            foreach (MeshRenderer renderer in renderers)
+            {
+                if (renderer.materials.Length > 0)
+                {
+                    Material[] newMats = new Material[renderer.materials.Length + 1];
+                    for (int i = 0; i < renderer.materials.Length; i++)
+                    {
+                        newMats[i] = renderer.materials[i];
+                    }
+                    newMats[newMats.Length - 1] = outlineMaterial;
+                    renderer.materials = newMats;
+                }
+            }
+        }
+
+        if (poi.displayTexture != null)
+        {
+            image.sprite = poi.displayTexture;
+        }
+    }
+
+    void ResetDisplayPOI(PointOfInterest poi)
+    {
+        if (displayingPOI != poi)
+        {
+            Debug.Log("ResetDisplayPOI: " + (displayingPOI != null ? displayingPOI.name : "null") + " -> " + (poi != null ? poi.name : "null"));
+            if (displayingPOI != null) 
+            {
+                MeshRenderer[] renderers = displayingPOI.GetComponentsInChildren<MeshRenderer>();
+                if (renderers.Length > 0)
+                {
+                    foreach (MeshRenderer renderer in renderers)
+                    {
+                        if (renderer.materials.Length > 1)
+                        {
+                            Material[] newMats = new Material[renderer.materials.Length - 1];
+                            for (int i = 0; i < newMats.Length; i++)
+                            {
+                                newMats[i] = renderer.materials[i];
+                            }
+                            renderer.materials = newMats;
+                        }
+                    }
+                }
+            }
+        }
+
+        displayingPOI = poi;
+    }
+
+    void CheckIfDisplayROIOutOfRange()
+    {
+        if (displayingPOI != null)
+        {
+            if (displayingPOI.currentState == 0)
+            {
+                ResetDisplayPOI(null);
+                image.sprite = null;
+                imageDisplay.SetActive(false);
+            }
+        }
     }
 }
