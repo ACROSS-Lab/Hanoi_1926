@@ -55264,7 +55264,7 @@ MonoBehaviour:
   details: {fileID: 3248045689211160689}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 5b6d559fdd6f9e84aa2df5b732f6b6ec, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -55471,7 +55471,7 @@ MonoBehaviour:
   details: {fileID: 4287628701533649233}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 488451e839942674ab3a7d2efaba3b6f, type: 3}
   volume: 0.1
   pitch: 0.8
   randomizePitch: 1
@@ -105930,7 +105930,7 @@ MonoBehaviour:
   details: {fileID: 8599022949544610421}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 5227db88fce84ea4d9914a82d5b71dfa, type: 3}
   volume: 0.1
   pitch: 0.8
   randomizePitch: 1
@@ -126260,7 +126260,7 @@ MonoBehaviour:
   details: {fileID: 1231253136527272031}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 2eafaf11a90e5bf469b1f116dce6e123, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -131340,7 +131340,7 @@ MonoBehaviour:
   details: {fileID: 890366385537963831}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: bb2e5411038d0174e97a017412ec1cb4, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -132519,7 +132519,7 @@ MonoBehaviour:
   details: {fileID: 2940671885630939}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 4aa589fb010246b438f0b9421d929c49, type: 3}
   volume: 0.1
   pitch: 0.8
   randomizePitch: 1
@@ -147524,7 +147524,7 @@ MonoBehaviour:
   details: {fileID: 6910495136531762860}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 19e9d898ca5a04e4e980bcf204323fe0, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -157038,7 +157038,7 @@ MonoBehaviour:
   details: {fileID: 8916794179635632472}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: e9adaf6ea6a65fb4d841500198a20546, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -173116,7 +173116,7 @@ MonoBehaviour:
   details: {fileID: 8681183341247403143}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: b8208a3e946b7d04fb722f3704c342f3, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -202822,7 +202822,7 @@ MonoBehaviour:
   details: {fileID: 8737912627875098969}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 3a06eb80988cafe44927c72a8e903a4c, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -260425,7 +260425,7 @@ MonoBehaviour:
   details: {fileID: 8993320226415126785}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 3fad0da1a9a97804c9b0a7c5b3d198e6, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -286063,7 +286063,7 @@ MonoBehaviour:
   details: {fileID: 8048789125250029872}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: a2fc51672b93d914ab5bde8f272c4616, type: 3}
   volume: 0.1
   pitch: 0.8
   randomizePitch: 1
@@ -299242,7 +299242,7 @@ MonoBehaviour:
   details: {fileID: 1015838173888238886}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 807fc66faf6d7c1468c2555cd1943edb, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -321700,7 +321700,7 @@ MonoBehaviour:
   details: {fileID: 5766178302120256618}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 04425c12e4646c44bba60f70ed804e52, type: 3}
   volume: 0.1
   pitch: 0.8
   randomizePitch: 1
@@ -328733,7 +328733,7 @@ MonoBehaviour:
   details: {fileID: 7237400563551584757}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 91fe9cba9c5290c488267364222a7699, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -348062,6 +348062,10 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 123
       objectReference: {fileID: 0}
+    - target: {fileID: 7860702861848405641, guid: 4498dcf3a87b671429bc1c17d9c75b31, type: 3}
+      propertyPath: displayTexture
+      value: 
+      objectReference: {fileID: 21300000, guid: 8bbbb2909db716a4fb895261ec889ce2, type: 3}
     - target: {fileID: 8179495173530628516, guid: 4498dcf3a87b671429bc1c17d9c75b31, type: 3}
       propertyPath: m_Name
       value: SM_Building_Ngoc_Son
@@ -372394,7 +372398,7 @@ MonoBehaviour:
   details: {fileID: 382476307432068034}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: c068fea814fa3344b8807a9462c3a7cf, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -384283,7 +384287,7 @@ MonoBehaviour:
   details: {fileID: 9197920161803749414}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: f0c9d7b9677ed2b43958098e1bfc8b37, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -401448,7 +401452,7 @@ MonoBehaviour:
   details: {fileID: 8663115783661291916}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 4e783cc9f2597fe4ab7cec161cd573c3, type: 3}
   volume: 0.1
   pitch: 0.8
   randomizePitch: 1
@@ -415174,7 +415178,7 @@ MonoBehaviour:
   details: {fileID: 134905915833993304}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: cca6a01a747cc4a4e8d274cd7bb02da1, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
@@ -432147,7 +432151,7 @@ MonoBehaviour:
   details: {fileID: 8480280605457211443}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: 882dc93ce25cf9b419b4853e26de81df, type: 3}
   volume: 0.1
   pitch: 0.8
   randomizePitch: 1
@@ -448445,7 +448449,7 @@ MonoBehaviour:
   details: {fileID: 4302217371832416905}
   heightOffset: 0.001
   currentState: -1
-  displayTexture: {fileID: 0}
+  displayTexture: {fileID: 21300000, guid: d32f0eb8881638a43b150f2459de6137, type: 3}
   volume: 1
   pitch: 1
   randomizePitch: 1
