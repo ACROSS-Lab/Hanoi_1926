@@ -27,9 +27,9 @@ MonoBehaviour:
   hasSceneTransition: 0
   sceneName: Diorama_04_City
   isGoingBackToMainScene: 0
-  hasDialogue: 0
+  hasDialogue: 1
   timeWaitBeforeTalking: 0
-  dialogueKey: cityversion.narrator.dialogue.11
+  dialogueKey: narrator.dialogue.diorama4.02
   isUsingOverlay: 0
   eyesState: 0
   bodyStartState: 4
@@ -37,5 +37,5 @@ MonoBehaviour:
   mouthStartState: 1
   mouthEndState: 0
   timeWaitAfterTalking: 2
-  hasInteraction: 1
+  hasInteraction: 0
   waitTimeout: 15
