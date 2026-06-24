@@ -56,25 +56,22 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Hanoi_Delta_View/Hanoi_1926_Delta_View.unity
     guid: 6a5eb65fdba21fd47a1d2cf43afcd49d
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Main_Menu/SCN_Main_Menu.unity
     guid: 01759f4bc42771b4cbe286ca7b8d1865
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Hanoi_City_View/Hanoi_1926_City_View.unity
     guid: 8ca2a31bf3642b84fb780f23e3fdbe56
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dioramas/Diorama_01_Sandbank.unity
     guid: 828babbe76e3e2347a2feabc6a83f1df
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dioramas/Diorama_02_Railway.unity
     guid: ef46fdaa193a5b94ca97e90d6c524ee9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dioramas/Diorama_03_Quay.unity
     guid: 61172f009e7776240b54589220a2e32a
   - enabled: 0
-    path: Assets/Scenes/Samples/Test/Diorama_01_Test.unity
-    guid: d2bc19aff358d474994cbc708b3bf12e
-  - enabled: 1
     path: Assets/Scenes/WebGL/Hanoi_1926_City_View_WebGL.unity
     guid: a9ce81359f75ecc479407191d3115ac4
   m_configObjects:

@@ -4175,7 +4175,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 764807303}
-  - component: {fileID: 764807304}
   m_Layer: 0
   m_Name: _Gameplay_
   m_TagString: Untagged
@@ -4206,18 +4205,6 @@ Transform:
   - {fileID: 2043534392}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &764807304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 764807302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b1125ef4dba0e34288376da53238bb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OnHandContact
 --- !u!1 &794163623 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7836428150805734235, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
