@@ -32,8 +32,8 @@ MonoBehaviour:
   dialogueKey: narrator.dialogue.diorama4.02
   isUsingOverlay: 0
   eyesState: 0
-  bodyStartState: 4
-  bodyEndState: 3
+  bodyStartState: 0
+  bodyEndState: 4
   mouthStartState: 1
   mouthEndState: 0
   timeWaitAfterTalking: 2
