@@ -28,7 +28,7 @@ MonoBehaviour:
   sceneName: Diorama_04_City
   isGoingBackToMainScene: 0
   hasDialogue: 1
-  timeWaitBeforeTalking: 0
+  timeWaitBeforeTalking: 3
   dialogueKey: narrator.dialogue.diorama4.02
   isUsingOverlay: 0
   eyesState: 0
