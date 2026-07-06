@@ -15,7 +15,7 @@ MonoBehaviour:
   hasSequenceEvents: 1
   hasNarratorMovement: 1
   targetNarratorPosition: {x: -2.692, y: 0.0212, z: -2.118}
-  offsetAtCenter: {x: 0, y: 0, z: 0}
+  offsetAtCenter: {x: 0, y: 0.1, z: 0}
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
   targetNarratorScale: 0.2

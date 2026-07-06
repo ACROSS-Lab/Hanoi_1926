@@ -17,6 +17,12 @@
         },
         {
             "m_Id": "d0daf5d296e34200ac90894a534cddd5"
+        },
+        {
+            "m_Id": "a429c6dc099745e8a045d9d7446a4867"
+        },
+        {
+            "m_Id": "73ffee1093af43d98ae1f8c78018d0b6"
         }
     ],
     "m_Keywords": [],
@@ -415,6 +421,12 @@
         },
         {
             "m_Id": "d0daf5d296e34200ac90894a534cddd5"
+        },
+        {
+            "m_Id": "a429c6dc099745e8a045d9d7446a4867"
+        },
+        {
+            "m_Id": "73ffee1093af43d98ae1f8c78018d0b6"
         }
     ]
 }
@@ -1421,6 +1433,34 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.BooleanShaderProperty",
+    "m_ObjectId": "73ffee1093af43d98ae1f8c78018d0b6",
+    "m_Guid": {
+        "m_GuidSerialized": "9b831e0f-3c4b-430c-90a2-d57a3a92c3bc"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "AddColor",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "AddColor",
+    "m_DefaultReferenceName": "_AddColor",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 3,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": false
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BlockNode",
     "m_ObjectId": "7b12fdcdcdde40728b79e003a0a1df44",
     "m_Group": {
@@ -1656,6 +1696,41 @@
         "w": 0.0
     },
     "m_LiteralMode": false
+}
+
+{
+    "m_SGVersion": 3,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
+    "m_ObjectId": "a429c6dc099745e8a045d9d7446a4867",
+    "m_Guid": {
+        "m_GuidSerialized": "62ecb82b-474a-4d82-9e97-1cba8bb53197"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "AdditionnalColor",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "AdditionnalColor",
+    "m_DefaultReferenceName": "_AdditionnalColor",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 3,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+    },
+    "isMainColor": false,
+    "m_ColorMode": 0
 }
 
 {

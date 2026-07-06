@@ -91,11 +91,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
+    - _Additionnal_Color: 1
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
+    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -132,16 +134,19 @@ Material:
     - _Wind_Intensity: 1
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 0.8018868, g: 0.79292434, b: 0.7754094, a: 1}
     - _Color: {r: 0.8018868, g: 0.79292434, b: 0.77540934, a: 1}
     - _Color1: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LightDir: {r: -4.66, g: 26.62, b: 0, a: 0}
+    - _LightDir: {r: -4.66, g: 13.24, b: 0, a: 0}
+    - _MultipliedColor: {r: 1, g: 0.9092709, b: 0.8066038, a: 1}
     - _Outline_Color: {r: 1, g: 1, b: 1, a: 0}
     - _ShadowColor: {r: 0.5660378, g: 0.5660378, b: 0.5660378, a: 0}
-    - _Shadow_Color: {r: 0.8207547, g: 0.6869042, b: 0.63105196, a: 0}
+    - _Shadow_Color: {r: 0.9056604, g: 0.7755429, b: 0.72196513, a: 0}
     - _SpecColor: {r: 0.19999933, g: 0.19999933, b: 0.19999933, a: 0}
     - _UV_Tiling: {r: 1, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []

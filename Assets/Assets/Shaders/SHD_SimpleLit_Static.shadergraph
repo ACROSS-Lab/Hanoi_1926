@@ -26,6 +26,12 @@
         },
         {
             "m_Id": "538b804108f948b1936b4ed75daaaea2"
+        },
+        {
+            "m_Id": "d0862b35f4d64330bfc45b0a483b5997"
+        },
+        {
+            "m_Id": "6ac0dfa12ea6465c85dcfbc994e070cb"
         }
     ],
     "m_Keywords": [],
@@ -612,6 +618,12 @@
         },
         {
             "m_Id": "538b804108f948b1936b4ed75daaaea2"
+        },
+        {
+            "m_Id": "d0862b35f4d64330bfc45b0a483b5997"
+        },
+        {
+            "m_Id": "6ac0dfa12ea6465c85dcfbc994e070cb"
         }
     ]
 }
@@ -1646,10 +1658,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 542.0,
-            "y": 766.9999389648438,
-            "width": 208.0,
-            "height": 278.00006103515627
+            "x": 543.0,
+            "y": 764.0000610351563,
+            "width": 208.00006103515626,
+            "height": 277.99993896484377
         }
     },
     "m_Slots": [
@@ -2069,6 +2081,34 @@
     "m_ShaderOutputName": "Out",
     "m_StageCapability": 3,
     "m_BareResource": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.BooleanShaderProperty",
+    "m_ObjectId": "6ac0dfa12ea6465c85dcfbc994e070cb",
+    "m_Guid": {
+        "m_GuidSerialized": "60f88bd8-6915-4afb-adba-16eb641b0ffb"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "Additionnal_Color",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Additionnal_Color",
+    "m_DefaultReferenceName": "_Additionnal_Color",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 3,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": false
 }
 
 {
@@ -3392,6 +3432,41 @@
         "y": 1.0
     },
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 3,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
+    "m_ObjectId": "d0862b35f4d64330bfc45b0a483b5997",
+    "m_Guid": {
+        "m_GuidSerialized": "6aeca457-edfb-4fef-905d-bdc807ce19a8"
+    },
+    "promotedFromAssetID": "",
+    "promotedFromCategoryName": "",
+    "promotedOrdering": -1,
+    "m_Name": "Multiply_Color",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Multiply_Color",
+    "m_DefaultReferenceName": "_Multiply_Color",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": true,
+    "hlslDeclarationOverride": 3,
+    "m_Hidden": false,
+    "m_PerRendererData": false,
+    "m_customAttributes": [],
+    "m_Value": {
+        "r": 1.0,
+        "g": 1.0,
+        "b": 1.0,
+        "a": 1.0
+    },
+    "isMainColor": false,
+    "m_ColorMode": 0
 }
 
 {
