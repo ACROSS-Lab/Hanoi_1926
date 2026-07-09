@@ -28,7 +28,7 @@ MonoBehaviour:
   sceneName: 
   isGoingBackToMainScene: 0
   hasDialogue: 1
-  timeWaitBeforeTalking: 0
+  timeWaitBeforeTalking: 0.5
   dialogueKey: cityversion.narrator.Goodbye
   isUsingOverlay: 0
   eyesState: 0

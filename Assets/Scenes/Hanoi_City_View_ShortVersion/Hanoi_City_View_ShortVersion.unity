@@ -490,128 +490,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2231882705240230273, guid: f34a7018930f46946aa498b529e3d103, type: 3}
   m_PrefabInstance: {fileID: 115506800}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &122882200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3403200301954143189, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
-  m_PrefabInstance: {fileID: 2644842499362234013}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &122882202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122882200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Filtering.XRPokeFilter
-  m_Interactable: {fileID: 122882203}
-  m_PokeCollider: {fileID: 122882204}
-  m_PokeConfiguration:
-    m_UseConstant: 1
-    m_ConstantValue:
-      m_PokeDirection: 5
-      m_InteractionDepthOffset: 0
-      m_EnablePokeAngleThreshold: 1
-      m_PokeAngleThreshold: 89.9
-    m_Variable: {fileID: 0}
---- !u!114 &122882203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122882200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_AutoFindParentInteractableInHierarchy: 0
-  m_ParentInteractableObject: {fileID: 0}
---- !u!65 &122882204
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 122882200}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 54.616898, y: 26.333065, z: 35.693226}
-  m_Center: {x: -2.3933854, y: 13.076469, z: -0.07589921}
 --- !u!1 &160369535
 GameObject:
   m_ObjectHideFlags: 0
@@ -6858,128 +6736,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 69.0034, y: 31.382261, z: 135.58824}
   m_Center: {x: 21.516956, y: 12.973684, z: 21.926598}
---- !u!1 &1109114585 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5596981143675952495, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
-  m_PrefabInstance: {fileID: 2644842499362234013}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1109114587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109114585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Filtering.XRPokeFilter
-  m_Interactable: {fileID: 1109114588}
-  m_PokeCollider: {fileID: 1109114589}
-  m_PokeConfiguration:
-    m_UseConstant: 1
-    m_ConstantValue:
-      m_PokeDirection: 5
-      m_InteractionDepthOffset: 0
-      m_EnablePokeAngleThreshold: 1
-      m_PokeAngleThreshold: 89.9
-    m_Variable: {fileID: 0}
---- !u!114 &1109114588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109114585}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
-  m_InteractionManager: {fileID: 0}
-  m_Colliders: []
-  m_InteractionLayers:
-    m_Bits: 1
-  m_DistanceCalculationMode: 1
-  m_SelectMode: 0
-  m_FocusMode: 1
-  m_CustomReticle: {fileID: 0}
-  m_AllowGazeInteraction: 0
-  m_AllowGazeSelect: 0
-  m_OverrideGazeTimeToSelect: 0
-  m_GazeTimeToSelect: 0.5
-  m_OverrideTimeToAutoDeselectGaze: 0
-  m_TimeToAutoDeselectGaze: 3
-  m_AllowGazeAssistance: 0
-  m_FirstHoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastHoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_HoverExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FirstFocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastFocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FocusExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Activated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Deactivated:
-    m_PersistentCalls:
-      m_Calls: []
-  m_StartingHoverFilters: []
-  m_StartingSelectFilters: []
-  m_StartingInteractionStrengthFilters: []
-  m_AutoFindParentInteractableInHierarchy: 0
-  m_ParentInteractableObject: {fileID: 0}
---- !u!65 &1109114589
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1109114585}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 49.352493, y: 25.980616, z: 35.199154}
-  m_Center: {x: -1.3210438, y: 12.900314, z: -1.0994393}
 --- !u!1 &1111640133 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1515800812123637520, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
@@ -9506,7 +9262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65fd12833ef2344ea41bc352290235f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasFollower
-  distanceFromCamera: {x: 0, y: 0, z: 6}
+  distanceFromCamera: {x: 0, y: 0, z: 5}
   yRotationOffset: 0
   followSpeed: 8
 --- !u!114 &1576861937
@@ -12532,7 +12288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2c0fb59e797f9c4394b260c04181050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizationManager
-  currentLanguage: French
+  currentLanguage: Vietnamese
 --- !u!4 &2015688264
 Transform:
   m_ObjectHideFlags: 0
@@ -14147,15 +13903,15 @@ PrefabInstance:
     - target: {fileID: 265210122225001263, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       propertyPath: displayTexture
       value: 
-      objectReference: {fileID: 5390246818323809478, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+      objectReference: {fileID: 21300000, guid: cca6a01a747cc4a4e8d274cd7bb02da1, type: 3}
     - target: {fileID: 2290131613580979249, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       propertyPath: displayTexture
       value: 
-      objectReference: {fileID: 2437483765381717123, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+      objectReference: {fileID: 21300000, guid: 807fc66faf6d7c1468c2555cd1943edb, type: 3}
     - target: {fileID: 3692667945714292404, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       propertyPath: displayTexture
       value: 
-      objectReference: {fileID: -497568770147540219, guid: 215687feeab0b7445b4a1cd86c82c2e1, type: 3}
+      objectReference: {fileID: 21300000, guid: 4e783cc9f2597fe4ab7cec161cd573c3, type: 3}
     - target: {fileID: 6802084524011920769, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       propertyPath: m_Name
       value: __Environment__
@@ -14353,24 +14109,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6139341496232509861, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 862033883}
-    - targetCorrespondingSourceObject: {fileID: 5596981143675952495, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1109114589}
-    - targetCorrespondingSourceObject: {fileID: 5596981143675952495, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1109114588}
-    - targetCorrespondingSourceObject: {fileID: 5596981143675952495, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1109114587}
-    - targetCorrespondingSourceObject: {fileID: 3403200301954143189, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 122882204}
-    - targetCorrespondingSourceObject: {fileID: 3403200301954143189, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 122882203}
-    - targetCorrespondingSourceObject: {fileID: 3403200301954143189, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 122882202}
     - targetCorrespondingSourceObject: {fileID: 8880988309839873411, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 592022236}
@@ -14800,12 +14538,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a69e375f4c4e8734795e4e51bb9bddb4, type: 2}
   - {fileID: 11400000, guid: 39fb6caac1795834780052ce9d0e71a6, type: 2}
   - {fileID: 11400000, guid: 985b54c9b72d6ae49b7ee83664f08c03, type: 2}
+  - {fileID: 11400000, guid: 3c33c2e52d5a8974b9049be5cd6f1633, type: 2}
   - {fileID: 11400000, guid: 55faa2ac3edb4774699b9288507aa12e, type: 2}
   - {fileID: 11400000, guid: 409f22311d7916244bb93f69dea415e1, type: 2}
   - {fileID: 11400000, guid: 7a18f40f7e572904f8e7758cf86915bf, type: 2}
   - {fileID: 11400000, guid: 994de37e8c57a6548b40a9602413691c, type: 2}
   - {fileID: 11400000, guid: 2cbb0edde07df97449178ac1a5ee5a28, type: 2}
-  - {fileID: 11400000, guid: 3c33c2e52d5a8974b9049be5cd6f1633, type: 2}
   - {fileID: 11400000, guid: 6fd7e1cd7034c884a963525460573837, type: 2}
   - {fileID: 11400000, guid: 2a9d467c64d4f7848b3b76cc1dbe87ca, type: 2}
   - {fileID: 11400000, guid: a94f5ff16e836d941a37c6d4bd32f7aa, type: 2}
@@ -14817,7 +14555,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 0
+  debugStepIndex: 2
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:
