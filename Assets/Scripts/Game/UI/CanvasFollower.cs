@@ -5,6 +5,7 @@ public class CanvasFollower : MonoBehaviour
     [SerializeField] Vector3 distanceFromCamera = new Vector3(0, 0, 6);
     [SerializeField] float yRotationOffset = 0;
     [SerializeField] float followSpeed = 8.0f;
+    [SerializeField] bool usingCameraUpTransform = false;
 
     Transform cameraTransform;
 
@@ -13,7 +14,14 @@ public class CanvasFollower : MonoBehaviour
         cameraTransform = Camera.main.transform;
 
         Vector3 targetPosition = cameraTransform.position + (cameraTransform.forward * distanceFromCamera.z) + (cameraTransform.right * distanceFromCamera.x);
-        targetPosition.y = cameraTransform.position.y + distanceFromCamera.y;
+        if (usingCameraUpTransform)
+        {
+            targetPosition += cameraTransform.up * distanceFromCamera.y;
+        }
+        else
+        {
+            targetPosition.y = cameraTransform.position.y + distanceFromCamera.y;
+        }
         transform.position = targetPosition;
 
         float cameraYaw = cameraTransform.eulerAngles.y;
@@ -25,7 +33,14 @@ public class CanvasFollower : MonoBehaviour
         if (cameraTransform == null) cameraTransform = Camera.main.transform;
 
         Vector3 targetPosition = cameraTransform.position + (cameraTransform.forward * distanceFromCamera.z) + (cameraTransform.right * distanceFromCamera.x);
-        targetPosition.y = cameraTransform.position.y + distanceFromCamera.y;
+        if (usingCameraUpTransform)
+        {
+            targetPosition += cameraTransform.up * distanceFromCamera.y;
+        }
+        else
+        {
+            targetPosition.y = cameraTransform.position.y + distanceFromCamera.y;
+        }
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);
 
         float cameraYaw = cameraTransform.eulerAngles.y + yRotationOffset;

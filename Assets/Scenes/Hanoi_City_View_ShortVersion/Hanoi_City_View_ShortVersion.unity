@@ -9262,9 +9262,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65fd12833ef2344ea41bc352290235f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasFollower
-  distanceFromCamera: {x: 0, y: -1, z: 4}
+  distanceFromCamera: {x: 0, y: 0, z: 2}
   yRotationOffset: 0
   followSpeed: 8
+  usingCameraUpTransform: 1
 --- !u!114 &1576861937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14551,7 +14552,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 4
+  debugStepIndex: 9
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:
