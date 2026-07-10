@@ -9262,7 +9262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65fd12833ef2344ea41bc352290235f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanvasFollower
-  distanceFromCamera: {x: 0, y: 0, z: 5}
+  distanceFromCamera: {x: 0, y: -1, z: 4}
   yRotationOffset: 0
   followSpeed: 8
 --- !u!114 &1576861937
@@ -9941,10 +9941,6 @@ PrefabInstance:
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 7615592486915259466}
-    - target: {fileID: 3087852308422767576, guid: 9628754f159e6cc4b8c906ba598d78c0, type: 3}
-      propertyPath: positionalOffset.y
-      value: -0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 4312656673819595223, guid: 9628754f159e6cc4b8c906ba598d78c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -9959,7 +9955,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4312656673819595223, guid: 9628754f159e6cc4b8c906ba598d78c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: SCN_Main_Menu
+      value: SCN_Main_Menu_City
       objectReference: {fileID: 0}
     - target: {fileID: 4312656673819595228, guid: 9628754f159e6cc4b8c906ba598d78c0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -14555,7 +14551,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 2
+  debugStepIndex: 4
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:

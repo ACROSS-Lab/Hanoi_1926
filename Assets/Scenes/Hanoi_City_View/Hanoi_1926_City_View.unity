@@ -6127,10 +6127,6 @@ PrefabInstance:
       propertyPath: leftHand
       value: 
       objectReference: {fileID: 7615592486915259466}
-    - target: {fileID: 3087852308422767576, guid: 9628754f159e6cc4b8c906ba598d78c0, type: 3}
-      propertyPath: positionalOffset.y
-      value: -0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 4312656673819595223, guid: 9628754f159e6cc4b8c906ba598d78c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6145,7 +6141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4312656673819595223, guid: 9628754f159e6cc4b8c906ba598d78c0, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: SCN_Main_Menu
+      value: SCN_Main_Menu_Flood
       objectReference: {fileID: 0}
     - target: {fileID: 4312656673819595228, guid: 9628754f159e6cc4b8c906ba598d78c0, type: 3}
       propertyPath: m_AnchorMax.y

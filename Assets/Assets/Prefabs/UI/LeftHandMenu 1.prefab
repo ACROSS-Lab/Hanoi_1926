@@ -257,7 +257,7 @@ MonoBehaviour:
   leftHand: {fileID: 0}
   positionSmoothSpeed: 20
   rotationSmoothSpeed: 20
-  positionalOffset: {x: 0, y: -0.1, z: 0.06}
+  positionalOffset: {x: 0, y: -0.12, z: 0.06}
   canvasGroup: {fileID: 5335099711007847368}
   fadeDuration: 0.5
 --- !u!1001 &436083623026025244
