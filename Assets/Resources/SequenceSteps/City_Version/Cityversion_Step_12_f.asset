@@ -22,7 +22,7 @@ MonoBehaviour:
   flyDuration: 0
   hasPlayerMovement: 1
   playerTargetPosition: {x: -1.8, y: -1, z: -1}
-  hasPlayerRotation: 1
+  hasPlayerRotation: 0
   playerTargetRotation: {x: 0, y: 0, z: 0}
   hasSceneTransition: 1
   sceneName: Diorama_04_City
