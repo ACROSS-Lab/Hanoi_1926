@@ -1104,6 +1104,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8209797214075343310, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: m_PokeDepth
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209797214075343310, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: m_PokeWidth
+      value: 0.015
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209797214075343310, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: m_PokeHoverRadius
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 8209797214075343310, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
+      propertyPath: m_PokeSelectWidth
+      value: 0.03
+      objectReference: {fileID: 0}
     - target: {fileID: 8210486130831417921, guid: d6878e1999eb4b44a9f5a263af86c185, type: 3}
       propertyPath: m_InteractorSource
       value: 
@@ -1269,3 +1285,5 @@ MonoBehaviour:
   fadeDuration: 0.5
   hasFadeOnStart: 1
   objectToKeep: {fileID: 0}
+  sequenceDirector: {fileID: 0}
+  exitDioramaButton: {fileID: 0}
