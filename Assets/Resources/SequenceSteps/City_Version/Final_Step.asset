@@ -19,7 +19,7 @@ MonoBehaviour:
   hasNarratorRotation: 0
   targetNarratorRotation: {x: 0, y: 0, z: 0}
   targetNarratorScale: 0
-  flyDuration: 3
+  flyDuration: 1.5
   hasPlayerMovement: 0
   playerTargetPosition: {x: 0, y: 0, z: 0}
   hasPlayerRotation: 0
