@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2964308459277234418}
   - component: {fileID: 2183619760486635572}
   - component: {fileID: 1230902552250622170}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: POI_Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 7997617211914040545}
   - component: {fileID: 3661913925921495361}
   - component: {fileID: 3937930186984995169}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Details
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 5193667096085883347}
   - component: {fileID: 6198429112992588823}
   - component: {fileID: 5908210562519092777}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 2684924199161159714}
   - component: {fileID: 2222891022837114074}
   - component: {fileID: 3314554679534195830}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}

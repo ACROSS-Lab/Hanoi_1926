@@ -21,12 +21,14 @@ public class POIManager : MonoBehaviour
     [SerializeField] float fadeDuration = 0.2f;
 
     [Header("Images Display")]
+    [SerializeField] float imageDisplayDotThreshold = 0.5f;
     [SerializeField] GameObject imageDisplay;
     [SerializeField] Image image;
     [SerializeField] string propertyName;
 
     static readonly List<PointOfInterest> poiList = new List<PointOfInterest>();
     Transform camTransform;
+    Transform currentPOITransform;
     PointOfInterest displayingPOI;
     MaterialPropertyBlock propertyBlock;
     int propertyID;
@@ -167,13 +169,16 @@ public class POIManager : MonoBehaviour
         }
 
         displayingPOI = poi;
+        currentPOITransform = poi != null ? poi.transform : null;
     }
 
     void CheckIfDisplayROIOutOfRange()
     {
         if (displayingPOI != null)
         {
-            if (displayingPOI.currentState == 0)
+            Vector3 direction = currentPOITransform.position - camTransform.position;
+            float dot = Vector3.Dot(camTransform.forward, direction.normalized);
+            if (dot < imageDisplayDotThreshold)
             {
                 ResetDisplayPOI(null);
                 image.sprite = null;

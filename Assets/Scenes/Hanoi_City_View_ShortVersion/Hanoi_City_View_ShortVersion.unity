@@ -9291,7 +9291,7 @@ MonoBehaviour:
   distanceFromCamera: {x: 0, y: 0, z: 2}
   yRotationOffset: 0
   followSpeed: 8
-  usingCameraUpTransform: 1
+  followCameraHeight: 1
 --- !u!114 &1576861937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14001,6 +14001,10 @@ PrefabInstance:
       propertyPath: displayTexture
       value: 
       objectReference: {fileID: 21300000, guid: cca6a01a747cc4a4e8d274cd7bb02da1, type: 3}
+    - target: {fileID: 530299989630513824, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1664047995550573779, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
@@ -14016,6 +14020,10 @@ PrefabInstance:
     - target: {fileID: 3170396958196565572, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228418829533590978, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3502570758655802719, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -14700,7 +14708,7 @@ MonoBehaviour:
   playerTransition: {fileID: 7615592486915259465}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 0
+  debugStepIndex: 9
   currentStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:
