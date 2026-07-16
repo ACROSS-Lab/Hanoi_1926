@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,6 +26,7 @@ public class POIManager : MonoBehaviour
     [SerializeField] GameObject imageDisplay;
     [SerializeField] Image image;
     [SerializeField] string propertyName;
+    [SerializeField] TextMeshProUGUI descriptionText;
 
     static readonly List<PointOfInterest> poiList = new List<PointOfInterest>();
     Transform camTransform;
@@ -148,6 +150,12 @@ public class POIManager : MonoBehaviour
         if (poi.displayTexture != null)
         {
             image.sprite = poi.displayTexture;
+        }
+
+        if (poi.TryGetComponent<LocalizedKey>(out LocalizedKey localizedKey))
+        {
+            string key = localizedKey.localizationKey;
+            descriptionText.text = LocalizationManager.Instance.GetLocalizedValue(key);
         }
     }
 
