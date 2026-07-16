@@ -21,7 +21,7 @@ MonoBehaviour:
   targetNarratorScale: 0.3
   flyDuration: 2
   hasPlayerMovement: 1
-  playerTargetPosition: {x: -1.8, y: -1, z: -1}
+  playerTargetPosition: {x: -1.525, y: -1, z: -0.443}
   hasPlayerRotation: 0
   playerTargetRotation: {x: 0, y: 0, z: 0}
   hasSceneTransition: 0
