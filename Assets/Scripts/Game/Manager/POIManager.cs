@@ -33,7 +33,6 @@ public class POIManager : MonoBehaviour
     Transform currentPOITransform;
     PointOfInterest displayingPOI;
     MaterialPropertyBlock propertyBlock;
-    int propertyID;
 
     void Awake()
     {
@@ -43,10 +42,7 @@ public class POIManager : MonoBehaviour
     void Start()
     {
         camTransform = Camera.main.transform;
-
         propertyBlock = new MaterialPropertyBlock();
-        propertyID = Shader.PropertyToID(propertyName);
-
     }
 
     void OnDisable()
@@ -136,16 +132,7 @@ public class POIManager : MonoBehaviour
         ResetDisplayPOI(poi);
         imageDisplay.SetActive(true);
 
-        MeshRenderer[] renderers = poi.GetComponentsInChildren<MeshRenderer>();
-        if (renderers.Length > 0)
-        {
-            foreach (MeshRenderer renderer in renderers)
-            {
-                renderer.GetPropertyBlock(propertyBlock);
-                propertyBlock.SetFloat(propertyID, 1f);
-                renderer.SetPropertyBlock(propertyBlock);
-            }
-        }
+        poi.SetHighlight(propertyBlock, 1f);
 
         if (poi.displayTexture != null)
         {
@@ -166,13 +153,7 @@ public class POIManager : MonoBehaviour
             Debug.Log("ResetDisplayPOI: " + (displayingPOI != null ? displayingPOI.name : "null") + " -> " + (poi != null ? poi.name : "null"));
             if (displayingPOI != null) 
             {
-                MeshRenderer[] renderers = displayingPOI.GetComponentsInChildren<MeshRenderer>();
-                foreach (MeshRenderer renderer in renderers)
-                {
-                    renderer.GetPropertyBlock(propertyBlock);
-                    propertyBlock.SetFloat(propertyID, 0f);
-                    renderer.SetPropertyBlock(propertyBlock);
-                }
+                displayingPOI.SetHighlight(propertyBlock, 0f);
             }
         }
 

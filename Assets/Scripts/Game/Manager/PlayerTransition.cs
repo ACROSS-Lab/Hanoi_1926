@@ -82,6 +82,7 @@ public class PlayerTransition : MonoBehaviour
         primarySceneRoots.AddRange(primaryScene.GetRootGameObjects());
         primarySceneRoots.Remove(objectToKeep);
 
+        LightmapSettings.lightmapsMode = LightmapsMode.CombinedDirectional;
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         while (!asyncLoad.isDone)
         {
@@ -102,6 +103,7 @@ public class PlayerTransition : MonoBehaviour
     {
         SceneManager.SetActiveScene(mainScene);
 
+        LightmapSettings.lightmapsMode = LightmapsMode.NonDirectional;
         AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(sceneName);
         while (!asyncUnload.isDone)
         {

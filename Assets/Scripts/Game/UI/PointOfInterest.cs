@@ -31,6 +31,9 @@ public class PointOfInterest : MonoBehaviour
     Transform canvasTransform, camTransform;
     AudioSource audioSource;
     XRSimpleInteractable interactable;
+    MeshRenderer[] meshRenderers;
+
+    static readonly int propertyID = Shader.PropertyToID("_Highlight");
 
     #if UNITY_EDITOR
     void Reset()
@@ -71,6 +74,7 @@ public class PointOfInterest : MonoBehaviour
     void Awake()
     {
         interactable = GetComponent<XRSimpleInteractable>();
+        meshRenderers = GetComponentsInChildren<MeshRenderer>();
     }
 
     void OnEnable()
@@ -130,6 +134,16 @@ public class PointOfInterest : MonoBehaviour
         }
         
         currentState = newState;
+    }
+
+    public void SetHighlight(MaterialPropertyBlock propertyBlock, float value)
+    {
+        foreach (var renderer in meshRenderers)
+        {
+            renderer.GetPropertyBlock(propertyBlock);
+            propertyBlock.SetFloat(propertyID, value);
+            renderer.SetPropertyBlock(propertyBlock);
+        }
     }
 
     void SetState0(float popDuration)
