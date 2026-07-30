@@ -37,6 +37,12 @@ public class WebBuildManager : MonoBehaviour
     Transform camTransform;
     Plane groundPlane;
 
+    Vector3 activePivotPoint;
+    bool isOrbiting = false;
+    bool isPanning = false;
+    bool wasOneTouch = false;
+    bool wasTwoTouch = false;
+
     void Awake()
     {
         cam = Camera.main;
@@ -81,28 +87,48 @@ public class WebBuildManager : MonoBehaviour
 
     void LateUpdate()
     {
-        Vector3 pivotPoint = GetScreenCenterOnGround();
-
         if (IsPointerOverUI())
         {
+            isOrbiting = false;
+            isPanning = false;
+            wasOneTouch = false;
+            wasTwoTouch = false;
             return;
         }
 
         if (Touch.activeTouches.Count > 0)
         {
+            isOrbiting = false;
+            isPanning = false;
+
             if (Touch.activeTouches.Count == 1)
             {
-                HandleOrbit(Touch.activeTouches[0].delta * orbitSensitivity, pivotPoint);
+                var touch = Touch.activeTouches[0];
+                if (!wasOneTouch)
+                {
+                    activePivotPoint = GetPointOnGround(touch.screenPosition);
+                    wasOneTouch = true;
+                }
+                wasTwoTouch = false;
+
+                HandleOrbit(touch.delta * orbitSensitivity, activePivotPoint);
             }
             else if (Touch.activeTouches.Count == 2)
             {
                 var touch0 = Touch.activeTouches[0];
                 var touch1 = Touch.activeTouches[1];
 
+                if (!wasTwoTouch)
+                {
+                    Vector2 center = (touch0.screenPosition + touch1.screenPosition) / 2f;
+                    activePivotPoint = GetPointOnGround(center);
+                    wasTwoTouch = true;
+                }
+                wasOneTouch = false;
+
                 // Normalize deltas to get pure direction, ignoring how fast they are swiping
                 Vector2 dir0 = touch0.delta.normalized;
                 Vector2 dir1 = touch1.delta.normalized;
-
 
                 // Calculate alignment: 1 (parallel), 0 (perpendicular), -1 (opposite)
                 float swipeAlignment = Vector2.Dot(dir0, dir1);
@@ -112,7 +138,7 @@ public class WebBuildManager : MonoBehaviour
                 {
                     // It's a PAN. Calculate average delta and ignore zoom.
                     Vector2 averageDelta = (touch0.delta + touch1.delta) / 2f;
-                    HandlePan(averageDelta * panSensitivity, pivotPoint);
+                    HandlePan(averageDelta * panSensitivity, activePivotPoint);
                 }
                 // If fingers are moving in opposite directions, or one is held still (< 0.3)
                 else if (swipeAlignment < 0.3f)
@@ -122,18 +148,50 @@ public class WebBuildManager : MonoBehaviour
                 }
                 // If it falls between 0.3 and 0.6, it's a deadzone to prevent jitter
             }
+            else
+            {
+                wasOneTouch = false;
+                wasTwoTouch = false;
+            }
         }
         else
         {
+            wasOneTouch = false;
+            wasTwoTouch = false;
+
             Vector2 pointerDelta = pointerDeltaAction.action.ReadValue<Vector2>();
             
-            if (orbitClickAction.action.IsInProgress())
+            bool orbitInProgress = orbitClickAction.action.IsInProgress();
+            if (orbitInProgress && !isOrbiting)
             {
-                HandleOrbit(pointerDelta * orbitSensitivity, pivotPoint);
+                Vector2 screenPos = Mouse.current != null ? Mouse.current.position.ReadValue() : new Vector2(Screen.width / 2f, Screen.height / 2f);
+                activePivotPoint = GetPointOnGround(screenPos);
+                isOrbiting = true;
             }
-            else if (panClickAction.action.IsInProgress())
+            else if (!orbitInProgress)
             {
-                HandlePan(pointerDelta * panSensitivity, pivotPoint);
+                isOrbiting = false;
+            }
+
+            bool panInProgress = panClickAction.action.IsInProgress();
+            if (panInProgress && !isPanning)
+            {
+                Vector2 screenPos = Mouse.current != null ? Mouse.current.position.ReadValue() : new Vector2(Screen.width / 2f, Screen.height / 2f);
+                activePivotPoint = GetPointOnGround(screenPos);
+                isPanning = true;
+            }
+            else if (!panInProgress)
+            {
+                isPanning = false;
+            }
+            
+            if (orbitInProgress)
+            {
+                HandleOrbit(pointerDelta * orbitSensitivity, activePivotPoint);
+            }
+            else if (panInProgress)
+            {
+                HandlePan(pointerDelta * panSensitivity, activePivotPoint);
             }
 
             HandleDesktopZoom();
@@ -146,9 +204,9 @@ public class WebBuildManager : MonoBehaviour
         );
     }
 
-    Vector3 GetScreenCenterOnGround()
+    Vector3 GetPointOnGround(Vector2 screenPos)
     {
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
+        Ray ray = cam.ScreenPointToRay(screenPos);
         if (groundPlane.Raycast(ray, out float distanceToPlane))
         {
             return ray.GetPoint(distanceToPlane);
@@ -191,7 +249,9 @@ public class WebBuildManager : MonoBehaviour
         float scroll = scrollAction.action.ReadValue<float>();
         if (Mathf.Abs(scroll) > 0.01f)
         {
-            camTransform.position += camTransform.forward * Mathf.Sign(scroll) * zoomSensitivity;
+            Vector2 screenPos = Mouse.current != null ? Mouse.current.position.ReadValue() : new Vector2(Screen.width / 2f, Screen.height / 2f);
+            Ray ray = cam.ScreenPointToRay(screenPos);
+            camTransform.position += ray.direction * Mathf.Sign(scroll) * zoomSensitivity;
         }
     }
 
@@ -204,7 +264,10 @@ public class WebBuildManager : MonoBehaviour
 
         float pinchDelta = currentDistance - previousDistance;
         
-        camTransform.position += camTransform.forward * pinchDelta * mobileZoomSensitivity;
+        Vector2 centerPosition = (touch0.screenPosition + touch1.screenPosition) / 2f;
+        Ray ray = cam.ScreenPointToRay(centerPosition);
+        
+        camTransform.position += ray.direction * pinchDelta * mobileZoomSensitivity;
     }
 
     void AdjustSensitivity()
