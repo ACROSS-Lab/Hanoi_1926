@@ -466,7 +466,7 @@ MonoBehaviour:
   distanceFromCamera: {x: 0, y: 0, z: 2}
   yRotationOffset: 0
   followSpeed: 8
-  followCameraHeight: 1
+  rotateWithCamera: 1
 --- !u!1 &5733382586169651601
 GameObject:
   m_ObjectHideFlags: 0

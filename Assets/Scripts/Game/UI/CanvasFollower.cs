@@ -5,7 +5,7 @@ public class CanvasFollower : MonoBehaviour
     [SerializeField] Vector3 distanceFromCamera = new Vector3(0, 0, 6);
     [SerializeField] float yRotationOffset = 0;
     [SerializeField] float followSpeed = 8.0f;
-    [SerializeField] bool followCameraHeight = false;
+    [SerializeField] bool rotateWithCamera = false;
 
     Transform cameraTransform;
 
@@ -15,7 +15,7 @@ public class CanvasFollower : MonoBehaviour
 
         Vector3 targetPosition = cameraTransform.position + (cameraTransform.forward * distanceFromCamera.z) + (cameraTransform.right * distanceFromCamera.x);
         Quaternion targetRotation;
-        if (followCameraHeight)
+        if (rotateWithCamera)
         {
             targetPosition += cameraTransform.up * distanceFromCamera.y;
             targetRotation = Quaternion.LookRotation(targetPosition - cameraTransform.position);
@@ -35,7 +35,7 @@ public class CanvasFollower : MonoBehaviour
 
         Vector3 targetPosition = cameraTransform.position + (cameraTransform.forward * distanceFromCamera.z) + (cameraTransform.right * distanceFromCamera.x);
         Quaternion targetRotation;
-        if (followCameraHeight)
+        if (rotateWithCamera)
         {
             targetPosition += cameraTransform.up * distanceFromCamera.y;
             targetRotation = Quaternion.LookRotation(targetPosition - cameraTransform.position);
