@@ -711,6 +711,10 @@ PrefabInstance:
       propertyPath: m_PresetInfoIsWorld
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8011913535806139822, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8046370365096114985, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -998,6 +1002,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4883549871351756046, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1186324148792452983}
+    - targetCorrespondingSourceObject: {fileID: 1792420452319694395, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5101693665035829851}
+    - targetCorrespondingSourceObject: {fileID: 1792420452319694395, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7017770288411897718}
+    - targetCorrespondingSourceObject: {fileID: 1792420452319694395, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5792342095351903922}
   m_SourcePrefab: {fileID: 100100000, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
 --- !u!1 &57488839532208887 stripped
 GameObject:
@@ -1235,6 +1248,128 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Filtering.XRPokeFilter
   m_Interactable: {fileID: 1707268586086634031}
   m_PokeCollider: {fileID: 1093663237039057492}
+  m_PokeConfiguration:
+    m_UseConstant: 1
+    m_ConstantValue:
+      m_PokeDirection: 5
+      m_InteractionDepthOffset: 0
+      m_EnablePokeAngleThreshold: 1
+      m_PokeAngleThreshold: 89.9
+    m_Variable: {fileID: 0}
+--- !u!1 &335444138267148916 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1792420452319694395, guid: d3485dbc68f871b49b67198e152315e3, type: 3}
+  m_PrefabInstance: {fileID: 2051469125880876111}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5101693665035829851
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335444138267148916}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 174.2463, y: 46.810516, z: 265.32404}
+  m_Center: {x: -56.452034, y: 8.405262, z: 11.754244}
+--- !u!114 &7017770288411897718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335444138267148916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a35f6cfbfba9b548aaa00d52cfe8a50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Interactables.XRSimpleInteractable
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_FocusMode: 1
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstFocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastFocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FocusExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_AutoFindParentInteractableInHierarchy: 0
+  m_ParentInteractableObject: {fileID: 0}
+--- !u!114 &5792342095351903922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335444138267148916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 115f1a2a50d85cd4b9d6dad4c95622be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Filtering.XRPokeFilter
+  m_Interactable: {fileID: 7017770288411897718}
+  m_PokeCollider: {fileID: 5101693665035829851}
   m_PokeConfiguration:
     m_UseConstant: 1
     m_ConstantValue:

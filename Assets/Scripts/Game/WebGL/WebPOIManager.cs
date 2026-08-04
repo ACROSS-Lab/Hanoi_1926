@@ -42,6 +42,26 @@ public class WebPOIManager : MonoBehaviour
         // Find all POIs in the scene
         PointOfInterest[] allPOIs = FindObjectsByType<PointOfInterest>(FindObjectsInactive.Include, FindObjectsSortMode.None);
         poiList.AddRange(allPOIs);
+
+        // FIX FOR WORLD SPACE CANVAS CLICKS:
+        // Automatically assign the main camera as the Event Camera for all POI canvases
+        foreach (var poi in poiList)
+        {
+            if (poi != null && poi.canvas != null)
+            {
+                Canvas poiCanvas = poi.canvas.GetComponent<Canvas>();
+                if (poiCanvas != null && poiCanvas.renderMode == RenderMode.WorldSpace)
+                {
+                    poiCanvas.worldCamera = Camera.main;
+                    
+                    // A GraphicRaycaster is required for EventSystem to hit UI elements
+                    if (poiCanvas.GetComponent<GraphicRaycaster>() == null)
+                    {
+                        poiCanvas.gameObject.AddComponent<GraphicRaycaster>();
+                    }
+                }
+            }
+        }
     }
 
     void OnDisable()
@@ -74,7 +94,7 @@ public class WebPOIManager : MonoBehaviour
         }
 
         CheckIfDisplayROIOutOfRange();
-        // HandleInput();
+        HandleInput();
     }
 
     void ProcessCanvas(PointOfInterest poi, Vector3 camPos, Vector3 camForward)
@@ -103,14 +123,28 @@ public class WebPOIManager : MonoBehaviour
 
     void HandleInput()
     {
-        // Detect click/touch interaction using EventSystem
+        bool inputDetected = false;
+        Vector2 inputPosition = Vector2.zero;
+
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            inputDetected = true;
+            inputPosition = Mouse.current.position.ReadValue();
+        }
+        else if (Touchscreen.current != null && Touchscreen.current.primaryTouch.press.wasPressedThisFrame)
+        {
+            inputDetected = true;
+            inputPosition = Touchscreen.current.primaryTouch.position.ReadValue();
+        }
+
+        // Detect click/touch interaction using EventSystem
+        if (inputDetected)
         {
             if (EventSystem.current == null) return;
 
             PointerEventData eventData = new PointerEventData(EventSystem.current)
             {
-                position = Mouse.current.position.ReadValue()
+                position = inputPosition
             };
 
             List<RaycastResult> results = new List<RaycastResult>();
@@ -135,7 +169,7 @@ public class WebPOIManager : MonoBehaviour
                 if (poi != null && poi.currentState != 0)
                 {
                     // Confirm the hit object is part of the sign UI
-                    if (poi.sign != null && hitObj.transform.IsChildOf(poi.sign.transform))
+                    if (poi.sign != null && hitObj.transform.IsChildOf(poi.details.transform))
                     {
                         clickedPOI = poi;
                         break;

@@ -13,6 +13,10 @@ public class WebBuildManager : MonoBehaviour
     [SerializeField] InputActionReference panClickAction;   
     [SerializeField] InputActionReference scrollAction;
 
+    [Header("Controls")]
+    [SerializeField] bool pivotOnPointerRotate = true;
+    [SerializeField] bool pivotOnPointerZoom = true;
+
     [Header("Sensitivities")]
     [SerializeField] float orbitSensitivity = 0.5f;
     [SerializeField] float panSensitivity = 0.5f;
@@ -87,14 +91,14 @@ public class WebBuildManager : MonoBehaviour
 
     void LateUpdate()
     {
-        if (IsPointerOverUI())
-        {
-            isOrbiting = false;
-            isPanning = false;
-            wasOneTouch = false;
-            wasTwoTouch = false;
-            return;
-        }
+        // if (IsPointerOverUI())
+        // {
+        //     isOrbiting = false;
+        //     isPanning = false;
+        //     wasOneTouch = false;
+        //     wasTwoTouch = false;
+        //     return;
+        // }
 
         if (Touch.activeTouches.Count > 0)
         {
@@ -106,7 +110,8 @@ public class WebBuildManager : MonoBehaviour
                 var touch = Touch.activeTouches[0];
                 if (!wasOneTouch)
                 {
-                    activePivotPoint = GetPointOnGround(touch.screenPosition);
+                    Vector2 pos = pivotOnPointerRotate ? touch.screenPosition : new Vector2(Screen.width / 2f, Screen.height / 2f);
+                    activePivotPoint = GetPointOnGround(pos);
                     wasOneTouch = true;
                 }
                 wasTwoTouch = false;
@@ -121,7 +126,8 @@ public class WebBuildManager : MonoBehaviour
                 if (!wasTwoTouch)
                 {
                     Vector2 center = (touch0.screenPosition + touch1.screenPosition) / 2f;
-                    activePivotPoint = GetPointOnGround(center);
+                    Vector2 pos = pivotOnPointerRotate ? center : new Vector2(Screen.width / 2f, Screen.height / 2f);
+                    activePivotPoint = GetPointOnGround(pos);
                     wasTwoTouch = true;
                 }
                 wasOneTouch = false;
@@ -138,7 +144,7 @@ public class WebBuildManager : MonoBehaviour
                 {
                     // It's a PAN. Calculate average delta and ignore zoom.
                     Vector2 averageDelta = (touch0.delta + touch1.delta) / 2f;
-                    HandlePan(averageDelta * panSensitivity, activePivotPoint);
+                    HandlePan(averageDelta * panSensitivity * 3, activePivotPoint);
                 }
                 // If fingers are moving in opposite directions, or one is held still (< 0.3)
                 else if (swipeAlignment < 0.3f)
@@ -165,7 +171,8 @@ public class WebBuildManager : MonoBehaviour
             if (orbitInProgress && !isOrbiting)
             {
                 Vector2 screenPos = Mouse.current != null ? Mouse.current.position.ReadValue() : new Vector2(Screen.width / 2f, Screen.height / 2f);
-                activePivotPoint = GetPointOnGround(screenPos);
+                Vector2 pos = pivotOnPointerRotate ? screenPos : new Vector2(Screen.width / 2f, Screen.height / 2f);
+                activePivotPoint = GetPointOnGround(pos);
                 isOrbiting = true;
             }
             else if (!orbitInProgress)
@@ -177,7 +184,8 @@ public class WebBuildManager : MonoBehaviour
             if (panInProgress && !isPanning)
             {
                 Vector2 screenPos = Mouse.current != null ? Mouse.current.position.ReadValue() : new Vector2(Screen.width / 2f, Screen.height / 2f);
-                activePivotPoint = GetPointOnGround(screenPos);
+                Vector2 pos = pivotOnPointerRotate ? screenPos : new Vector2(Screen.width / 2f, Screen.height / 2f);
+                activePivotPoint = GetPointOnGround(pos);
                 isPanning = true;
             }
             else if (!panInProgress)
@@ -250,7 +258,8 @@ public class WebBuildManager : MonoBehaviour
         if (Mathf.Abs(scroll) > 0.01f)
         {
             Vector2 screenPos = Mouse.current != null ? Mouse.current.position.ReadValue() : new Vector2(Screen.width / 2f, Screen.height / 2f);
-            Ray ray = cam.ScreenPointToRay(screenPos);
+            Vector2 pos = pivotOnPointerZoom ? screenPos : new Vector2(Screen.width / 2f, Screen.height / 2f);
+            Ray ray = cam.ScreenPointToRay(pos);
             camTransform.position += ray.direction * Mathf.Sign(scroll) * zoomSensitivity;
         }
     }
@@ -265,7 +274,8 @@ public class WebBuildManager : MonoBehaviour
         float pinchDelta = currentDistance - previousDistance;
         
         Vector2 centerPosition = (touch0.screenPosition + touch1.screenPosition) / 2f;
-        Ray ray = cam.ScreenPointToRay(centerPosition);
+        Vector2 pos = pivotOnPointerZoom ? centerPosition : new Vector2(Screen.width / 2f, Screen.height / 2f);
+        Ray ray = cam.ScreenPointToRay(pos);
         
         camTransform.position += ray.direction * pinchDelta * mobileZoomSensitivity;
     }
