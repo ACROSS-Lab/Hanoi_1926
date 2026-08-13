@@ -4,9 +4,10 @@ using System.Collections;
 
 public class SceneTransition : MonoBehaviour
 {
+    public static SceneTransition Instance { get; private set; }
+
     public Canvas canvas;
     public CanvasGroup fadeCanvasGroup;
-    public GameObject leftHand, rightHand;
     public float fadeInDuration = 1.0f;
     public float fadeOutDuration = 2.0f;
 
@@ -27,7 +28,15 @@ public class SceneTransition : MonoBehaviour
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void SwitchScene(string sceneName)
@@ -37,20 +46,11 @@ public class SceneTransition : MonoBehaviour
 
     IEnumerator TransitionRoutine(string sceneName)
     {
+        fadeCanvasGroup.blocksRaycasts = true;
+
         yield return StartCoroutine(Fade(1f, fadeInDuration));
+
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
-        operation.allowSceneActivation = false;
-
-        rightHand.SetActive(false);
-        leftHand.SetActive(false);
-        
-        while (operation.progress < 0.9f)
-        {
-            yield return null;
-        }
-
-        operation.allowSceneActivation = true;
-
         while (!operation.isDone)
         {
             yield return null;
@@ -58,7 +58,7 @@ public class SceneTransition : MonoBehaviour
 
         yield return StartCoroutine(Fade(0f, fadeOutDuration));
 
-        Destroy(gameObject);
+        fadeCanvasGroup.blocksRaycasts = false;
     }
 
     IEnumerator Fade(float targetAlpha, float fadeDuration)
