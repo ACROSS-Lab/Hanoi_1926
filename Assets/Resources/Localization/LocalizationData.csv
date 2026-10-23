@@ -139,3 +139,6 @@ menu.webgl.ui.narration,Story of the flood,Câu chuyện về cơn lũ,L'histoir
 menu.webgl.ui.credits,Credits & References,Nguồn & Mục lục,Crédits & Références,
 menu.webgl.ui.sens,Sensitivity,Độ nhạy,Sensibilité,
 menu.webgl.ui.resetview,Reset view,Đặt lại góc nhìn ,Réinitialiser la vue,
+menu.webgl.ui.mousehint,<b>Mouse</b>\nLeft-click + drag: Rotate\nRight-click + drag: Pan\nScroll wheel: Zoom,<b>Chuột</b>\nChuột trái + kéo: Xoay\nChuột phải + kéo: Di chuyển\nCon lăn: Thu phóng,<b>Souris</b>\nClic gauche + glisser : Tourner\nClic droit + glisser : Déplacer\nMolette : Zoomer,
+menu.webgl.ui.touchhint,<b>Touch</b>\nOne finger + drag: Rotate\nTwo fingers + drag: Pan\nPinch / spread: Zoom,<b>Cảm ứng</b>\nMột ngón + kéo: Xoay\nHai ngón + kéo: Di chuyển\nChụm / tách hai ngón: Thu phóng,<b>Écran tactile</b>\nUn doigt + glisser : Tourner\nDeux doigts + glisser : Déplacer\nPincer / écarter : Zoomer,
+menu.webgl.ui.exclaimer,Best experienced in landscape mode,Trải nghiệm tốt nhất ở chế độ ngang,Expérience optimale en mode paysage,
