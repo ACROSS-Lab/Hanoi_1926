@@ -26,6 +26,8 @@ public class HeadLookAt : MonoBehaviour
             _initialLocalRotation = headBone.localRotation;
 
         _currentLookRotation = headBone.rotation;
+
+        if (target == null) target = Camera.main.transform;
     }
 
     void LateUpdate()

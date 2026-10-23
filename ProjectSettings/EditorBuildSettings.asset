@@ -78,7 +78,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Dioramas/Diorama_04_City.unity
     guid: d26dee8dbb111e44c913b57e7e46f4c1
   - enabled: 0
-    path: Assets/Scenes/WebGL/Hanoi_1926_City_View_WebGL.unity
+    path: Assets/Scenes/WebGL/Hanoi_1926_Exploration_WebGL.unity
     guid: a9ce81359f75ecc479407191d3115ac4
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bfa1182bd221b4ca89619141f66f1260, type: 2}
@@ -88,6 +88,7 @@ EditorBuildSettings:
     com.unity.adaptivePerformance.basic.provider_settings: {fileID: 11400000, guid: bbade76f4eb1f8a4d93ff1cf24acc8b2, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: abaeb46dfc6db2b4db18a8bd86db2313, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: ae9e1beb4038df3459ec76c7375d79d3, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: a8150bb610f4bb24e845db05bd5ab0d8, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 7ba45cd27effccf43a2106a43ec141b3, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 1a4c68ca72a83449f938d669337cb305, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: a9a6963505ddf7f4d886008c6dc86122, type: 2}

@@ -1,3 +1,4 @@
+#if !UNITY_EDITOR
 using UnityEngine;
 
 public class AndroidListener : MonoBehaviour
@@ -11,7 +12,6 @@ public class AndroidListener : MonoBehaviour
     bool wasMounted = true;
     float timeHeadsetRemoved;
 
-    #if !UNITY_EDITOR
     void Start()
     {
         if (Application.platform == RuntimePlatform.Android)
@@ -60,5 +60,5 @@ public class AndroidListener : MonoBehaviour
             wasMounted = isMounted;
         }
     }
-    #endif
 }
+#endif

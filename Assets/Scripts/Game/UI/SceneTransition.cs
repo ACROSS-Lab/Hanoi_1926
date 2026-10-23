@@ -4,38 +4,30 @@ using System.Collections;
 
 public class SceneTransition : MonoBehaviour
 {
-    public static SceneTransition Instance { get; private set; }
+    [SerializeField] float fadeInDuration = 1.0f;
+    [SerializeField] float fadeOutDuration = 2.0f;
+    [SerializeField] bool fadeInOnStart = true;
 
-    public Canvas canvas;
-    public CanvasGroup fadeCanvasGroup;
-    public float fadeInDuration = 1.0f;
-    public float fadeOutDuration = 2.0f;
+    public float FadeInDuration => fadeInDuration;
+    public float FadeOutDuration => fadeOutDuration;
 
-    void OnEnable()
-    {
-        SceneManager.sceneLoaded += SetCamera;
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= SetCamera;
-    }
-
-    void SetCamera(Scene scene, LoadSceneMode mode)
-    {
-        canvas.worldCamera = Camera.allCameras[Camera.allCameras.Length - 1];
-    }
+    CanvasGroup fadeCanvasGroup;
 
     void Awake()
     {
-        if (Instance == null)
+        fadeCanvasGroup = GetComponentInChildren<CanvasGroup>();
+        if (fadeInOnStart && fadeCanvasGroup != null)
         {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
+            fadeCanvasGroup.alpha = 1f;
+            fadeCanvasGroup.blocksRaycasts = true;
         }
-        else
+    }
+
+    void Start()
+    {
+        if (fadeInOnStart)
         {
-            Destroy(gameObject);
+            StartCoroutine(Fade(0f, fadeOutDuration));
         }
     }
 
@@ -44,11 +36,30 @@ public class SceneTransition : MonoBehaviour
         StartCoroutine(TransitionRoutine(sceneName));
     }
 
+    public void SwitchScene(int sceneBuildIndex)
+    {
+        StartCoroutine(TransitionRoutineIndex(sceneBuildIndex));
+    }
+
     IEnumerator TransitionRoutine(string sceneName)
     {
         fadeCanvasGroup.blocksRaycasts = true;
 
         yield return StartCoroutine(Fade(1f, fadeInDuration));
+
+        // Unload additive diorama if open
+        if (PlayerCameraController.ActiveDioramaHandle.IsValid())
+        {
+            yield return UnityEngine.AddressableAssets.Addressables.UnloadSceneAsync(PlayerCameraController.ActiveDioramaHandle);
+            PlayerCameraController.ActiveDioramaHandle = default;
+        }
+
+        // Unload main addressable scene if loaded via Addressables
+        if (AddressableSceneLoader.LastLoadedSceneHandle.IsValid())
+        {
+            yield return UnityEngine.AddressableAssets.Addressables.UnloadSceneAsync(AddressableSceneLoader.LastLoadedSceneHandle);
+            AddressableSceneLoader.LastLoadedSceneHandle = default;
+        }
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
         while (!operation.isDone)
@@ -61,8 +72,42 @@ public class SceneTransition : MonoBehaviour
         fadeCanvasGroup.blocksRaycasts = false;
     }
 
-    IEnumerator Fade(float targetAlpha, float fadeDuration)
+    IEnumerator TransitionRoutineIndex(int sceneBuildIndex)
     {
+        fadeCanvasGroup.blocksRaycasts = true;
+
+        yield return StartCoroutine(Fade(1f, fadeInDuration));
+
+        // Unload additive diorama if open
+        if (PlayerCameraController.ActiveDioramaHandle.IsValid())
+        {
+            yield return UnityEngine.AddressableAssets.Addressables.UnloadSceneAsync(PlayerCameraController.ActiveDioramaHandle);
+            PlayerCameraController.ActiveDioramaHandle = default;
+        }
+
+        // Unload main addressable scene if loaded via Addressables
+        if (AddressableSceneLoader.LastLoadedSceneHandle.IsValid())
+        {
+            yield return UnityEngine.AddressableAssets.Addressables.UnloadSceneAsync(AddressableSceneLoader.LastLoadedSceneHandle);
+            AddressableSceneLoader.LastLoadedSceneHandle = default;
+        }
+
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneBuildIndex);
+        while (!operation.isDone)
+        {
+            yield return null;
+        }
+
+        yield return StartCoroutine(Fade(0f, fadeOutDuration));
+
+        fadeCanvasGroup.blocksRaycasts = false;
+    }
+
+    public IEnumerator Fade(float targetAlpha, float fadeDuration)
+    {
+        if (fadeCanvasGroup == null) yield break;
+
+        fadeCanvasGroup.blocksRaycasts = true;
         float startAlpha = fadeCanvasGroup.alpha;
         float time = 0;
 
@@ -73,5 +118,10 @@ public class SceneTransition : MonoBehaviour
             yield return null;
         }
         fadeCanvasGroup.alpha = targetAlpha;
+
+        if (targetAlpha <= 0f)
+        {
+            fadeCanvasGroup.blocksRaycasts = false;
+        }
     }
 }

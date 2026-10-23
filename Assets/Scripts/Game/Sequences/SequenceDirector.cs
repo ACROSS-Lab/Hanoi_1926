@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class SequenceDirector : MonoBehaviour
@@ -9,6 +10,7 @@ public class SequenceDirector : MonoBehaviour
 
     [Header("Player References")]
     [SerializeField] PlayerTransition playerTransition;
+    [SerializeField] PlayerCameraController playerCameraController;
  
     [Header("Narrator References")]
     [SerializeField] Narrator narrator;
@@ -18,9 +20,21 @@ public class SequenceDirector : MonoBehaviour
 
     [Header("Debugging")]
     [SerializeField] int debugStepIndex = 0;
-    [SerializeField] int currentStepIndex = 0;
+    [ShowNonSerializedField] int currentStepIndex = 0;
 
     bool hasPerformedAction = false;
+
+    void Awake()
+    {
+        if (playerCameraController == null)
+        {
+            playerCameraController = FindFirstObjectByType<PlayerCameraController>();
+        }
+        if (playerTransition == null && playerCameraController == null)
+        {
+            playerTransition = FindFirstObjectByType<PlayerTransition>();
+        }
+    }
 
     void Start()
     {
@@ -32,12 +46,12 @@ public class SequenceDirector : MonoBehaviour
         for (int i = 0; i < sequenceSteps.Length; i++)
         {
             SequenceStep step = sequenceSteps[i];
+            currentStepIndex = i;
             bool fastForward = false;
             #if UNITY_EDITOR
             fastForward = i < debugStepIndex;
             #endif
             yield return StartCoroutine(ExecuteStep(step, fastForward));
-            currentStepIndex = i;
         }
     }
 
@@ -75,10 +89,20 @@ public class SequenceDirector : MonoBehaviour
 
         if (step.hasPlayerMovement)
         {
-            playerTransition.transform.SetPositionAndRotation(
-                step.playerTargetPosition,
-                Quaternion.Euler(step.playerTargetRotation)
-            );
+            if (playerCameraController != null)
+            {
+                playerCameraController.SetPositionAndRotation(
+                    step.playerTargetPosition,
+                    step.hasPlayerRotation ? Quaternion.Euler(step.playerTargetRotation) : playerCameraController.transform.rotation
+                );
+            }
+            else if (playerTransition != null)
+            {
+                playerTransition.transform.SetPositionAndRotation(
+                    step.playerTargetPosition,
+                    Quaternion.Euler(step.playerTargetRotation)
+                );
+            }
         }
     }
 
@@ -101,14 +125,28 @@ public class SequenceDirector : MonoBehaviour
     {
         if (!step.hasPlayerMovement) return;
 
-        playerTransition.MovePlayer(
-            step.playerTargetPosition,
-            step.hasPlayerRotation,
-            step.playerTargetRotation,
-            step.hasSceneTransition,
-            step.sceneName,
-            step.isGoingBackToMainScene
-        );
+        if (playerCameraController != null)
+        {
+            playerCameraController.MovePlayer(
+                step.playerTargetPosition,
+                step.hasPlayerRotation,
+                step.playerTargetRotation,
+                step.hasSceneTransition,
+                step.sceneName,
+                step.isGoingBackToMainScene
+            );
+        }
+        else if (playerTransition != null)
+        {
+            playerTransition.MovePlayer(
+                step.playerTargetPosition,
+                step.hasPlayerRotation,
+                step.playerTargetRotation,
+                step.hasSceneTransition,
+                step.sceneName,
+                step.isGoingBackToMainScene
+            );
+        }
     }
 
     IEnumerator HandleNarrator(SequenceStep step)

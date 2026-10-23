@@ -5,7 +5,8 @@ public class CanvasFollower : MonoBehaviour
     [SerializeField] Vector3 distanceFromCamera = new Vector3(0, 0, 6);
     [SerializeField] float yRotationOffset = 0;
     [SerializeField] float followSpeed = 8.0f;
-    [SerializeField] bool rotateWithCamera = false;
+    [SerializeField] bool followCameraHeight = false;
+    [SerializeField] bool followCameraRotation = true;
 
     Transform cameraTransform;
 
@@ -15,14 +16,21 @@ public class CanvasFollower : MonoBehaviour
 
         Vector3 targetPosition = cameraTransform.position + (cameraTransform.forward * distanceFromCamera.z) + (cameraTransform.right * distanceFromCamera.x);
         Quaternion targetRotation;
-        if (rotateWithCamera)
+        if (followCameraHeight)
         {
             targetPosition += cameraTransform.up * distanceFromCamera.y;
-            targetRotation = Quaternion.LookRotation(targetPosition - cameraTransform.position);
+            
         }
         else
         {
             targetPosition.y = cameraTransform.position.y + distanceFromCamera.y;
+        }
+        if (followCameraRotation)
+        {
+            targetRotation = Quaternion.LookRotation(targetPosition - cameraTransform.position);
+        }
+        else
+        {
             targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y + yRotationOffset, 0);
         }
         transform.position = targetPosition;
@@ -35,14 +43,20 @@ public class CanvasFollower : MonoBehaviour
 
         Vector3 targetPosition = cameraTransform.position + (cameraTransform.forward * distanceFromCamera.z) + (cameraTransform.right * distanceFromCamera.x);
         Quaternion targetRotation;
-        if (rotateWithCamera)
+        if (followCameraHeight)
         {
             targetPosition += cameraTransform.up * distanceFromCamera.y;
-            targetRotation = Quaternion.LookRotation(targetPosition - cameraTransform.position);
         }
         else
         {
             targetPosition.y = cameraTransform.position.y + distanceFromCamera.y;
+        }
+        if (followCameraRotation)
+        {
+            targetRotation = Quaternion.LookRotation(targetPosition - cameraTransform.position);
+        }
+        else
+        {
             targetRotation = Quaternion.Euler(0, cameraTransform.eulerAngles.y + yRotationOffset, 0);
         }
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * followSpeed);

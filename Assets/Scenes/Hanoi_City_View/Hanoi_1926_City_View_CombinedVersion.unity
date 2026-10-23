@@ -10642,10 +10642,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c23c8f0d71fa9f9429a1fbf70e8f0c9b, type: 2}
   - {fileID: 11400000, guid: 6d00dd81fd7489d46938b9655f430cee, type: 2}
   playerTransition: {fileID: 7615592486915259465}
+  playerCameraController: {fileID: 0}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 11
-  currentStepIndex: 0
+  debugStepIndex: 0
 --- !u!1001 &6655997187793256193
 PrefabInstance:
   m_ObjectHideFlags: 0
