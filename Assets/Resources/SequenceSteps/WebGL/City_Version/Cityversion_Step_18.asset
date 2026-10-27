@@ -30,7 +30,7 @@ MonoBehaviour:
   hasDialogue: 1
   timeWaitBeforeTalking: 0
   dialogueKey: cityversion.narrator.dialogue.18
-  isUsingOverlay: 0
+  isUsingOverlay: 1
   eyesState: 0
   bodyStartState: 4
   bodyEndState: 0

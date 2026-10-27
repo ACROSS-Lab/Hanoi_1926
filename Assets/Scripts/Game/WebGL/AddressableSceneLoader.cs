@@ -11,7 +11,7 @@ public class AddressableSceneLoader : MonoBehaviour
 {
     [Header("UI Elements")]
     [SerializeField] GameObject loadingPanel;
-    [SerializeField] Slider progressBar;
+    [SerializeField] SlicedFilledImage progressBar;
     [SerializeField] TextMeshProUGUI statusText;
     [SerializeField] TextMeshProUGUI percentText;
 
@@ -38,7 +38,7 @@ public class AddressableSceneLoader : MonoBehaviour
     IEnumerator LoadSceneCoroutine(string sceneAddress)
     {
         if (loadingPanel != null) loadingPanel.SetActive(true);
-        if (progressBar != null) progressBar.value = 0f;
+        if (progressBar != null) progressBar.fillAmount = 0f;
 
         // -------------------------------------------------------------
         // Step 1: Check how much data needs to be downloaded over HTTP
@@ -63,7 +63,7 @@ public class AddressableSceneLoader : MonoBehaviour
                 float progress = status.Percent; // 0.0 to 1.0
                 float downloadedMB = status.DownloadedBytes / (1024f * 1024f);
 
-                if (progressBar != null) progressBar.value = progress * 0.7f; // allocate first 70% to download
+                if (progressBar != null) progressBar.fillAmount = progress * 0.7f; // allocate first 70% to download
                 if (statusText != null) statusText.text = $"Downloading: {downloadedMB:F1} MB / {totalMB:F1} MB";
                 if (percentText != null) percentText.text = $"{Mathf.RoundToInt(progress * 70f)}%";
 
@@ -87,7 +87,7 @@ public class AddressableSceneLoader : MonoBehaviour
                 ? 0.7f + (loadHandle.PercentComplete * 0.3f) 
                 : loadHandle.PercentComplete;
 
-            if (progressBar != null) progressBar.value = loadProgress;
+            if (progressBar != null) progressBar.fillAmount = loadProgress;
             if (percentText != null) percentText.text = $"{Mathf.RoundToInt(loadProgress * 100f)}%";
 
             yield return null;
@@ -95,7 +95,7 @@ public class AddressableSceneLoader : MonoBehaviour
 
         if (loadHandle.Status == AsyncOperationStatus.Succeeded)
         {
-            if (progressBar != null) progressBar.value = 1f;
+            if (progressBar != null) progressBar.fillAmount = 1f;
             if (percentText != null) percentText.text = "100%";
             currentSceneHandle = loadHandle;
             LastLoadedSceneHandle = loadHandle;

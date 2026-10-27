@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 272b3340dec6323418bfbb3b98283410, type: 3}
   m_Name: Simulation_Step_08_b
   m_EditorClassIdentifier: Assembly-CSharp::SequenceStep
-  hasSequenceEvents: 0
+  hasSequenceEvents: 1
   hasNarratorMovement: 1
   targetNarratorPosition: {x: 11.38, y: 7.41, z: -4.48}
   offsetAtCenter: {x: 0, y: 0, z: 0}
@@ -21,7 +21,7 @@ MonoBehaviour:
   targetNarratorScale: 2
   flyDuration: 0
   hasPlayerMovement: 1
-  playerTargetPosition: {x: 1.827, y: 5.873, z: -1.65}
+  playerTargetPosition: {x: 1.827, y: 7, z: -1.65}
   hasPlayerRotation: 1
   playerTargetRotation: {x: 0, y: 90, z: 0}
   hasSceneTransition: 1

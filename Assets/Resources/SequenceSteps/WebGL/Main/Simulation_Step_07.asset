@@ -30,7 +30,7 @@ MonoBehaviour:
   hasDialogue: 1
   timeWaitBeforeTalking: 2
   dialogueKey: narrator.dialogue.22
-  isUsingOverlay: 0
+  isUsingOverlay: 1
   eyesState: 2
   bodyStartState: 6
   bodyEndState: 6
