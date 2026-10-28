@@ -19,7 +19,20 @@ public class AddressableSceneLoader : MonoBehaviour
     [SerializeField] SceneTransition sceneTransition;
 
     public static AsyncOperationHandle<SceneInstance> LastLoadedSceneHandle { get; set; }
+    public static bool IsLoading { get; private set; }
+
     AsyncOperationHandle<SceneInstance> currentSceneHandle;
+    Coroutine activeLoadCoroutine;
+
+    void Awake()
+    {
+        IsLoading = false;
+    }
+
+    void OnDestroy()
+    {
+        IsLoading = false;
+    }
 
     void Start()
     {
@@ -28,11 +41,61 @@ public class AddressableSceneLoader : MonoBehaviour
             sceneTransition = GetComponentInChildren<SceneTransition>();
             if (sceneTransition == null) sceneTransition = FindAnyObjectByType<SceneTransition>();
         }
+
+        if (loadingPanel != null)
+        {
+            if (progressBar == null) progressBar = loadingPanel.GetComponentInChildren<SlicedFilledImage>(true);
+            if (statusText == null) statusText = loadingPanel.GetComponentInChildren<TextMeshProUGUI>(true);
+            if (percentText == null)
+            {
+                TextMeshProUGUI[] texts = loadingPanel.GetComponentsInChildren<TextMeshProUGUI>(true);
+                foreach (var t in texts)
+                {
+                    if (t != statusText) { percentText = t; break; }
+                }
+            }
+        }
     }
 
     public void LoadAddressableScene(string sceneAddress)
     {
-        StartCoroutine(LoadSceneCoroutine(sceneAddress));
+        if (IsLoading)
+        {
+            Debug.LogWarning($"[AddressableSceneLoader] A scene is already loading. Ignoring request to load '{sceneAddress}'.");
+            return;
+        }
+
+        IsLoading = true;
+        DisableMenuInteraction();
+        activeLoadCoroutine = StartCoroutine(LoadSceneCoroutine(sceneAddress));
+    }
+
+    void DisableMenuInteraction()
+    {
+        Button[] buttons = FindObjectsByType<Button>(FindObjectsSortMode.None);
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            if (buttons[i] != null) buttons[i].interactable = false;
+        }
+
+        if (loadingPanel != null)
+        {
+            CanvasGroup cg = loadingPanel.GetComponent<CanvasGroup>();
+            if (cg == null) cg = loadingPanel.AddComponent<CanvasGroup>();
+            cg.blocksRaycasts = true;
+        }
+    }
+
+    void EnableMenuInteraction()
+    {
+        IsLoading = false;
+        activeLoadCoroutine = null;
+
+        Button[] buttons = FindObjectsByType<Button>(FindObjectsSortMode.None);
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            if (buttons[i] != null) buttons[i].interactable = true;
+        }
     }
 
     IEnumerator LoadSceneCoroutine(string sceneAddress)
@@ -100,7 +163,7 @@ public class AddressableSceneLoader : MonoBehaviour
             currentSceneHandle = loadHandle;
             LastLoadedSceneHandle = loadHandle;
 
-            // Fade to black smoothly using SceneTransition before opening the new scene
+            // Fade to white/black smoothly using SceneTransition before opening the new scene
             if (sceneTransition == null)
             {
                 sceneTransition = GetComponentInChildren<SceneTransition>();
@@ -114,11 +177,14 @@ public class AddressableSceneLoader : MonoBehaviour
 
             // Activate the new scene behind the black overlay
             yield return loadHandle.Result.ActivateAsync();
+            IsLoading = false;
+            activeLoadCoroutine = null;
         }
         else
         {
             Debug.LogError($"[AddressableSceneLoader] Failed to load addressable scene '{sceneAddress}': {loadHandle.OperationException}");
             if (statusText != null) statusText.text = "Failed to load scene!";
+            EnableMenuInteraction();
         }
     }
 }

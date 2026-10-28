@@ -1,1 +1,22 @@
 ﻿Role,Name
+menu.webgl.ui.credits.dept.production,
+menu.webgl.ui.credits.role.director,"Alexis Drogoul, IRD, Vietnam"
+menu.webgl.ui.credits.dept.history,
+menu.webgl.ui.credits.role.history_architect,"Olivier Tessier, EFEO, Vietnam\nEmmanuel Cerise, PRX, Vietnam"
+menu.webgl.ui.credits.role.history_geography,"Alexis Drogoul, IRD, Vietnam"
+menu.webgl.ui.credits.dept.narrative,
+menu.webgl.ui.credits.role.lead_writer,"Pierre Chandezon, IRD, Vietnam"
+menu.webgl.ui.credits.role.script_editor,"Eloi Landes, IRD, Vietnam\nNguyễn Hoàng Tùng, IRD, Vietnam\nTạ Hoàng Lan, IRD, Vietnam"
+menu.webgl.ui.credits.dept.programming,
+menu.webgl.ui.credits.role.lead_programmer,"Nguyễn Hoàng Tùng, IRD, Vietnam"
+menu.webgl.ui.credits.role.flood_engineer,"Ngô Quang Minh, IRD, Vietnam"
+menu.webgl.ui.credits.dept.art,
+menu.webgl.ui.credits.role.lead_art_tech,"Eloi Landes, IRD, Vietnam"
+menu.webgl.ui.credits.role.artist_3d,"Valentine Lodenos, IRD, Vietnam"
+menu.webgl.ui.credits.role.concept_artist,"Pierre Chandezon, IRD, Vietnam"
+menu.webgl.ui.credits.dept.audio,
+menu.webgl.ui.credits.role.sound_designer,"Eloi Landes, IRD, Vietnam\nNguyễn Hoàng Tùng, IRD, Vietnam"
+menu.webgl.ui.credits.dept.partners,
+menu.webgl.ui.credits.role.partners,"IRD (Institut de Recherche pour le Développement)\nEFEO (École française d'Extrême-Orient)\nPRX (Pôle Régional d'Expertise de Paris)"
+menu.webgl.ui.credits.dept.special_thanks,
+menu.webgl.ui.credits.role.special_thanks,"[Special Thanks / Contributors]"

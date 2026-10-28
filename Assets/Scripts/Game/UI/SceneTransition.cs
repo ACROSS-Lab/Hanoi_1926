@@ -12,9 +12,11 @@ public class SceneTransition : MonoBehaviour
     public float FadeOutDuration => fadeOutDuration;
 
     CanvasGroup fadeCanvasGroup;
+    bool isTransitioning = false;
 
     void Awake()
     {
+        isTransitioning = false;
         fadeCanvasGroup = GetComponentInChildren<CanvasGroup>();
         if (fadeInOnStart && fadeCanvasGroup != null)
         {
@@ -33,11 +35,15 @@ public class SceneTransition : MonoBehaviour
 
     public void SwitchScene(string sceneName)
     {
+        if (isTransitioning) return;
+        isTransitioning = true;
         StartCoroutine(TransitionRoutine(sceneName));
     }
 
     public void SwitchScene(int sceneBuildIndex)
     {
+        if (isTransitioning) return;
+        isTransitioning = true;
         StartCoroutine(TransitionRoutineIndex(sceneBuildIndex));
     }
 
@@ -70,6 +76,7 @@ public class SceneTransition : MonoBehaviour
         yield return StartCoroutine(Fade(0f, fadeOutDuration));
 
         fadeCanvasGroup.blocksRaycasts = false;
+        isTransitioning = false;
     }
 
     IEnumerator TransitionRoutineIndex(int sceneBuildIndex)
@@ -101,6 +108,7 @@ public class SceneTransition : MonoBehaviour
         yield return StartCoroutine(Fade(0f, fadeOutDuration));
 
         fadeCanvasGroup.blocksRaycasts = false;
+        isTransitioning = false;
     }
 
     public IEnumerator Fade(float targetAlpha, float fadeDuration)

@@ -25,9 +25,12 @@ public class IngameMenu : MonoBehaviour
     Vector3 initialCameraPosition;
     Quaternion initialCameraRotation;
     Transform camTransform;
+    bool isReturningToMenu = false;
 
     void OnEnable()
     {
+        isReturningToMenu = false;
+        if (returnToMenuButton != null) returnToMenuButton.interactable = true;
         resetViewButton.onClick.AddListener(ResetCameraView);
         returnToMenuButton.onClick.AddListener(ReturnToMenu);
     }
@@ -72,6 +75,14 @@ public class IngameMenu : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        if (isReturningToMenu) return;
+        isReturningToMenu = true;
+
+        if (returnToMenuButton != null)
+        {
+            returnToMenuButton.interactable = false;
+        }
+
         string targetScene = string.IsNullOrEmpty(menuSceneName) ? "Menu_WebGL" : menuSceneName;
 
         if (sceneTransition != null)

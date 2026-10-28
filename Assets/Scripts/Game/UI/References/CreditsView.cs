@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreditsView : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class CreditsView : MonoBehaviour
     [Header("UI Hierarchy")]
     [SerializeField] private Transform rowsContainer;
     [SerializeField] private GameObject creditRowPrefab;
+    [Tooltip("Optional: dedicated prefab for Department headers. If null, creditRowPrefab is adapted automatically.")]
+    [SerializeField] private GameObject headerPrefab;
 
     [Header("Settings")]
     [SerializeField] private bool reloadOnLanguageChanged = true;
@@ -63,6 +66,8 @@ public class CreditsView : MonoBehaviour
             if (row.Count >= 1)
             {
                 string roleKey = row[0].Trim();
+                if (string.IsNullOrWhiteSpace(roleKey)) continue;
+
                 string nameValue = row.Count >= 2 ? row[1].Trim() : string.Empty;
 
                 _entries.Add(new CreditEntry
@@ -90,18 +95,66 @@ public class CreditsView : MonoBehaviour
 
         foreach (var entry in _entries)
         {
-            GameObject rowObj = Instantiate(creditRowPrefab, rowsContainer);
+            bool isHeader = string.IsNullOrWhiteSpace(entry.Name);
+            GameObject prefabToUse = (isHeader && headerPrefab != null) ? headerPrefab : creditRowPrefab;
+            GameObject rowObj = Instantiate(prefabToUse, rowsContainer);
 
             string localizedRole = GetLocalizedText(entry.Role);
-
-            // Expected components: [0] = Role, [1] = Name
             TextMeshProUGUI[] textComponents = rowObj.GetComponentsInChildren<TextMeshProUGUI>();
-            if (textComponents.Length >= 2)
-            {
-                textComponents[0].text = localizedRole;
-                textComponents[1].text = entry.Name;
 
-                _localizedRows.Add((textComponents[0], entry.Role));
+            if (isHeader)
+            {
+                if (headerPrefab != null)
+                {
+                    if (textComponents.Length > 0)
+                    {
+                        textComponents[0].text = localizedRole;
+                        _localizedRows.Add((textComponents[0], entry.Role));
+                    }
+                }
+                else
+                {
+                    // Fallback with creditRowPrefab: adapt to display as full-width header
+                    if (textComponents.Length >= 2)
+                    {
+                        textComponents[1].transform.parent.gameObject.SetActive(false);
+                    }
+
+                    if (textComponents.Length >= 1)
+                    {
+                        textComponents[0].text = localizedRole;
+                        textComponents[0].alignment = TextAlignmentOptions.Center;
+                        textComponents[0].fontStyle = FontStyles.Bold;
+
+                        var layoutElement = textComponents[0].GetComponentInParent<LayoutElement>();
+                        if (layoutElement != null)
+                        {
+                            layoutElement.preferredWidth = -1;
+                            layoutElement.flexibleWidth = 1;
+                        }
+
+                        _localizedRows.Add((textComponents[0], entry.Role));
+                    }
+                }
+            }
+            else
+            {
+                // Expected components: [0] = Role, [1] = Name
+                if (textComponents.Length >= 2)
+                {
+                    textComponents[0].text = localizedRole;
+
+                    string formattedNames = entry.Name.Replace("\\n", "\n");
+                    formattedNames = TMP_LinkHandler.FormatLinks(formattedNames);
+                    textComponents[1].text = formattedNames;
+
+                    if (textComponents[1].GetComponent<TMP_LinkHandler>() == null)
+                    {
+                        textComponents[1].gameObject.AddComponent<TMP_LinkHandler>();
+                    }
+
+                    _localizedRows.Add((textComponents[0], entry.Role));
+                }
             }
         }
     }
