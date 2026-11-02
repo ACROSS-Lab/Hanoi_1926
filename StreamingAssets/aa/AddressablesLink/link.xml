@@ -1,7 +1,6 @@
 <linker>
   <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
     <type fullname="AudioFadeController" preserve="all" />
-    <type fullname="CanvasFollower" preserve="all" />
     <type fullname="CanvasGroupFader" preserve="all" />
     <type fullname="EventDirector" preserve="all" />
     <type fullname="Face_Controller" preserve="all" />
