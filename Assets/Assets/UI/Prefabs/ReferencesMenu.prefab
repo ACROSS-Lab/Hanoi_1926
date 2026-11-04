@@ -380,6 +380,7 @@ GameObject:
   - component: {fileID: 8054852139371846471}
   - component: {fileID: 5340751448937311219}
   - component: {fileID: 6396961463937412403}
+  - component: {fileID: 4097267518850344466}
   m_Layer: 5
   m_Name: LocationButton
   m_TagString: Untagged
@@ -489,6 +490,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4097267518850344466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467552645746662570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39659c1f7cc47d54c8946cb6ecaf9a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UICardHover
+  hoverScale: 1.05
+  scaleDuration: 0.15
+  maxTilt: 0
+  tiltDuration: 0
 --- !u!1 &1543640963697430122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,6 +1211,7 @@ GameObject:
   - component: {fileID: 7119578217329377057}
   - component: {fileID: 5567928033117413863}
   - component: {fileID: 5202751942842589891}
+  - component: {fileID: 1400416358416695204}
   m_Layer: 5
   m_Name: CreditsButton
   m_TagString: Untagged
@@ -1303,6 +1321,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1400416358416695204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2766006869982739176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39659c1f7cc47d54c8946cb6ecaf9a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UICardHover
+  hoverScale: 1.05
+  scaleDuration: 0.15
+  maxTilt: 0
+  tiltDuration: 0
 --- !u!1 &2897636917823180714
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,7 +1469,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 15, y: 8, z: 15, w: 8}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1468,6 +1502,7 @@ GameObject:
   - component: {fileID: 2382952407737234815}
   - component: {fileID: 5653108351444764139}
   - component: {fileID: 3639754757371488136}
+  - component: {fileID: 3063399869772171666}
   m_Layer: 5
   m_Name: ScriptButton
   m_TagString: Untagged
@@ -1577,6 +1612,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3063399869772171666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940292341274209997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39659c1f7cc47d54c8946cb6ecaf9a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UICardHover
+  hoverScale: 1.05
+  scaleDuration: 0.15
+  maxTilt: 0
+  tiltDuration: 0
 --- !u!1 &3081312651783534295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,7 +2166,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 15, y: 8, z: 15, w: 8}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3029,6 +3080,7 @@ GameObject:
   - component: {fileID: 9199868407976174905}
   - component: {fileID: 6782660823904118580}
   - component: {fileID: 5480830517538508036}
+  - component: {fileID: 4016980775367896935}
   m_Layer: 5
   m_Name: CloseButton
   m_TagString: Untagged
@@ -3138,6 +3190,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4016980775367896935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5532414819806730623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39659c1f7cc47d54c8946cb6ecaf9a46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UICardHover
+  hoverScale: 1.05
+  scaleDuration: 0.15
+  maxTilt: 0
+  tiltDuration: 0
 --- !u!1 &5815903258963276662
 GameObject:
   m_ObjectHideFlags: 0
@@ -4390,7 +4458,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 15, y: 8, z: 15, w: 8}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

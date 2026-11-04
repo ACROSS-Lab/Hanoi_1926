@@ -10638,6 +10638,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1d4de6772abf25b479b26fab498ba45f, type: 2}
   - {fileID: 11400000, guid: e982951262d8f9f44b2e976b57659523, type: 2}
   - {fileID: 11400000, guid: 734fb26f19b11e544812e4e3cdd57858, type: 2}
+  - {fileID: 11400000, guid: 26a572b3cd30c8a4db45fe471e375ba3, type: 2}
   - {fileID: 11400000, guid: 2b08b35f24413d948b8e837a0f411d54, type: 2}
   - {fileID: 11400000, guid: c23c8f0d71fa9f9429a1fbf70e8f0c9b, type: 2}
   - {fileID: 11400000, guid: 6d00dd81fd7489d46938b9655f430cee, type: 2}
@@ -10645,7 +10646,7 @@ MonoBehaviour:
   playerCameraController: {fileID: 0}
   narrator: {fileID: 388895355}
   eventDirector: {fileID: 6197533774078462313}
-  debugStepIndex: 0
+  debugStepIndex: 51
 --- !u!1001 &6655997187793256193
 PrefabInstance:
   m_ObjectHideFlags: 0

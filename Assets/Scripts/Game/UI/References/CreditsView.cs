@@ -20,7 +20,7 @@ public class CreditsView : MonoBehaviour
     [SerializeField] private bool reloadOnLanguageChanged = true;
 
     private readonly List<CreditEntry> _entries = new();
-    private readonly List<(TextMeshProUGUI roleText, string roleKey)> _localizedRows = new();
+    private readonly List<(TextMeshProUGUI roleText, string roleKey, TextMeshProUGUI nameText, string nameKey)> _localizedRows = new();
 
     private void Start()
     {
@@ -109,7 +109,7 @@ public class CreditsView : MonoBehaviour
                     if (textComponents.Length > 0)
                     {
                         textComponents[0].text = localizedRole;
-                        _localizedRows.Add((textComponents[0], entry.Role));
+                        _localizedRows.Add((textComponents[0], entry.Role, null, null));
                     }
                 }
                 else
@@ -133,7 +133,7 @@ public class CreditsView : MonoBehaviour
                             layoutElement.flexibleWidth = 1;
                         }
 
-                        _localizedRows.Add((textComponents[0], entry.Role));
+                        _localizedRows.Add((textComponents[0], entry.Role, null, null));
                     }
                 }
             }
@@ -143,17 +143,14 @@ public class CreditsView : MonoBehaviour
                 if (textComponents.Length >= 2)
                 {
                     textComponents[0].text = localizedRole;
-
-                    string formattedNames = entry.Name.Replace("\\n", "\n");
-                    formattedNames = TMP_LinkHandler.FormatLinks(formattedNames);
-                    textComponents[1].text = formattedNames;
+                    textComponents[1].text = FormatNameText(entry.Name);
 
                     if (textComponents[1].GetComponent<TMP_LinkHandler>() == null)
                     {
                         textComponents[1].gameObject.AddComponent<TMP_LinkHandler>();
                     }
 
-                    _localizedRows.Add((textComponents[0], entry.Role));
+                    _localizedRows.Add((textComponents[0], entry.Role, textComponents[1], entry.Name));
                 }
             }
         }
@@ -161,13 +158,49 @@ public class CreditsView : MonoBehaviour
 
     public void RefreshLocalization()
     {
-        foreach (var (roleText, key) in _localizedRows)
+        foreach (var (roleText, roleKey, nameText, nameKey) in _localizedRows)
         {
-            if (roleText != null)
+            if (roleText != null && !string.IsNullOrEmpty(roleKey))
             {
-                roleText.text = GetLocalizedText(key);
+                roleText.text = GetLocalizedText(roleKey);
+            }
+
+            if (nameText != null && !string.IsNullOrEmpty(nameKey))
+            {
+                nameText.text = FormatNameText(nameKey);
             }
         }
+    }
+
+    private string FormatNameText(string rawOrKey)
+    {
+        if (string.IsNullOrWhiteSpace(rawOrKey)) return string.Empty;
+
+        // If rawOrKey contains or is a localization key
+        if (rawOrKey.StartsWith("menu.") || rawOrKey.StartsWith("credits."))
+        {
+            if (rawOrKey.Contains("\\n") || rawOrKey.Contains("\n"))
+            {
+                string[] parts = rawOrKey.Split(new[] { "\\n", "\n" }, System.StringSplitOptions.None);
+                for (int i = 0; i < parts.Length; i++)
+                {
+                    string p = parts[i].Trim();
+                    if (p.StartsWith("menu.") || p.StartsWith("credits."))
+                    {
+                        parts[i] = GetLocalizedText(p);
+                    }
+                }
+                string combined = string.Join("\n", parts);
+                return TMP_LinkHandler.FormatLinks(combined);
+            }
+
+            string text = GetLocalizedText(rawOrKey);
+            text = text.Replace("\\n", "\n");
+            return TMP_LinkHandler.FormatLinks(text);
+        }
+
+        string formatted = rawOrKey.Replace("\\n", "\n");
+        return TMP_LinkHandler.FormatLinks(formatted);
     }
 
     private string GetLocalizedText(string key)

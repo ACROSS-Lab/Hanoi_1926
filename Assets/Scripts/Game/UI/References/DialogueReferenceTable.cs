@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueReferenceTable : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class DialogueReferenceTable : MonoBehaviour
     [SerializeField] private bool reloadOnLanguageChanged = true;
 
     private readonly List<DialogueReferenceEntry> _entries = new();
-    private readonly List<(TextMeshProUGUI dialogueText, string key)> _localizedRows = new();
+    private readonly List<(TextMeshProUGUI dialogueText, string dialogueKey, TextMeshProUGUI referenceText, string referenceKey)> _localizedRows = new();
 
     private void Start()
     {
@@ -27,6 +28,14 @@ public class DialogueReferenceTable : MonoBehaviour
         if (reloadOnLanguageChanged)
         {
             LocalizationManager.OnLanguageChanged += RefreshLocalization;
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (_localizedRows.Count > 0)
+        {
+            RebuildTableLayout();
         }
     }
 
@@ -90,11 +99,9 @@ public class DialogueReferenceTable : MonoBehaviour
         {
             GameObject rowObj = Instantiate(rowPrefab, rowsContainer);
 
-            // Fetch localized dialogue string
+            // Fetch localized dialogue and reference strings
             string localizedDialogue = GetLocalizedText(entry.LocalizationKey);
-
-            // Format hyperlinks
-            string formattedReference = TMP_LinkHandler.FormatLinks(entry.Reference);
+            string formattedReference = GetFormattedReference(entry.Reference);
 
             // Find TextMeshPro components in rowPrefab:
             // Expected: index 0 = Dialogue, index 1 = Reference
@@ -110,24 +117,55 @@ public class DialogueReferenceTable : MonoBehaviour
                     textComponents[1].gameObject.AddComponent<TMP_LinkHandler>();
                 }
 
-                _localizedRows.Add((textComponents[0], entry.LocalizationKey));
+                _localizedRows.Add((textComponents[0], entry.LocalizationKey, textComponents[1], entry.Reference));
             }
         }
     }
 
     public void RefreshLocalization()
     {
-        foreach (var (dialogueText, key) in _localizedRows)
+        foreach (var (dialogueText, dialogueKey, referenceText, referenceKey) in _localizedRows)
         {
             if (dialogueText != null)
             {
-                dialogueText.text = GetLocalizedText(key);
+                dialogueText.text = GetLocalizedText(dialogueKey);
+            }
+
+            if (referenceText != null)
+            {
+                referenceText.text = GetFormattedReference(referenceKey);
             }
         }
+
+        RebuildTableLayout();
+    }
+
+    private void RebuildTableLayout()
+    {
+        if (rowsContainer == null) return;
+
+        var refresher = rowsContainer.GetComponent<UIOrientationRefresher>();
+        if (refresher != null)
+        {
+            refresher.TriggerRefresh();
+        }
+        else if (rowsContainer is RectTransform rectTransform)
+        {
+            LayoutRebuilder.MarkLayoutForRebuild(rectTransform);
+        }
+    }
+
+    private string GetFormattedReference(string referenceKey)
+    {
+        string localizedReference = GetLocalizedText(referenceKey);
+        localizedReference = localizedReference.Replace("\\n", "\n");
+        return TMP_LinkHandler.FormatLinks(localizedReference);
     }
 
     private string GetLocalizedText(string key)
     {
+        if (string.IsNullOrWhiteSpace(key)) return string.Empty;
+
         if (LocalizationManager.Instance != null)
         {
             return LocalizationManager.Instance.GetLocalizedValue(key);
