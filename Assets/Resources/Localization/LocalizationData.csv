@@ -2,10 +2,10 @@
 mainMenu.start  ,,,Commencer
 mainMenu.end    ,,,Fin
 mainMenu.options,,,Options
-mainMenu.Leave,"Trải nghiệm đã kết thúc, vui lòng đặt kính thực tế ảo trở lại giá đỡ.","Experience complete, please place the VR headset back on its stand.",Expérience terminée. Merci de remettre le casque de réalité virtuelle sur son support.
+mainMenu.Leave,"Trải nghiệm đã kết thúc, vui lòng đặt kính thực tế ảo trở lại giá đỡ.","Experience complete, please place the VR headset back on its stand.",Expérience terminée. Merci de remettre le casque de réalité virtuelle sur son support.+D20D12D5:D22D5:D22D12D5:D22D5:DD5:D55
 ,,,
 narrator.dialogue.01,"Xin chào, tôi tên là Hoài, tôi sống ở đồng bằng sông Hồng. Hôm nay là ngày 23 tháng 7 năm 1926.","Hello, my name is Hoài, I live in the Red River Delta. Today is July 23, 1926.","Bonjour, je m’appelle Hoài, j’habite dans le delta du fleuve Rouge. Nous sommes aujourd’hui le 23 juillet 1926."
-narrator.dialogue.02,Đã hơn một tháng nay mực nước sông không ngừng dâng cao.,"For a month now, the water level of the river has been rising ceaselessly.","Depuis un mois, le niveau d’eau du fleuve ne cesse de monter."
+narrator.dialogue.02,Đã một tháng nay mực nước sông không ngừng dâng cao.,"For a month now, the water level of the river has been rising ceaselessly.","Depuis un mois, le niveau d’eau du fleuve ne cesse de monter."
 narrator.dialogue.03,Chính quyền địa phương đang bày tỏ lo ngại sẽ xảy ra lũ lớn…,The local authorities are expressing concern that a major flood will occur…,Les autorités locales expriment leur inquiétude face au risque d’une grande crue…
 narrator.dialogue.04,"May thay, đồng bằng sông Hồng được bao bọc bởi một hệ thống đê điều gồm 2.000 km đê chính và 1.000 km đê phụ, nhưng việc bảo dưỡng nó gặp nhiều khó khăn.","Fortunately, the Red River Delta is surrounded by a dike system consisting of 2,000 km of main dikes and 1,000 km of secondary dikes, but maintaining it involves many difficulties.","Heureusement, le delta du fleuve Rouge est entouré d’un système de digues comprenant 2 000 km de digues principales et 1 000 km de digues secondaires, mais son entretien rencontre de nombreuses difficultés."
 narrator.dialogue.05,Nếu các con đê phía bờ đông bị vỡ sẽ tạo ra thiệt hại đáng kể đối với mùa màng và nhà cửa.,"If the dikes on the eastern bank were to break, it would cause significant damage to crops and homes.","Si les digues de la rive est venaient à rompre, cela causerait des dégâts considérables aux cultures et aux habitations."
