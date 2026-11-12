@@ -79,6 +79,7 @@
     <type fullname="TMPro.LigatureSubstitutionRecord" preserve="nothing" serialized="true" />
     <type fullname="TMPro.MarkPositionAdjustment" preserve="nothing" serialized="true" />
     <type fullname="TMPro.MarkToBaseAdjustmentRecord" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.MarkToMarkAdjustmentRecord" preserve="nothing" serialized="true" />
     <type fullname="TMPro.TMP_Character" preserve="nothing" serialized="true" />
     <type fullname="TMPro.TMP_FontFeatureTable" preserve="nothing" serialized="true" />
     <type fullname="TMPro.TMP_FontWeightPair" preserve="nothing" serialized="true" />
