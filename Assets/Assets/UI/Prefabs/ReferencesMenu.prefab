@@ -1487,7 +1487,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b716f285080a10847b43a250b34d933c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedKey
-  localizationKey: menu.webgl.ui.button.locations
+  localizationKey: menu.webgl.ui.button.images
   audioSource: {fileID: 0}
   textComponent: {fileID: 757715474928889575}
 --- !u!1 &2940292341274209997
@@ -1641,12 +1641,12 @@ GameObject:
   - component: {fileID: 368810654004300096}
   - component: {fileID: 6501436392855358303}
   m_Layer: 5
-  m_Name: LocationPanel
+  m_Name: ImagePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3996801657413332504
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1718,11 +1718,12 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e360f9284703ff46875be1f0b693010, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::POIReferenceTable
+  m_EditorClassIdentifier: Assembly-CSharp::ImagePanel
   csvAsset: {fileID: 4900000, guid: 58e9b4a66a18478409ab7ca8bc2e6e75, type: 3}
-  resourcesPath: References/POIReferences
+  resourcesPath: References/ImagesReferences
+  imagesFolderPath: References/Images
   rowsContainer: {fileID: 7692022832540619087}
-  rowPrefab: {fileID: 2563926844174112340, guid: 7ac82c4fac67cb146a147c92d7678b42, type: 3}
+  rowPrefab: {fileID: 2563926844174112340, guid: 7a9b8d26e71b05440ae10912f84ebcf2, type: 3}
   reloadOnLanguageChanged: 1
 --- !u!1 &3206111476679971995
 GameObject:
@@ -1876,7 +1877,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b716f285080a10847b43a250b34d933c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedKey
-  localizationKey: menu.webgl.ui.reftitle.poiimagesources
+  localizationKey: menu.webgl.ui.reftitle.sources
   audioSource: {fileID: 0}
   textComponent: {fileID: 2051878214285106457}
 --- !u!1 &3545591775777512559
@@ -1945,7 +1946,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Sources
+  m_text: 'Caption
 
 '
   m_isRightToLeft: 0
@@ -2031,7 +2032,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b716f285080a10847b43a250b34d933c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedKey
-  localizationKey: menu.webgl.ui.reftitle.sources
+  localizationKey: menu.webgl.ui.reftitle.caption
   audioSource: {fileID: 0}
   textComponent: {fileID: 3961539515655215360}
 --- !u!1 &3965463887999218930
@@ -2894,7 +2895,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ReferenceMenuController
   tabController: {fileID: 5577669637011668771}
   dialogueTable: {fileID: 3398556815430441474}
-  poiTable: {fileID: 6501436392855358303}
+  imagePanel: {fileID: 6501436392855358303}
   creditsView: {fileID: 7720725724218800057}
   closeButton: {fileID: 5480830517538508036}
 --- !u!1 &5468851499316094481
@@ -3843,9 +3844,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Dialogue
-
-'
+  m_text: Image
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8a0b50e2d1d8318418fe0bbfd4b33514, type: 2}
   m_sharedMaterial: {fileID: 90684645038628035, guid: 8a0b50e2d1d8318418fe0bbfd4b33514, type: 2}
@@ -3929,7 +3928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b716f285080a10847b43a250b34d933c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LocalizedKey
-  localizationKey: menu.webgl.ui.reftitle.poiname
+  localizationKey: menu.webgl.ui.reftitle.image
   audioSource: {fileID: 0}
   textComponent: {fileID: 7013026914743902756}
 --- !u!1 &7402494881548743617

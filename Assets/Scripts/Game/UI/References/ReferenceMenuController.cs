@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ReferenceMenuController : MonoBehaviour
@@ -6,7 +7,8 @@ public class ReferenceMenuController : MonoBehaviour
     [Header("Sub-Systems")]
     [SerializeField] private TabController tabController;
     [SerializeField] private DialogueReferenceTable dialogueTable;
-    [SerializeField] private POIReferenceTable poiTable;
+    [FormerlySerializedAs("poiTable")]
+    [SerializeField] private ImagePanel imagePanel;
     [SerializeField] private CreditsView creditsView;
 
     [Header("Navigation / Controls")]

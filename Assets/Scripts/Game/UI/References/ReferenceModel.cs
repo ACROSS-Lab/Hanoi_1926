@@ -10,9 +10,9 @@ public class DialogueReferenceEntry
 [Serializable]
 public class POIReferenceEntry
 {
+    public string ImageKey;
     public string LocalizationKey;
-    public string NameReference;
-    public string ImageReference;
+    public string Reference;
 }
 
 [Serializable]

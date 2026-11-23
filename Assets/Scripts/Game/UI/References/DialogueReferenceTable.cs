@@ -145,14 +145,12 @@ public class DialogueReferenceTable : MonoBehaviour
         if (rowsContainer == null) return;
 
         var refresher = rowsContainer.GetComponent<UIOrientationRefresher>();
-        if (refresher != null)
+        if (refresher == null)
         {
-            refresher.TriggerRefresh();
+            refresher = rowsContainer.gameObject.AddComponent<UIOrientationRefresher>();
         }
-        else if (rowsContainer is RectTransform rectTransform)
-        {
-            LayoutRebuilder.MarkLayoutForRebuild(rectTransform);
-        }
+
+        refresher.TriggerRefresh();
     }
 
     private string GetFormattedReference(string referenceKey)
